@@ -1685,7 +1685,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                             userid = client.setups.findKey(user => user.ticketid8 == message.channel.id)
                         if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.TicketCategorys.ModMailBotTicketsCategory}`)
                             userid = client.setups.findKey(user => user.ticketid9 == message.channel.id)
-                        if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.OwnerTicket.toString()}`)
+                        if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.OwnerTicket}`)
                             userid = client.setups.findKey(user => user.ticketid10 == message.channel.id)
                         
                         if(userid.length < 5) {
@@ -2008,7 +2008,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                             userid = client.setups.findKey(user => user.ticketid8 == message.channel.id)
                         if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.TicketCategorys.ModMailBotTicketsCategory}`)
                             userid = client.setups.findKey(user => user.ticketid9 == message.channel.id)
-                        if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.OwnerTicket.toString()}`)
+                        if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.OwnerTicket}`)
                             userid = client.setups.findKey(user => user.ticketid10 == message.channel.id)
                         
                         if(userid.length < 5) {

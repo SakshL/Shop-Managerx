@@ -1,5 +1,5 @@
 {
-    "token": "OTY0OTY5MTk5ODM3NTI0MDA5.YlsXmQ.fnnR3df3_dF7dxXQzp_qPiJVKtA",
+    "token": "OTY0OTY5MTk5ODM3NTI0MDA5.YlsXmQ.id3OFAPPKoRNbT8tMP2DGFaxank",
     "prefix": ",",
     "color": "#6861fe",
     "pastebinapi": "sdsd",
@@ -7,14 +7,14 @@
     "callback": "localhost:3000", 
 
     "paypal": {
-        "clientId": "",
-        "clientSecret": ""
+        "clientId": "AUv5QHdR6T69UrZdHrvWfcCIian0IQebwfN188wPkd4u1XLN5Napq7kMZFf1skIKnaLHBz2AgwEZePNy",
+        "clientSecret": "EAyDFfh7_nIsP6ncDVT55YfeITo0E5izmwGTbnyLXiCDNRbJ1CjHnynL_4bUsVzI98fVJcJUqeyvRQb1"
     },
     "servers": {
         "6": "109.71.253.6"
     },
     "passwords": {
-        "6": "SzICUCN2HGkLykqo"
+        "6": "NotSaksh@6969"
     },
     "usernames": {
         "6": "root"

@@ -28,7 +28,7 @@ function isValidTicket(channel) {
         `${mainconfig.TicketCategorys.AllBotTicketsCategory}`,
         `${mainconfig.OwnerInformation.NotSakshTicket}`,
         `${mainconfig.StaffApply}`,
-        `${mainconfig.OwnerTicket.toString()}`,
+        `${mainconfig.OwnerTicket}`,
         `${mainconfig.ApplyTickets.PartnerApply}`,
         `${mainconfig.TicketCategorys.ModMailBotTicketsCategory}`,
         `${mainconfig.TicketCategorys.ModMailBotTicketsCategory}`
