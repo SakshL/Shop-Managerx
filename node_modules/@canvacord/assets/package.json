@@ -1,0 +1,33 @@
+{
+  "name": "@canvacord/assets",
+  "version": "2.1.0",
+  "description": "Assets used in Canvacord",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "data"
+  ],
+  "scripts": {
+    "build": "rimraf ./dist && tsc"
+  },
+  "keywords": [
+    "canvacord",
+    "assets"
+  ],
+  "author": "DevAndromeda",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevSnowflake/canvacord-assets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DevSnowflake/canvacord-assets/issues"
+  },
+  "homepage": "https://github.com/DevSnowflake/canvacord-assets#readme",
+  "devDependencies": {
+    "@types/node": "^16.10.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.4.3"
+  }
+}

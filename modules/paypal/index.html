@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <title>Nexuss Paypal</title>
+  
+  <!-- Favicons -->
+  <link href="./assets/img/favicon.png" rel="icon">
+  <link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+  <!-- Vendor CSS Files -->
+  <link href="./assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="./assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="./assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="./assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="./assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+  <!-- Template Main CSS File -->
+  <link href="./assets/css/style.css" rel="stylesheet">
+  <style>
+    .card {
+      border-radius: 15px 15px 15px 15px;
+      box-shadow: 0 0px 8px 2px rgba(0, 0, 0, 0.993);
+      max-width: 220px;
+      width: 220px;
+      margin: auto;
+      background: #17181a;
+      text-align: center;
+      font-family: arial;
+    }
+    .card h1 {
+      font-size: 25px;
+    }
+    .price {
+      color: grey;
+      font-size: 20px;
+    }
+    .description {
+      font-style: italic;
+      margin: 10px;
+    }
+    .button {
+      border: none;
+      border-radius: 0 0 15px 15px;
+      outline: 0;
+      padding: 12px;
+      color: white;
+      background-color: rgb(0, 255, 136);
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    .button:hover {
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="index.html"><span><img src="https://imgur.com/RcykDiA.png" style="height: 35px;margin-top:-1%;" > Nexuss Development</span></a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto highlight2" href="https://milrato.dev/index.html#shopbots">Shop Bots Overview</a></li>
+          <li class="dropdown"><a><span>Nagivation</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a class="nav-link scrollto active" href="#monthly">Hosted Bots / Month</a></li>
+              <li><a class="nav-link scrollto" href="#yearly">Hosted Bots / Year</a></li>
+              <li><a class="nav-link scrollto" href="#source">Source Codes</a></li>
+              <li><a class="nav-link scrollto" href="https://milrato.dev/#shopbots">Shop Bots Overview</a></li>
+              <li><a class="nav-link scrollto" href="https://milrato.dev/#team">Team</a></li>
+              <li><a class="nav-link scrollto" href="https://milrato.dev/#faq">F.A.Q</a></li>
+              <li><a class="nav-link scrollto" href="https://milrato.dev/impressum.html">Legal Notice / Privacy Policy</a></li>
+              <li><a class="nav-link scrollto" href="https://milrato.dev/#footer">Footer</a></li>
+              <li><a class="nav-link scrollto" href="https://dc.milrato.dev" target="_blank">Discord</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a><span>LINKS</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="https://milrato.dev/shop.html" ><i class="bx bxs-shopping-bags"></i> Free Discord Bots</a></li>
+              <li><a href="https://milrato.dev/sponsors.html" ><i class="bx bx-gift"></i> Sponsors</a></li>
+              <li><a href="https://milrato.dev/donate.html"><i class="bx bx-donate-heart"></i> Donate us</a></li>
+              <li><a href="https://discord.Nexuss.me/" target="_blank"><i class="bx bxl-discord"></i> Discord Server</a></li>
+              <li><a href="https://botlist.Nexuss.me/" target="_blank"><i class="bx bx-list-plus"></i> Discord Bot-List</a></li>
+              <li><a href="https://botlist.Nexuss.me/servers" target="_blank"><i class="bx bx-list-ol"></i> Discord Server-list</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto highlight" href="https://milrato.dev/shop.html">Get Free Discord Bots (SHOP)</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+ 
+ 
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+          <div data-aos="zoom-out">
+            <h1><span>Nexuss</span> Development</h1>
+            <h2>Nexuss Development offers you the best and most feature Rich Discord Bots you ever used. Tho you can get Bots for <b>FREE</b>, we love it if the customer wants to support us buy <b>donating Money for HIS/HER/THEIR BOT</b>!<br />That's why we created a System to buy Bots MONTHLY/YEARLY Hosted or even the COMPLETE SOURCE CODE.<br />But please always Mind, you can get them for free, and those payments are not required! <br />They are payed in a prepaid System, this means, you pay and then your Bot is hosted for X Months, then you can repay for more Months, or leave it!</h2>
+            <div class="text-center text-lg-start">
+              <a href="#monthly" class="btn-get-started scrollto">Buy Monthly Payed</a>&nbsp;
+              <a href="#yearly" class="btn-get-started scrollto">Buy Yearly Payed</a>&nbsp;
+              <a href="#source" class="btn-get-started scrollto">Buy Source Codes</a>&nbsp;
+              <br />
+            </div>
+            <div class="text-center text-lg-start">
+              <br />
+              <a href="https://milrato.dev/shop.html#features" class="btn-get-started scrollto">Check out Bot's Features</a>&nbsp;
+              <button type="red" onclick="window.open('https://dc.milrato.dev', '_blank')"><i class="bi bi-discord"></i> Discord</button>&nbsp;
+              <a href="https://bero.milrato.dev" class="btn-get-started scrollto"><i class="bi bi-hdd-stack-fill"></i> 24/7 Host</a>&nbsp;
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+          <img src="./assets/img/hero-img.png" class="img-fluid animated" alt="" style="width: 100%">
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-waves" 
+    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+      </defs>
+      <g class="wave1">
+        <use xlink:href="https://milrato.dev/#wave-path" x="50" y="3" fill="rgba(45,56,53, .1)">
+      </g>
+      <g class="wave2">
+        <use xlink:href="https://milrato.dev/#wave-path" x="50" y="0" fill="rgba(45,56,53, .2)">
+      </g>
+      <g class="wave3">
+        <use xlink:href="https://milrato.dev/#wave-path" x="50" y="9" fill="https://milrato.dev/#23272A">
+      </g>
+    </svg>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <section id="monthly" style="background-color: #57f2886c;border: solid 15px #57f2886c;border-radius: 5px;">
+      
+    <h1 style="margin: 25px;font-size:30px;text-align: center;">HOSTED BOTS / MONTH</h1>
+    <div class="container">
+      <div class="row justify-content-center" data-aos="fade-left">
+        <div class="col">
+          <div class="card">
+            <img src="https://cdn.discordapp.com/emojis/832697296687726654.png" alt="Denim Jeans" style="width:100%">
+            <h1>Clan Bot</h1>
+            <p class="price">€ 2.00</p>
+            <p class="description">Buy 1 Month of Hosting</p>
+            <form action="/pay/monthlyhosted/clan" method="post">
+              <input type="submit" value="Buy" class="button">
+            </form>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="https://cdn.discordapp.com/emojis/867718814325669888.png" alt="Denim Jeans" style="width:100%">
+            <h1>Music Bot</h1>
+            <p class="price">€ 1.50</p>
+            <p class="description">Buy 1 Month of Hosting</p>
+            <form action="/pay/monthlyhosted/music" method="post">
+              <input type="submit" value="Buy" class="button">
+            </form>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="https://cdn.discordapp.com/emojis/832697296687726654.png" alt="Denim Jeans" style="width:100%">
+            <h1>Waitingroom</h1>
+            <p class="price">€ 1.00</p>
+            <p class="description">Buy 1 Month of Hosting</p>
+            <form action="/pay/monthlyhosted/waitingroom" method="post">
+              <input type="submit" value="Buy" class="button">
+            </form>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="https://cdn.discordapp.com/emojis/834754808979128360.png?size=128" alt="Denim Jeans" style="width:100%">
+            <h1>Admin Bot</h1>
+            <p class="price">€ 0.50</p>
+            <p class="description">Buy 1 Month of Hosting</p>
+            <form action="/pay/monthlyhosted/admin" method="post">
+              <input type="submit" value="Buy" class="button">
+            </form>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="https://cdn.discordapp.com/emojis/890251890414215168.png" alt="Denim Jeans" style="width:100%">
+            <h1>Modmail Bot</h1>
+            <p class="price">€ 0.50</p>
+            <p class="description">Buy 1 Month of Hosting</p>
+            <form action="/pay/monthlyhosted/modmail" method="post">
+              <input type="submit" value="Buy" class="button">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+
+    <section id="yearly" style="background-color: #57c1f26c;border: solid 15px #57c1f26c;border-radius: 5px;">
+      
+      <h1 style="margin: 25px;font-size:30px;text-align: center;">HOSTED BOTS / YEAR</h1>
+      <div class="container">
+        <div class="row justify-content-center" data-aos="fade-left">
+          <div class="col">
+            <div class="card">
+              <img src="https://cdn.discordapp.com/emojis/832697296687726654.png" alt="Denim Jeans" style="width:100%">
+              <h1>Clan Bot</h1>
+              <p class="price">€ 10.00</p>
+              <p class="description">Buy 1 Year of Hosting</p>
+              <form action="/pay/yearlyhosted/clan" method="post">
+                <input type="submit" value="Buy" class="button">
+              </form>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://cdn.discordapp.com/emojis/867718814325669888.png" alt="Denim Jeans" style="width:100%">
+              <h1>Music Bot</h1>
+              <p class="price">€ 7.50</p>
+              <p class="description">Buy 1 Year of Hosting</p>
+              <form action="/pay/yearlyhosted/music" method="post">
+                <input type="submit" value="Buy" class="button">
+              </form>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://cdn.discordapp.com/emojis/832697296687726654.png" alt="Denim Jeans" style="width:100%">
+              <h1>Waitingroom</h1>
+              <p class="price">€ 5.00</p>
+              <p class="description">Buy 1 Year of Hosting</p>
+              <form action="/pay/yearlyhosted/waitingroom" method="post">
+                <input type="submit" value="Buy" class="button">
+              </form>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://cdn.discordapp.com/emojis/834754808979128360.png?size=128" alt="Denim Jeans" style="width:100%">
+              <h1>Admin Bot</h1>
+              <p class="price">€ 2.00</p>
+              <p class="description">Buy 1 Year of Hosting</p>
+              <form action="/pay/yearlyhosted/admin" method="post">
+                <input type="submit" value="Buy" class="button">
+              </form>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://cdn.discordapp.com/emojis/890251890414215168.png" alt="Denim Jeans" style="width:100%">
+              <h1>Modmail Bot</h1>
+              <p class="price">€ 2.00</p>
+              <p class="description">Buy 1 Year of Hosting</p>
+              <form action="/pay/yearlyhosted/modmail" method="post">
+                <input type="submit" value="Buy" class="button">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <section id="source" style="background-color: #f2af576c;border: solid 15px #f2af576c;border-radius: 5px;">
+      
+      <h1 style="margin: 25px;font-size:30px;text-align: center;">SOURCE CODES</h1>
+      <div class="container">
+        <div class="row justify-content-center" data-aos="fade-left">
+          <div class="col">
+            <div class="card">
+              <img src="https://cdn.discordapp.com/emojis/832697296687726654.png" alt="Denim Jeans" style="width:100%">
+              <h1>Clan Bot</h1>
+              <p class="price">€ 75.00</p>
+              <p class="description">Same as MILRATO, includes a HOSTING GUIDE</p>
+              <form action="/pay/source/clan" method="post">
+                <input type="submit" value="Buy" class="button">
+              </form>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://cdn.discordapp.com/emojis/867718814325669888.png" alt="Denim Jeans" style="width:100%">
+              <h1>Music Bot</h1>
+              <p class="price">€ 25.00</p>
+              <p class="description">Same as MUSIC MIXER, includes a HOSTING GUIDE</p>
+              <form action="/pay/source/music" method="post">
+                <input type="submit" value="Buy" class="button">
+              </form>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://cdn.discordapp.com/emojis/832697296687726654.png" alt="Denim Jeans" style="width:100%">
+              <h1>Waitingroom</h1>
+              <p class="price">€ 25.00</p>
+              <p class="description">Same as PUBLIC WAITINGROOM, includes a GUIDE</p>
+              <form action="/pay/source/waitingroom" method="post">
+                <input type="submit" value="Buy" class="button">
+              </form>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://cdn.discordapp.com/emojis/834754808979128360.png?size=128" alt="Denim Jeans" style="width:100%">
+              <h1>Admin Bot</h1>
+              <p class="price">€ 40.00</p>
+              <p class="description">Perfect Administration Bot, includes a HOSTING GUIDE</p>
+              <form action="/pay/source/admin" method="post">
+                <input type="submit" value="Buy" class="button">
+              </form>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://cdn.discordapp.com/emojis/890251890414215168.png" alt="Denim Jeans" style="width:100%">
+              <h1>Modmail Bot</h1>
+              <p class="price">€ 15.00</p>
+              <p class="description">Same as Easy Modmail, includes a complete Hosting Guide</p>
+              <form action="/pay/source/modmail" method="post">
+                <input type="submit" value="Buy" class="button">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3><img src="https://imgur.com/RcykDiA.png" style="height: 25px;" > Nexuss Development</h3>
+              <p class="pb-3"><em>Best Bots of 2021<br>Custom - & Public Bots</em><br>Since: 07.2019</p>
+              <p>
+                <button type="green" onclick="location.href='mailto:help@milrato.dev'"><i class="bi bi-envelope-open-fill"></i> Email us</button>
+                <button type="red" onclick="window.open('https://dc.milrato.dev', '_blank')"><i class="bi bi-discord"></i> Discord</button>
+              </p>
+              <div class="social-links mt-3">
+                <a href="https://dc.Nexuss.me" class="twitter" target="_blank"><i class="bi bi-discord"></i></a>
+                <a href="https://twitter.Nexuss.me" class="twitter" target="_blank"><i class="bi bi-youtube"></i></a>
+                <a href="https://youtube.Nexuss.me" class="twitter"  target="_blank"><i class="bi bi-twitter"></i></a>
+                <a href="https://github.Nexuss.me" class="twitter" target="_blank"><i class="bi bi-github"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://milrato.dev/#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://milrato.dev/#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://milrato.dev/#team">Team Nexuss</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://milrato.dev/#bots">Bots</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://milrato.dev/shop.html#">Shop Bots Overview</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://milrato.dev/sponsors.html#">Sponsors</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://milrato.dev/impressum.html#">Legal Notice</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://milrato.dev/impressum.html#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a target="_blank" href="https://dc.Nexuss.me">Bot Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a target="_blank" href="https://dc.Nexuss.me">Custom Bots</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a target="_blank" href="https://dc.Nexuss.me">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a target="_blank" href="https://dc.Nexuss.me">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a target="_blank" href="https://dc.Nexuss.me">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a target="_blank" href="https://youtube.Nexuss.me">Tutorials</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a target="_blank" href="https://dc.Nexuss.me">Events</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Bots</h4>
+            <p>We are making high Quality, public, free to use <b>Discord Bots</b>, which can be found here!</p>
+            <button type="green" onclick="location.href='#bots'">See our Bots</button>
+            <button type="red" onclick="window.open('https://dc.milrato.dev', '_blank')"><i class="bi bi-discord"></i> Discord Server</button>
+            <br /><br /><h4>We also have a Discord List, for Bots & Servers</h4>
+            <p>Grow your Discord Bot, improve your Discord Server & gain Members! All of that and more, can be found on our <b>BOTLIST</b>
+            </p>
+            <button type="green" onclick="window.open('https://botlist.Nexuss.me', '_blank')">Visit Botlist</button>
+            <button type="red" onclick="window.open('https://dc.milrato.dev', '_blank')"><i class="bi bi-discord"></i> Discord Server</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Nexuss Development</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        Designed & Modified by <a style="color: #ff4756"target="_blank" href="https://dc.Nexuss.me">Nexuss Development</a>, Base by <a style="color: #ff4756" target="_blank" href="https://bootstrapmade.com/">Bootstrap</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+
+  <a href="https://milrato.dev/#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+  
+  <!-- Vendor JS Files -->
+  <script src="./assets/vendor/aos/aos.js"></script>
+  <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="./assets/vendor/purecounter/purecounter.js"></script>
+  <script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="./assets/js/main.js"></script>
+
+</body>
+</html>

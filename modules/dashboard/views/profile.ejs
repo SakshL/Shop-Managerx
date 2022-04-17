@@ -1,0 +1,95 @@
+<%- include('header'); -%>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <!--Meta Tags-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+        <link href="https://pro.fontawesome.com/releases/v5.13.1/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" href="/index.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link rel="stylesheet" href="/sweetalert.css">
+        
+        <title>
+            Nexuss | Dashboard
+        </title>
+    </head>
+
+
+    <!--HEADER-->
+    <!--MAIN BODY-->
+
+        <div class="w-full text-center flex justify-center flex-col items-center" style="margin: 100px">
+  
+                
+<img src="https://c.tenor.com/kg--P3zmvkIAAAAd/fortnite-dance.gif" height="500" width="500">
+<br>
+<center><a href="/logout"<button class="text-white bg-red-600/20 hover:bg-red-600/30 px-8 py-4 rounded-md shadow-xl transition-all duration-150"><font size="4"><b>Logout</b></font></button></a></center> 
+
+
+    
+          
+        </div>
+
+        <script type="text/javascript">
+            window.onload = startInterval
+
+            function startInterval() {
+                setInterval(() => {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            try {
+                                var data = this.responseText
+                                parser = new DOMParser();
+                                var doc = parser.parseFromString(data, "text/html");
+                                data = doc.querySelector("#creation").innerHTML;
+                                document.getElementById("creation").innerHTML = data;
+                                data = doc.querySelector("#ping").innerHTML;
+                                document.getElementById("ping").innerHTML = data;
+                            } catch (e) {
+                                console.log(e)
+                            }
+                        }
+                    };
+                    xmlhttp.open("GET", "/", true);
+                    xmlhttp.send();
+                }, 1000);
+            }
+        </script>
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('success') && urlParams.get('success')) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    showCloseButton: true,
+                    text: urlParams.get('message'),
+                    footer: 'Copyright 2022 &copy Nexuss Development - All right reserved.'
+                }).then((result) => {
+                    window.location.href = `/`;
+                })
+            }
+            if (urlParams.has('error') && urlParams.get('error')) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'An Error occurred!',
+                    text: urlParams.get('message'),
+                    showCloseButton: true,
+                    footer: 'Copyright 2022 &copy Nexuss Development - All right reserved.'
+                }).then((result) => {
+                    window.location.href = `/`;
+                })
+            }
+        </script>
+        <!--JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            crossorigin="anonymous"></script>
+        </body>
+
+    </html>

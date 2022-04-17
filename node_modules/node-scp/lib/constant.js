@@ -1,0 +1,21 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.targetType = exports.errorCode = void 0;
+var errorCode;
+(function (errorCode) {
+    errorCode["generic"] = "ERR_GENERIC_CLIENT";
+    errorCode["connect"] = "ERR_NOT_CONNECTED";
+    errorCode["badPath"] = "ERR_BAD_PATH";
+    errorCode["permission"] = "EACCES";
+    errorCode["notexist"] = "ENOENT";
+    errorCode["notdir"] = "ENOTDIR";
+})(errorCode = exports.errorCode || (exports.errorCode = {}));
+var targetType;
+(function (targetType) {
+    targetType[targetType["writeFile"] = 1] = "writeFile";
+    targetType[targetType["readFile"] = 2] = "readFile";
+    targetType[targetType["writeDir"] = 3] = "writeDir";
+    targetType[targetType["readDir"] = 4] = "readDir";
+    targetType[targetType["readObj"] = 5] = "readObj";
+    targetType[targetType["writeObj"] = 6] = "writeObj";
+})(targetType = exports.targetType || (exports.targetType = {}));

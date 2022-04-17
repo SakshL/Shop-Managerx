@@ -1,0 +1,22 @@
+{
+    "token": "OTY0OTY5MTk5ODM3NTI0MDA5.YlsXmQ.fnnR3df3_dF7dxXQzp_qPiJVKtA",
+    "prefix": ",",
+    "color": "#6861fe",
+    "pastebinapi": "sdsd",
+    "secret": "RCiFAz2b0sSu1fGYtwIY_e3MRwR_5r_8", 
+    "callback": "localhost:3000", 
+
+    "paypal": {
+        "clientId": "",
+        "clientSecret": ""
+    },
+    "servers": {
+        "6": "109.71.253.6"
+    },
+    "passwords": {
+        "6": "SzICUCN2HGkLykqo"
+    },
+    "usernames": {
+        "6": "root"
+    }
+}

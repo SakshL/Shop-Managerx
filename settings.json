@@ -1,0 +1,87 @@
+{
+    "Roles": {
+        "FounderId": "964370138570842160",
+        "OwnerRoleId": "964370138570842159",
+        "CoOwnerRoleId": "964370138570842158",
+        "ChiefHumanResources": "964370138570842157",
+        "HumanResources": "964370138570842156",
+        "AdminRoleId": "964370138570842163",
+        "ModRoleId": "964370138549854255",
+        "ChiefSupporterRoleId": "964370138549854253",
+        "ChiefBotCreatorRoleId": "964370138549854252",
+        "BotCreatorRoleId": "964370138549854251",
+        "SupporterRoleId": "964370138549854250",
+        "NewSupporterRoleId": "964370138549854249"
+    },
+    "ticketsystem": [
+        {
+            "value": "General Help",
+            "description": "Get help for anything you need",
+            "emoji": "❓",
+            "type": "GENERAL"
+        },
+        {
+            "value": "Bot Help",
+            "description": "Get help for your SHOP-BOT",
+            "emoji": "🤖",
+            "type": "HELP"
+        },
+
+
+        {
+            "value": "Staff Application",
+            "description": "Apply as a Staff for Nexuss",
+            "emoji": "<:staff:955479654028935248>",
+            "type": "TEAMAPPLY"
+        },
+        {
+            "value": "Partner Application",
+            "description": "Apply for a partnership with Nexuss",
+            "emoji": "<:partner:946846491971043338>",
+            "type": "PARTNERAPPLY"
+        }
+    ],
+    "ordersystem": [    
+        {
+            "value": "System Bot",
+            "description": "6 Invites ・ 1€/30 Days ・ 4€/Year",
+            "emoji": "🤖",
+            "type": "SYSTEMBOTS"
+        },
+        {
+            "value": "Music Bot",
+            "description": "7 Invites ・ 1€/60 Days ・ 3€/Year",
+            "emoji": "🎵",
+            "type": "MusicBots"
+        },
+
+        {
+            "value": "Waitingroom Bot",
+            "description": "3 Invites ・ 1€/100 Days ・ 2€/Year",
+            "emoji": "🕓",
+            "type": "WAITINGROOMBOT"
+        },
+
+        {
+            "value": "Mod Mail Bot",
+            "description": "3 Invites ・ 1€/100 Days ・ 2€/Year",
+            "emoji": "📨",
+            "type": "MODMAILBOT"
+        }
+    ],
+    "createbot": [
+        {
+            "value": "System Bot",
+            "description": "6 Invites ・ 1€/30 Days ・ 4€/Year",
+            "emoji": "🤖",
+            "bottype": "SYSTEMBOTS"
+        },
+
+        {
+            "value": "Music Bot",
+            "description": "7 Invites ・ 1€/60 Days ・ 3€/Year",
+            "emoji": "🎵",
+            "bottype": "MusicBots"
+        }    
+    ]
+}

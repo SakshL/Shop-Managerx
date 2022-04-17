@@ -1,0 +1,172 @@
+/// <reference types="node" />
+import { errorCode, targetType } from './constant';
+import { EventEmitter } from 'events';
+import { ScpClient } from '.';
+import { CheckResult, ErrorCustom } from './types';
+/**
+ * Generate a new Error object with a reformatted error message which
+ * is a little more informative and useful to users.
+ *
+ * @param {Error|string} err - The Error object the new error will be based on
+ * @param {number} retryCount - For those functions which use retry. Number of
+ *                              attempts to complete before giving up
+ * @returns {Error} New error with custom error message
+ */
+export declare function formatError(err: ErrorCustom | string, name?: string, eCode?: errorCode, retryCount?: number): ErrorCustom;
+/**
+ * Tests an error to see if it is one which has already been customised
+ * by this module or not. If not, applies appropriate customisation.
+ *
+ * @param {Error} err - an Error object
+ * @param {String} name - name to be used in customised error message
+ * @param {Function} reject - If defined, call this function instead of
+ *                            throwing the error
+ * @throws {Error}
+ */
+export declare function handleError(err: ErrorCustom, name: string, reject: (e: any) => void): void;
+/**
+ * Remove all ready, error and end listeners.
+ *
+ * @param {Emitter} emitter - The emitter object to remove listeners from
+ */
+/**
+ * Simple default error listener. Will reformat the error message and
+ * throw a new error.
+ *
+ * @param {Error} err - source for defining new error
+ * @throws {Error} Throws new error
+ */
+export declare function makeErrorListener(reject: (e: any) => void, client: ScpClient, name: string): (err: Error) => void;
+export declare function makeEndListener(client: ScpClient): () => void;
+export declare function makeCloseListener(client: ScpClient, reject?: (e: any) => void, name?: string): () => void;
+/**
+ * @async
+ *
+ * Tests to see if a path identifies an existing item. Returns either
+ * 'd' = directory, 'l' = sym link or '-' regular file if item exists. Returns
+ * false if it does not
+ *
+ * @param {String} localPath
+ * @returns {Boolean | String}
+ */
+export declare function localExists(localPath: string): Promise<string>;
+/**
+ * Used by checkRemotePath and checkLocalPath to help ensure consistent
+ * error messages.
+ *
+ * @param {Error} err - original error
+ * @param {String} testPath - path associated with the error
+ * @returns {Object} with properties of 'msg' and 'code'.
+ */
+export declare function classifyError(err: ErrorCustom, testPath: string): {
+    msg: string;
+    code: string;
+};
+export declare function localAccess(localPath: string, mode: number): Promise<CheckResult>;
+export declare function checkLocalReadFile(localPath: string, localType: string): Promise<CheckResult>;
+export declare function checkLocalReadDir(localPath: string, localType: string): Promise<CheckResult>;
+export declare function checkLocalWriteFile(localPath: string, localType: string): Promise<CheckResult>;
+export declare function checkLocalWriteDir(localPath: string, localType: string): Promise<CheckResult>;
+export declare function checkLocalPath(lPath: string, target?: targetType): Promise<CheckResult>;
+export declare function normalizeRemotePath(client: ScpClient, aPath: string): Promise<string>;
+export declare function checkReadObject(aPath: string, type: string): {
+    path: string;
+    type: string;
+    valid: boolean;
+    msg: string | undefined;
+    code: errorCode | undefined;
+};
+export declare function checkReadFile(aPath: string, type: string): {
+    path: string;
+    type: string;
+    valid: boolean;
+    msg: string;
+    code: errorCode;
+} | {
+    path: string;
+    type: string;
+    valid: boolean;
+    msg?: undefined;
+    code?: undefined;
+};
+export declare function checkReadDir(aPath: string, type: string): {
+    path: string;
+    type: string;
+    valid: boolean;
+    msg: string;
+    code: errorCode;
+} | {
+    path: string;
+    type: string;
+    valid: boolean;
+    msg?: undefined;
+    code?: undefined;
+};
+export declare function checkWriteFile(client: ScpClient, aPath: string, type: string): Promise<{
+    path: string;
+    type: string;
+    valid: boolean;
+    msg: string;
+    code: errorCode;
+} | {
+    path: string;
+    type: boolean;
+    valid: boolean;
+    msg: string;
+    code: errorCode;
+} | {
+    path: string;
+    type: string;
+    valid: boolean;
+    msg?: undefined;
+    code?: undefined;
+}>;
+export declare function checkWriteDir(client: ScpClient, aPath: string, type: string): Promise<{
+    path: string;
+    type: string;
+    valid: boolean;
+    msg: string;
+    code: errorCode;
+} | {
+    path: string;
+    type: string;
+    valid: boolean;
+    msg?: undefined;
+    code?: undefined;
+} | {
+    path: string;
+    type: boolean;
+    valid: boolean;
+    msg: string;
+    code: errorCode;
+}>;
+export declare function checkWriteObject(aPath: string, type: string): {
+    path: string;
+    type: string;
+    valid: boolean;
+};
+export declare function checkRemotePath(client: ScpClient, rPath: string, target?: targetType): Promise<{
+    path: string;
+    type: boolean;
+    valid: boolean;
+    msg: string;
+    code: errorCode;
+} | {
+    path: string;
+    type: string;
+    valid: boolean;
+}>;
+/**
+ * Check to see if there is an active sftp connection
+ *
+ * @param {Object} client - current sftp object
+ * @param {String} name - name given to this connection
+ * @param {Function} reject - if defined, call this rather than throw
+ *                            an error
+ * @returns {Boolean} True if connection OK
+ * @throws {Error}
+ */
+export declare function haveConnection(client: ScpClient, name: string, reject?: (e: any) => void): boolean;
+export declare function dumpListeners(emitter: EventEmitter): void;
+export declare function hasListener(emitter: EventEmitter, eventName: string, listenerName: string): boolean;
+export declare function joinRemote(client: ScpClient, ...args: string[]): string;
