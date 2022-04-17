@@ -1,3 +1,4 @@
+// now you can edit the file
 /*module.exports = {
   like: "<:Like:934494916241948763>",
   no: "<:no:933239221836206131>",
