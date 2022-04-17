@@ -1275,8 +1275,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                                 try {
                                     message.guild.members.fetch(owner).then(member => {
                                         member.roles.add("937130001495646328").catch(() => {})
-                                        if(member.roles.cache.has("947130196253868062")) {
-                                            member.roles.remove("947130196253868062").catch(() => {})
+                                        if(member.roles.cache.has("964370138507931694")) {
+                                            member.roles.remove("964370138507931694").catch(() => {})
                                             tempmsfg.embeds[0].fields[4].name = `<a:check:964989203656097803> Adding Finished Role & Removed recover Role`
                                             tempmsfg.embeds[0].fields[5].name = `<a:Loading:945121333333852161> Writing Database`
                                         } else {
@@ -1468,8 +1468,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                                     try {
                                         message.guild.members.fetch(owner).then(member => {
                                             member.roles.add("937130001495646328").catch(() => {})
-                                            if(member.roles.cache.has("947130196253868062")) {
-                                                member.roles.remove("947130196253868062").catch(() => {})
+                                            if(member.roles.cache.has("964370138507931694")) {
+                                                member.roles.remove("964370138507931694").catch(() => {})
                                                 tempmsfg.embeds[0].fields[4].name = `<a:check:964989203656097803> Adding Finished Role & Removed recover Role`
                                                 tempmsfg.embeds[0].fields[5].name = `<a:Loading:945121333333852161> Writing Database`
                                             } else {
