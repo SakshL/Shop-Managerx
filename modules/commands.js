@@ -555,7 +555,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                         else return Files.push(Absolute);
                     });
                 }
-                ThroughDirectory(`/home/servicebots/${BotDir}/template/`);
+                ThroughDirectory(`${process.cwd()}/servicebots/${BotDir}/template/`);
                 filenum = Files.length;
                 try {
                     const ch = message.author;
@@ -1012,8 +1012,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
 
                         if(!localhost) {
                             setTimeout(async () => {
-                                const srcDir = `/home/servicebots/${BotDir}/template`;
-                                let destDir = `/home/servicebots/${BotDir}/${filenama}`;
+                                const srcDir = `${process.cwd()}/servicebots/${BotDir}/template`;
+                                let destDir = `${process.cwd()}/servicebots/${BotDir}/${filenama}`;
                                 const sshclient = await scp(remote_server)
                                 /**
                                  * CHECK IF BOT ALREADY EXISTS
@@ -1023,7 +1023,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                                     if(res) {
                                         tempmsfg.channel.send(`${destDir} already exists changing to: ${destDir}_2`);
                                         filenama = `${filenama}_2`;
-                                        destDir = `/home/servicebots/${BotDir}/${filenama}`;
+                                        destDir = `${process.cwd()}/servicebots/${BotDir}/${filenama}`;
                                         res = await sshclient.exists(destDir);
                                         if(res) {
                                             client.createingbotmap.delete("CreatingTime");
@@ -1069,7 +1069,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                                 /**
                                  * EDIT THE BOT CONFIG.JSON FILE
                                  */
-                                let config = require(`/home/servicebots/${BotDir}/template/tempbotconfig/config.json`);
+                                let config = require(`${process.cwd()}/servicebots/${BotDir}/template/tempbotconfig/config.json`);
                                 config.status.text = status;
                                 config.status.type = statustype ? statustype : "PLAYING";
                                 config.status.url = statusurl ? statusurl : "https://twitch.tv/#";
@@ -1077,7 +1077,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                                 config.ownerIDS.push(owner);
                                 config.prefix = prefix;
                                 config.token = token;
-                                await fs.writeFile(`/home/servicebots/${BotDir}/template/tempbotconfig/config.json`, JSON.stringify(config, null, 3), async (e) => {
+                                await fs.writeFile(`${process.cwd()}/servicebots/${BotDir}/template/tempbotconfig/config.json`, JSON.stringify(config, null, 3), async (e) => {
                                     if (e) {
                                         console.log(e.stack ? String(e.stack).grey : String(e).grey);
                                         globerror = true;
@@ -1106,11 +1106,11 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                                 /**
                                  * EDIT THE BOT EMBED.JSON FILE
                                  */
-                                let embed = require(`/home/servicebots/${BotDir}/template/tempbotconfig/embed.json`);
+                                let embed = require(`${process.cwd()}/servicebots/${BotDir}/template/tempbotconfig/embed.json`);
                                 embed.color = color;
                                 embed.footertext = footertext;
                                 embed.footericon = avatar;
-                                await fs.writeFile(`/home/servicebots/${BotDir}/template/tempbotconfig/embed.json`, JSON.stringify(embed, null, 3), async (e) => {
+                                await fs.writeFile(`${process.cwd()}/servicebots/${BotDir}/template/tempbotconfig/embed.json`, JSON.stringify(embed, null, 3), async (e) => {
                                     if (e) {
                                         client.createingbotmap.delete("CreatingTime");
                                         client.createingbotmap.delete("Creating");
@@ -1166,7 +1166,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                                  * DELETE THE tempbotconfig FOLDER
                                  */
                                 try {
-                                    fs.rmSync(`/home/servicebots/${BotDir}/template/tempbotconfig`, { recursive: true });
+                                    fs.rmSync(`${process.cwd()}/servicebots/${BotDir}/template/tempbotconfig`, { recursive: true });
                                 } catch (e) {
                                     console.log(e)
                                 }
@@ -1378,7 +1378,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                         } else {
                             setTimeout(async () => {
 
-                                let config = require(`/home/servicebots/${BotDir}/template/botconfig/config.json`);
+                                let config = require(`${process.cwd()}/servicebots/${BotDir}/template/botconfig/config.json`);
                                 config.status.text = status;
                                 config.status.type = statustype ? statustype : "PLAYING";
                                 config.status.url = statusurl ? statusurl : "https://twitch.tv/#";
@@ -1386,7 +1386,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                                 config.ownerIDS.push(owner);
                                 config.prefix = prefix;
                                 config.token = token;
-                                await fs.writeFile(`/home/servicebots/${BotDir}/template/botconfig/config.json`, JSON.stringify(config, null, 3), async (e) => {
+                                await fs.writeFile(`${process.cwd()}/servicebots/${BotDir}/template/botconfig/config.json`, JSON.stringify(config, null, 3), async (e) => {
                                     if (e) {
                                         console.log(e.stack ? String(e.stack).grey : String(e).grey);
                                         globerror = true;
@@ -1411,11 +1411,11 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                                     })
                                 });
 
-                                let embed = require(`/home/servicebots/${BotDir}/template/botconfig/embed.json`);
+                                let embed = require(`${process.cwd()}/servicebots/${BotDir}/template/botconfig/embed.json`);
                                 embed.color = color;
                                 embed.footertext = footertext;
                                 embed.footericon = avatar;
-                                await fs.writeFile(`/home/servicebots/${BotDir}/template/botconfig/embed.json`, JSON.stringify(embed, null, 3), async (e) => {
+                                await fs.writeFile(`${process.cwd()}/servicebots/${BotDir}/template/botconfig/embed.json`, JSON.stringify(embed, null, 3), async (e) => {
                                     if (e) {
                                         client.createingbotmap.delete("CreatingTime");
                                         client.createingbotmap.delete("Creating");
@@ -1446,8 +1446,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                                 tempmsfg.embeds[0].fields[1].name = `<a:check:964989203656097803> Changing Embed Settings`
 
 
-                                const srcDir = `/home/servicebots/${BotDir}/template`;
-                                const destDir = `/home/servicebots/${BotDir}/${filenama}`;
+                                const srcDir = `${process.cwd()}/servicebots/${BotDir}/template`;
+                                const destDir = `${process.cwd()}/servicebots/${BotDir}/${filenama}`;
                                 // Async with promises:
                                 fse.copy(srcDir, destDir, {
                                         overwrite: true
@@ -2563,7 +2563,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
             if (serverid != `search` && (!theserver || !theusername || !thepassword)) return message.reply(`❌ **Invalid Server Id added**!\n> Possible serverids are: ${Object.keys(servers).sort((a, b) => b - a).map(d => `\`${d}\``).join(", ")}`)
             let consolecmd = `pm2 ${option1}${option2 ? ` ` + option2 : ``}`;
             if ([`start`, `restart`, `stop`, `show`, `delete`].includes(option1) && !option2) return message.reply(`> ❌ **Missing the BOT ID / NAME** Usage: \`,botmanagement <serverid> <start/restart/stop/show/list/startall/stopall/search> [PM2-ID/BOTNAME]\`\n\n> [PM2-ID] ... is for start, stop, restart, **e.g:** \`,botmanagement 9 restart 69\`\n\n> [BOTNAME] ... is for search, **e.g:** \`,botmanagement search wing\`\n\n> Possible serverids are: ${Object.keys(servers).sort((a, b) => b - a).map(d => `\`${d}\``).join(", ")}`)
-            if (option1 == `startall`) consolecmd = `node /home/startall.js`;
+            if (option1 == `startall`) consolecmd = `node ${process.cwd()}/startall.js`;
             if (option1 == `stopall`) consolecmd = `pm2 stop all`;
             if (option1 == `restartall`) consolecmd = `pm2 restart all`;
             let tmpmessage = await message.reply(`<a:Loading:945121333333852161> **Loading...**`);

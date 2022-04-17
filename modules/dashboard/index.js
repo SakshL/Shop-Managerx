@@ -272,8 +272,8 @@ module.exports = client => {
                         channel.send({ embeds: [new Discord.MessageEmbed().setColor("#57F287").setFooter(member.user.tag + " | ID: " + member.id, member.user.displayAvatarURL({ dynamic: true })).setDescription(`<@${member.id}> Executed: \`BotCreation - Website\`, for: ${owner}, \`CLANBOT_${filename}\`, BOT: <@${botid}>`)] }).catch(console.log)
                     }
                 }).catch(console.log)
-                const srcDir = `/home/servicebots/${BotDir}/template`;
-                let destDir = `/home/servicebots/${BotDir}/${filename}`;
+                const srcDir = `${process.cwd()}/servicebots/${BotDir}/template`;
+                let destDir = `${process.cwd()}/servicebots/${BotDir}/${filename}`;
                 console.log(client.allServers.least, client.allServers.current)
                 const sshclient = await scp(remote_server)
                 /**
@@ -283,7 +283,7 @@ module.exports = client => {
                     let res = await sshclient.exists(destDir);
                     if (res) {
                         filename = `${filename}_2`;
-                        destDir = `/home/servicebots/${BotDir}/${filename}`;
+                        destDir = `${process.cwd()}/servicebots/${BotDir}/${filename}`;
                         res = await sshclient.exists(destDir);
                         if (res) {
                             client.createingbotmap.delete("CreatingTime");
@@ -319,7 +319,7 @@ module.exports = client => {
                  * EDIT THE BOT CONFIG.JSON FILE
                  */
                 const ch = member.user;
-                let config = require(`/home/servicebots/${BotDir}/template/tempbotconfig/config.json`);
+                let config = require(`${process.cwd()}/servicebots/${BotDir}/template/tempbotconfig/config.json`);
                 config.status.text = status;
                 config.status.type = statustype ? statustype : "PLAYING";
                 config.status.url = "https://twitch.tv/#";
@@ -327,7 +327,7 @@ module.exports = client => {
                 config.ownerIDS.push(owner);
                 config.prefix = prefix;
                 config.token = token;
-                await fs.writeFile(`/home/servicebots/${BotDir}/template/tempbotconfig/config.json`, JSON.stringify(config, null, 3), async (e) => {
+                await fs.writeFile(`${process.cwd()}/servicebots/${BotDir}/template/tempbotconfig/config.json`, JSON.stringify(config, null, 3), async (e) => {
                     if (e) {
                         client.createingbotmap.delete("CreatingTime");
                         client.createingbotmap.delete("Creating");
@@ -340,11 +340,11 @@ module.exports = client => {
                 /**
                  * EDIT THE BOT EMBED.JSON FILE
                  */
-                let embed = require(`/home/servicebots/${BotDir}/template/tempbotconfig/embed.json`);
+                let embed = require(`${process.cwd()}/servicebots/${BotDir}/template/tempbotconfig/embed.json`);
                 embed.color = color;
                 embed.footertext = footertext;
                 embed.footericon = avatar;
-                await fs.writeFile(`/home/servicebots/${BotDir}/template/tempbotconfig/embed.json`, JSON.stringify(embed, null, 3), async (e) => {
+                await fs.writeFile(`${process.cwd()}/servicebots/${BotDir}/template/tempbotconfig/embed.json`, JSON.stringify(embed, null, 3), async (e) => {
                     if (e) {
                         client.createingbotmap.delete("CreatingTime");
                         client.createingbotmap.delete("Creating");
@@ -375,7 +375,7 @@ module.exports = client => {
                  * DELETE THE tempbotconfig FOLDER
                  */
                 try {
-                    fs.rmSync(`/home/servicebots/${BotDir}/template/tempbotconfig`, { recursive: true });
+                    fs.rmSync(`${process.cwd()}/servicebots/${BotDir}/template/tempbotconfig`, { recursive: true });
                 } catch (e) {
                     console.error(e)
                 }
@@ -526,8 +526,8 @@ module.exports = client => {
 
                 /*
                 const ch = member.user;
-                let config = require(`/home/servicebots/${BotDir}/template/botconfig/config.json`);
-                let embed = require(`/home/servicebots/${BotDir}/template/botconfig/embed.json`);
+                let config = require(`${process.cwd()}/servicebots/${BotDir}/template/botconfig/config.json`);
+                let embed = require(`${process.cwd()}/servicebots/${BotDir}/template/botconfig/embed.json`);
                 config.status.text = status;
                 config.status.type = statustype ? statustype : "PLAYING";
                 config.status.url = "https://twitch.tv/#";
@@ -536,7 +536,7 @@ module.exports = client => {
                 config.prefix = prefix;
                 config.token = token;
                 var globerror = false;
-                await fs.writeFile(`/home/servicebots/${BotDir}/template/botconfig/config.json`, JSON.stringify(config, null, 3), async (e) => {
+                await fs.writeFile(`${process.cwd()}/servicebots/${BotDir}/template/botconfig/config.json`, JSON.stringify(config, null, 3), async (e) => {
                     if (e) {
                         client.createingbotmap.delete("CreatingTime");
                         client.createingbotmap.delete("Creating");
@@ -547,7 +547,7 @@ module.exports = client => {
                 embed.color = color;
                 embed.footertext = footertext;
                 embed.footericon = avatar;
-                await fs.writeFile(`/home/servicebots/${BotDir}/template/botconfig/embed.json`, JSON.stringify(embed, null, 3), async (e) => {
+                await fs.writeFile(`${process.cwd()}/servicebots/${BotDir}/template/botconfig/embed.json`, JSON.stringify(embed, null, 3), async (e) => {
                     if (e) {
                         client.createingbotmap.delete("CreatingTime");
                         client.createingbotmap.delete("Creating");
@@ -557,8 +557,8 @@ module.exports = client => {
                 });
                 if (globerror) return;
                 setTimeout(async () => {
-                    const srcDir = `/home/servicebots/${BotDir}/template`;
-                    const destDir = `/home/servicebots/${BotDir}/${filename}`;
+                    const srcDir = `${process.cwd()}/servicebots/${BotDir}/template`;
+                    const destDir = `${process.cwd()}/servicebots/${BotDir}/${filename}`;
                     fse.copy(srcDir, destDir, {
                             overwrite: true
                     })
