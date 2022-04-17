@@ -38,7 +38,7 @@ module.exports = {
         .addField("\`,leaderboard [Days to Show]\`", "Shows the Staff Leaderboard\n**Alias**: \`,lb\`",true)
             //.addField("\u200b", "\u200b")                
         .addField("\`,close\`", "*Closes the Current Ticket*", true)
-        .addField("\`,settomato\`", "*Sets the Ticket to a Tomato Ticket*", true)
+        .addField("\`,setsaksh\`", "*Sets the Ticket to a Saksh Ticket*", true)
         .addField("\`,setowner\`", "*Sets the Ticket to a Owner Ticket*", true)
         .addField("\`,setmod\`", "*Sets the Ticket to a Mod+ Ticket*", true)
         .addField("\`,setimportant\`", "*Sets the Ticket into an Important State*", true)

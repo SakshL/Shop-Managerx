@@ -82,11 +82,11 @@ client.on("ready", () => {
                     counter++;
                 }break;
                 case 1: {
-                    try{client.user.setActivity(`Best Bots | Nexuss.me`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`Best Bots`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter++;
                 }break;
                 case 2: {
-                    try{client.user.setActivity(`botlist.Nexuss.me - SOON`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`Best Free Bots`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter++;
                 }break;
                 case 3: {
@@ -98,15 +98,15 @@ client.on("ready", () => {
                     counter++;
                 }break;
                 case 5: {
-                    try{client.user.setActivity(`Best Bots on Discord | Nexuss.me`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`Best Bots on Discord`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter++;
                 }break;
                 case 6: {
-                    try{client.user.setActivity(`Order Today! | Nexuss.me`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`Order Today!`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter=0;
                 }break;
                 default: {
-                    try{client.user.setActivity(`Free Bots | Nexuss.me`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`Free Bots`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter = 0;
                     counter++;
                 }break;

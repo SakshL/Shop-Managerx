@@ -42,7 +42,7 @@ module.exports = {
  
   OrdersChannelID: {
    RecoverChannelId: "964370139808141370",
-   TicketChannelID: "964370140013658145",
+   TicketChannelID: "964370139808141365",
    FeaturesChannelID: "964370139808141367",
    OrderChannelID: "964370139808141365"
   },
