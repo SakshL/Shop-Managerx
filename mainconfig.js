@@ -40,6 +40,12 @@ module.exports = {
    NotSakshTicket: "964528353531011173"
   },
  
+  Directory: {
+    SystemBot: "921430546813419550",
+    MusicBot: "964528353531011173"
+   },
+
+
   OrdersChannelID: {
    RecoverChannelId: "964370139808141370",
    TicketChannelID: "964370139808141365",

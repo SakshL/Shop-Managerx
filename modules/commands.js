@@ -555,7 +555,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                         else return Files.push(Absolute);
                     });
                 }
-                ThroughDirectory(`${process.cwd()}/servicebots/${BotDir}/template/`);
+                ThroughDirectory(`${mainconfig.Directory.MusicBot}`);
                 filenum = Files.length;
                 try {
                     const ch = message.author;
@@ -2749,11 +2749,11 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     usernames,
                     passwords
                 } = client.config;
-                let theserver = servers[server];
+                let theserver = servers["6"];
                 
                 if(!theserver) return message.reply("❌ Could not find the Server");
-                let theusername = usernames[server];
-                let thepassword = passwords[server];
+                let theusername = usernames["6"];
+                let thepassword = passwords["6"];
                 let failed = false;
                 const conn = new Client();
                 
@@ -2832,7 +2832,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     usernames,
                     passwords
                 } = client.config;
-                let theserver = servers[server];
+                let theserver = servers["6"];
                 if(!theserver) return message.reply("❌ Could not find the Server");
                 let alldata = false;
                 const conn = new Client();
@@ -2887,8 +2887,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 }).connect({
                     host: theserver,
                     port: 22,
-                    username: usernames[server],
-                    password: passwords[server]
+                    username: usernames["6"],
+                    password: passwords["6"]
                 });
             } catch (e) {
                 console.log(e.stack ? String(e.stack).grey : String(e).grey)
@@ -2927,7 +2927,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     usernames,
                     passwords
                 } = client.config;
-                let theserver = servers[server];
+                let theserver = servers["6"];
                 if(!theserver) return message.reply("❌ Could not find the Server");
                 let alldata = false;
                 const conn = new Client();
@@ -2984,8 +2984,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 }).connect({
                     host: theserver,
                     port: 22,
-                    username: usernames[server],
-                    password: passwords[server]
+                    username: usernames["6"],
+                    password: passwords["6"]
                 });
             } catch (e) {
                 console.log(e.stack ? String(e.stack).grey : String(e).grey)
@@ -3017,7 +3017,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     usernames,
                     passwords
                 } = client.config;
-                let theserver = servers[server];
+                let theserver = servers["6"];
                 if(!theserver) return message.reply("❌ Could not find the Server");
                 let alldata = false;
                 const conn = new Client();
@@ -3074,8 +3074,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 }).connect({
                     host: theserver,
                     port: 22,
-                    username: usernames[server],
-                    password: passwords[server]
+                    username: usernames["6"],
+                    password: passwords["6"]
                 });
             } catch (e) {
                 console.log(e.stack ? String(e.stack).grey : String(e).grey)
@@ -3107,7 +3107,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     usernames,
                     passwords
                 } = client.config;
-                let theserver = servers[server];
+                console.log(servers["6"])
+                let theserver = servers["6"];
                 if(!theserver) return message.reply("❌ Could not find the Server");
                 let alldata = false;
                 const conn = new Client();
@@ -3164,8 +3165,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 }).connect({
                     host: theserver,
                     port: 22,
-                    username: usernames[server],
-                    password: passwords[server]
+                    username: usernames["6"],
+                    password: passwords["6"]
                 });
             } catch (e) {
                 console.log(e.stack ? String(e.stack).grey : String(e).grey)
@@ -3197,7 +3198,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     usernames,
                     passwords
                 } = client.config;
-                let theserver = servers[server];
+                let theserver = servers["6"];
                 if(!theserver) return message.reply("❌ Could not find the Server");
                 let alldata = false;
                 const conn = new Client();
@@ -3254,8 +3255,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 }).connect({
                     host: theserver,
                     port: 22,
-                    username: usernames[server],
-                    password: passwords[server]
+                    username: usernames["6"],
+                    password: passwords["6"]
                 });
             } catch (e) {
                 console.log(e.stack ? String(e.stack).grey : String(e).grey)
@@ -3287,7 +3288,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     usernames,
                     passwords
                 } = client.config;
-                let theserver = servers[server];
+                let theserver = servers["6"];
                 if(!theserver) return message.reply("❌ Could not find the Server");
                 let alldata = false;
                 const conn = new Client();
@@ -3344,8 +3345,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 }).connect({
                     host: theserver,
                     port: 22,
-                    username: usernames[server],
-                    password: passwords[server]
+                    username: usernames["6"],
+                    password: passwords["6"]
                 });
             } catch (e) {
                 console.log(e.stack ? String(e.stack).grey : String(e).grey)
@@ -3361,7 +3362,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     passwords
                 } = client.config;
                 let server = args[0]
-                let theserver = servers[server];
+                let theserver = servers["6"];
                 if(!server) {
                     return message.reply("❌ Please provide which server to check!")
                 }
@@ -3481,7 +3482,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     passwords
                 } = client.config;
                 args.shift();
-                let theserver = servers[server];
+                let theserver = servers["6"];
                 if(!args[0]) {
                     return message.reply("❌ Please provide which server to migrate the bot to!")
                 }
@@ -3609,8 +3610,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 }).connect({
                     host: theserver,
                     port: 22,
-                    username: usernames[server],
-                    password: passwords[server]
+                    username: usernames["6"],
+                    password: passwords["6"]
                 });
                 //new Server
             } catch (e) {
@@ -3643,7 +3644,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     usernames,
                     passwords
                 } = client.config;
-                let theserver = servers[server];
+                let theserver = servers["6"];
                 if(!theserver) return message.reply("❌ Could not find the Server");
                 let alldata = false;
                 const conn = new Client();
@@ -3700,8 +3701,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 }).connect({
                     host: theserver,
                     port: 22,
-                    username: usernames[server],
-                    password: passwords[server]
+                    username: usernames["6"],
+                    password: passwords["6"]
                 });
             } catch (e) {
                 console.log(e.stack ? String(e.stack).grey : String(e).grey)
