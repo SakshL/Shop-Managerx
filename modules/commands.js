@@ -916,11 +916,15 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                      * CREATE THE REMOTE HOST CONNECTION DATA
                      */
                     const serverId = client.allServers.least ? client.allServers.least : client.allServers.current;
+                    console.log(serverId)
+                    console.log(`Host: ${client.config.servers["6"]}`)
+                    console.log(`Username: ${client.config.usernames["6"]}`)
+                    console.log(`Password: ${client.config.passwords["6"]}`)
                     const remote_server = {
-                        host: client.config.servers[serverId], 
+                        host: client.config.servers["6"], 
                         port: 22, 
-                        username: client.config.usernames[serverId], 
-                        password: client.config.passwords[serverId], 
+                        username: client.config.usernames["6"], 
+                        password: client.config.passwords["6"], 
                     };
 
 

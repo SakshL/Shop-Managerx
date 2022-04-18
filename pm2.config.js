@@ -5,7 +5,7 @@ module.exports = {
    script: "./index.js",
    watch: true,
    exec_mode: "cluster",
-   ignore_watch: ["[/\\]./", "^.sqlite", "dbs", "node_modules", "servicebots", "^.html", "databases", "cache", "^.", "^[.]", ".git"],
+   ignore_watch: ["[/\\]./", "^.sqlite", "[/\\].html", "dbs", "node_modules", "*.html", "servicebots", "^.html", "databases", "cache", "^.", "^[.]", ".git"],
    watch_options: {
     followSymlinks: false,
    },
