@@ -59,7 +59,7 @@ module.exports = {
   },
  
  TicketCategorys: {
-   SystemBotOrderCategory: "964370140986736724",
+   SystemBotOrderCategory: "964370140986736725",
    MusicBotOrderCategory: "964370141452312606",
    WaitingBotOrderCategory: "964370141452312609",
    Permahost: "964370141636878354",

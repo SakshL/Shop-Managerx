@@ -94,7 +94,7 @@ module.exports = async(client) => {
                         embeds: [
                             new Discord.MessageEmbed()
                             .setColor("RED")
-                            .setFooter(`${message.guild.name}`, `${message.guild.iconURL({dynamic: true})}`)
+                            .setFooter({text:`${message.guild.name}`, iconURL: `${message.guild.iconURL({dynamic: true})}`})
                             .setTitle(`❌ Please wait \`${onCoolDown(message, command)}\` more seconds before reusing \`${command.name}\` again.`)
                         ]
                     });
@@ -915,7 +915,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                     /**
                      * CREATE THE REMOTE HOST CONNECTION DATA
                      */
-                    const serverId = client.allServers.least ? client.allServers.least : client.allServers.current;
+                    const serverId = client.allServers.least ? client.allServers.least : client.allServers.current.split(".")[3];
                     console.log(serverId)
                     console.log(`Host: ${client.config.servers[serverId]}`)
                     console.log(`Username: ${client.config.usernames[serverId]}`)
@@ -1316,27 +1316,28 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                                  */
                                 try {
                                     client.users.fetch(owner).then(user => {
+                                        console.log(owner,user)
                                         user.send({
                                             content: `***IF YOU ARE HAVING PROBLEMS, or need a restart, or something else! THEN SEND US THIS INFORMATION!!!***\n> This includes: \`BotChanges\`, \`Restarts\`, \`Deletions\`, \`Adjustments & Upgrades\`\n> *This message is also a proof, that you are the original Owner of this BOT*`,
                                             embeds: [new Discord.MessageEmbed().setColor(client.config.color).setDescription(`> **Path:**\n\`\`\`yml\n${destDir}\n\`\`\`\n> **Server:**\n\`\`\`yml\n${serverId}\n\`\`\`\n> **Command:**\n\`\`\`yml\npm2 list | grep "${filename}" --ignore-case\n\`\`\`\n> **Application Information:**\n\`\`\`yml\nLink: https://discord.com/developers/applications/${botid}\nName: ${botuser ? `${botuser.tag}\nIcon: ${botuser.displayAvatarURL()}` : `>>${filename}<<`}\nOriginalOwner: ${client.users.cache.get(owner) ? client.users.cache.get(owner).tag + `(${client.users.cache.get(owner).id})` : owner}\`\`\``).setThumbnail(botuser.displayAvatarURL())]
                                         }).catch(e => {
-                                            console.log(e);
-                                            message.channel.send({
+                                            console.log(e)
+                                            ticketChannel.send({
                                                 content: `<@${user.id}> PLEASE SAVE THIS MESSAGE, YOUR DMS ARE DISABLED! (via aScreenshot for example)\n***IF YOU ARE HAVING PROBLEMS, or need a restart, or something else! THEN SEND US THIS INFORMATION!!!***\n> This includes: \`BotChanges\`, \`Restarts\`, \`Deletions\`, \`Adjustments & Upgrades\`\n> *This message is also a proof, that you are the original Owner of this BOT*`,
                                                 embeds: [new Discord.MessageEmbed().setColor(client.config.color).setDescription(`> **Path:**\n\`\`\`yml\n${destDir}\n\`\`\`\n> **Server:**\n\`\`\`yml\n${serverId}\n\`\`\`\n> **Command:**\n\`\`\`yml\npm2 list | grep "${filename}" --ignore-case\n\`\`\`\n> **Application Information:**\n\`\`\`yml\nLink: https://discord.com/developers/applications/${botid}\nName: ${botuser ? `${botuser.tag}\nIcon: ${botuser.displayAvatarURL()}` : `>>${filename}<<`}\nOriginalOwner: ${client.users.cache.get(owner) ? client.users.cache.get(owner).tag + `(${client.users.cache.get(owner).id})` : owner}\`\`\``).setThumbnail(botuser.displayAvatarURL())]
-                                            }).catch(() => {}).then(message => {
-                                                message.pin().catch(() => {})
+                                            }).catch(() => { }).then(msg => {
+                                                msg.pin().catch(() => { })
                                             })
-                                        }).then(message => {
-                                            message.pin().catch(() => {});
+                                        }).then(msg => {
+                                            msg.pin().catch(() => { })
                                         })
                                         user.send({
-                                            content: `<@${owner}> | **Created by: <@${message.author.id}> (\`${message.author.tag}\` | \`${message.author.id}\`)**`,
+                                            content: `<@${owner}> | **Created by: <@${member.id}> (\`${member.user.tag}\` | \`${member.id}\`)**`,
                                             embeds: [new Discord.MessageEmbed().setColor(client.config.color).addField("📯 Invite link: ", `> [Click here](https://discord.com/oauth2/authorize?client_id=${botuser.id}&scope=bot&permissions=8)`)
-                                                .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#941439058629001246> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready 2 be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
+                                                .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#941439058629001246> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready to be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
                                             ]
-                                        }).catch(() => {})
-                                    }).catch(() => {})
+                                        }).catch(console.error);
+                                    }).catch(() => { });
                                 } catch (e) {
                                     console.log(`DM FALIURE `,e.stack ? String(e.stack).grey : String(e).grey)
                                 }
@@ -2737,6 +2738,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 let data = client.bots.get(user.id, "info");
                 if (!data || data.type == "Default") throw "E";
                 let server = data.toString().split("\n")[6].split(",")[0];
+                if (server.includes(".")) server = server.split(".")[3]
                 let path = data.toString().split("\n")[2];
                 let {
                     servers,
@@ -2819,6 +2821,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 let data = client.bots.get(user.id, "info");
                 if (!data || data.type == "Default") throw "E";
                 let server = data.toString().split("\n")[6].split(",")[0];
+                if (server.includes(".")) server = server.split(".")[3]
                 let path = data.toString().split("\n")[2];
                 let BotFileName = path.split("/")[path.split("/").length - 1]
                 let {
@@ -2914,6 +2917,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 let data = client.bots.get(user.id, "info");
                 if (!data || data.type == "Default") throw "E";
                 let server = data.toString().split("\n")[6].split(",")[0];
+                if (server.includes(".")) server = server.split(".")[3]
                 let path = data.toString().split("\n")[2];
                 let BotFileName = path.split("/")[path.split("/").length - 1]
                 let {
@@ -3004,6 +3008,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 let data = client.bots.get(user.id, "info");
                 if (!data || data.type == "Default") throw "E";
                 let server = data.toString().split("\n")[6].split(",")[0];
+                if (server.includes(".")) server = server.split(".")[3]
                 let path = data.toString().split("\n")[2];
                 let BotFileName = path.split("/")[path.split("/").length - 1]
                 let {
@@ -3095,10 +3100,9 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 // console.log(data)
                 if (!data || data.type == "Default") throw "E";
                 let server = data.toString().split("\n")[6].split(",")[0];
-                console.log(server);
+                if (server.includes(".")) server = server.split(".")[3]
                 let path = data.toString().split("\n")[2];
                 let BotFileName = path.split("/")[path.split("/").length - 1]
-                console.log(BotFileName)
                 let {
                     servers,
                     usernames,
@@ -3188,6 +3192,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 let data = client.bots.get(user.id, "info");
                 if (!data || data.type == "Default") throw "E";
                 let server = data.toString().split("\n")[6].split(",")[0];
+                if (server.includes(".")) server = server.split(".")[3]
                 let path = data.toString().split("\n")[2];
                 let BotFileName = path.split("/")[path.split("/").length - 1]
                 let {
@@ -3278,6 +3283,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 let data = client.bots.get(user.id, "info");
                 if (!data || data.type == "Default") throw "E";
                 let server = data.toString().split("\n")[6].split(",")[0];
+                if (server.includes(".")) server = server.split(".")[3]
                 let path = data.toString().split("\n")[2];
                 let BotFileName = path.split("/")[path.split("/").length - 1]
                 let {
@@ -3634,6 +3640,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 let data = client.bots.get(user.id, "info");
                 if (!data || data.type == "Default") throw "E";
                 let server = data.toString().split("\n")[6].split(",")[0];
+                if (server.includes(".")) server = server.split(".")[3]
                 let path = data.toString().split("\n")[2];
                 let BotFileName = path.split("/")[path.split("/").length - 1]
                 let {

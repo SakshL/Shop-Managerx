@@ -202,19 +202,21 @@ module.exports = client => {
                 if (!bottype)
                     return res.redirect("/createbot?error=true&message=" + encodeURIComponent("Please select the right BOTTYPE!"));
                 var ticketChannel = milratoGuild.channels.cache.get(channel) || await milratoGuild.channels.fetch(channel).catch(() => { }) || false;
+                // console.log(ticketChannel)
                 if (!ticketChannel)
                     return res.redirect("/createbot?error=true&message=" + encodeURIComponent("Could not find the Ticket Channel"));
                 let BotType = "Default";
                 let BotDir = "Default";
-                if (ticketChannel.parentId == `${mainconfig.ApplyTickets.PartnerApply}`) {
+                if (ticketChannel.parentId === mainconfig.TicketCategorys.SystemBotOrderCategory) {
                     BotType = "System Bot";
                     BotDir = "SYSTEMBOTS";
                 }
-                if (ticketChannel.parentId == `${mainconfig.ApplyTickets.PartnerApply}`) {
+                if (ticketChannel.parentId === mainconfig.TicketCategorys.MusicBotOrderCategory) {
                     BotType = "Music Bot";
                     BotDir = "MusicBots";
                 }
-                if (bottype != BotDir) return res.redirect("/createbot?error=true&message=" + encodeURIComponent("You are not allowed to create this Bot Type in that Ticket!"));
+                console.log(bottype,BotDir)
+              if (bottype !== BotDir) return res.redirect("/createbot?error=true&message=" + encodeURIComponent("You are not allowed to create this Bot Type in that Ticket!"));
                 if (!prefix) return res.redirect("/createbot?error=true&message=" + encodeURIComponent("You are missing the PREFIX!"));
                 if (!status) return res.redirect("/createbot?error=true&message=" + encodeURIComponent("You are missing the STATUS!"));
                 if (!statustype) return res.redirect("/createbot?error=true&message=" + encodeURIComponent("You are missing the STATUSTYPE!"));
@@ -238,7 +240,7 @@ module.exports = client => {
                 /**
                  * CREATE THE REMOTE HOST CONNECTION DATA
                  */
-                 const serverId = client.allServers.least ? client.allServers.least : client.currentServerIP;
+                 const serverId = client.allServers.least ? client.allServers.least : client.currentServerIP.split(".")[3];
                  const remote_server = {
                      host: client.config.servers[serverId], 
                      port: 22, 
@@ -464,6 +466,7 @@ module.exports = client => {
                             content: `***IF YOU ARE HAVING PROBLEMS, or need a restart, or something else! THEN SEND US THIS INFORMATION!!!***\n> This includes: \`BotChanges\`, \`Restarts\`, \`Deletions\`, \`Adjustments & Upgrades\`\n> *This message is also a proof, that you are the original Owner of this BOT*`,
                             embeds: [new Discord.MessageEmbed().setColor(client.config.color).setDescription(`> **Path:**\n\`\`\`yml\n${destDir}\n\`\`\`\n> **Server:**\n\`\`\`yml\n${serverId}\n\`\`\`\n> **Command:**\n\`\`\`yml\npm2 list | grep "${filename}" --ignore-case\n\`\`\`\n> **Application Information:**\n\`\`\`yml\nLink: https://discord.com/developers/applications/${botid}\nName: ${botuser ? `${botuser.tag}\nIcon: ${botuser.displayAvatarURL()}` : `>>${filename}<<`}\nOriginalOwner: ${client.users.cache.get(owner) ? client.users.cache.get(owner).tag + `(${client.users.cache.get(owner).id})` : owner}\`\`\``).setThumbnail(botuser.displayAvatarURL())]
                         }).catch(e => {
+                            console.log(e)
                             ticketChannel.send({
                                 content: `<@${user.id}> PLEASE SAVE THIS MESSAGE, YOUR DMS ARE DISABLED! (via aScreenshot for example)\n***IF YOU ARE HAVING PROBLEMS, or need a restart, or something else! THEN SEND US THIS INFORMATION!!!***\n> This includes: \`BotChanges\`, \`Restarts\`, \`Deletions\`, \`Adjustments & Upgrades\`\n> *This message is also a proof, that you are the original Owner of this BOT*`,
                                 embeds: [new Discord.MessageEmbed().setColor(client.config.color).setDescription(`> **Path:**\n\`\`\`yml\n${destDir}\n\`\`\`\n> **Server:**\n\`\`\`yml\n${serverId}\n\`\`\`\n> **Command:**\n\`\`\`yml\npm2 list | grep "${filename}" --ignore-case\n\`\`\`\n> **Application Information:**\n\`\`\`yml\nLink: https://discord.com/developers/applications/${botid}\nName: ${botuser ? `${botuser.tag}\nIcon: ${botuser.displayAvatarURL()}` : `>>${filename}<<`}\nOriginalOwner: ${client.users.cache.get(owner) ? client.users.cache.get(owner).tag + `(${client.users.cache.get(owner).id})` : owner}\`\`\``).setThumbnail(botuser.displayAvatarURL())]
@@ -478,7 +481,7 @@ module.exports = client => {
                             embeds: [new Discord.MessageEmbed().setColor(client.config.color).addField("📯 Invite link: ", `> [Click here](https://discord.com/oauth2/authorize?client_id=${botuser.id}&scope=bot&permissions=8)`)
                                 .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#941439058629001246> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready to be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
                             ]
-                        }).catch(() => { });
+                        }).catch(console.error);
                     }).catch(() => { });
                 } catch (e) {
                     console.error(e)

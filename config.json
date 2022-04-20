@@ -11,12 +11,12 @@
         "clientSecret": "EAyDFfh7_nIsP6ncDVT55YfeITo0E5izmwGTbnyLXiCDNRbJ1CjHnynL_4bUsVzI98fVJcJUqeyvRQb1"
     },
     "servers": {
-        "1": "109.71.253.6"
+        "6": "109.71.253.6"
     },
     "passwords": {
-        "1": "NotUnknownIsCool"
+        "6": "NotUnknownIsCool"
     },
     "usernames": {
-        "1": "root"
+        "6": "root"
     }
 }
