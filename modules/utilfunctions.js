@@ -225,7 +225,7 @@ function theDB(client, guild) {
     > *(The Color on the Left Side of Embeds)*
     > 
     > <:arrow:964989830272532501> **\` 5. \` What should be the STATUS?**
-    > *(e.g: \`!help | discord.gg/Nexuss\`)*
+    > *(e.g: \`!help | discord.gg/nexusx\`)*
     > 
     > <:arrow:964989830272532501> **\` 6. \` What should be the STATUS TYPE?** 
     > *(\`PLAYING\` / \`WATCHING\` / \`LISTENING\` / \`STREAMING\` / \`COMPETING\`)*
@@ -263,7 +263,7 @@ function theDB(client, guild) {
     > *(The Color on the Left Side of Embeds)*
     > 
     > <:arrow:964989830272532501> **\` 5. \` What should be the STATUS?**
-    > *(e.g: \`!help | discord.gg/Nexuss\`)*
+    > *(e.g: \`!help | discord.gg/nexusx\`)*
     > 
     > <:arrow:964989830272532501> **\` 6. \` What should be the STATUS TYPE?** 
     > *(\`PLAYING\` / \`WATCHING\` / \`LISTENING\` / \`STREAMING\` / \`COMPETING\`)*
@@ -425,7 +425,7 @@ function theDB(client, guild) {
     > *(The Color on the Left Side of Embeds)*
     > 
     > <:arrow:964989830272532501> **\` 5. \` What should be the STATUS?**
-    > *(e.g: \`!help | https://discord.gg/Nexuss\`)*
+    > *(e.g: \`!help | https://discord.gg/nexusx\`)*
     > 
     > <:arrow:964989830272532501> **\` 6. \` What should be the STATUS TYPE?** 
     > *(\`PLAYING\` / \`WATCHING\` / \`LISTENING\` / \`STREAMING\` / \`COMPETING\`)*
@@ -463,7 +463,7 @@ function theDB(client, guild) {
     > *(The Color on the Left Side of Embeds)*
     > 
     > <:arrow:964989830272532501> **\` 5. \` What should be the STATUS?**
-    > *(e.g: \`!help | https://discord.gg/Nexuss\`)*
+    > *(e.g: \`!help | https://discord.gg/nexusx\`)*
     > 
     > <:arrow:964989830272532501> **\` 6. \` What should be the STATUS TYPE?** 
     > *(\`PLAYING\` / \`WATCHING\` / \`LISTENING\` / \`STREAMING\` / \`COMPETING\`)*
@@ -615,7 +615,7 @@ function theDB(client, guild) {
     > *(The Color on the Left Side of Embeds)*
     > 
     > <:arrow:964989830272532501> **\` 5. \` What should be the STATUS?**
-    > *(e.g: \`!help | https://discord.gg/Nexuss\`)*
+    > *(e.g: \`!help | https://discord.gg/nexusx\`)*
     > 
     > <:arrow:964989830272532501> **\` 6. \` What should be the STATUS TYPE?** 
     > *(\`PLAYING\` / \`WATCHING\` / \`LISTENING\` / \`STREAMING\` / \`COMPETING\`)*
@@ -981,7 +981,7 @@ async function swap_pages2(client, message, embeds) {
     const allbuttons = [new Discord.MessageActionRow().addComponents([button_back, button_home, button_forward])]
     //Send message with buttons
     let swapmsg = await message.channel.send({
-        content: `https://nexuss.dev/ - Help Menu`,
+        content: `https://nexusx.dev/ - Help Menu`,
         embeds: [embeds[0]],
         components: allbuttons
     });

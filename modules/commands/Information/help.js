@@ -10,7 +10,7 @@ module.exports = {
         
         var embed1 = new Discord.MessageEmbed()
         .setColor("GREEN")
-        .setAuthor("Nexuss | Free Bots Shop | Information Commands Help", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
+        .setAuthor("nexusx | Free Bots Shop | Information Commands Help", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
         .addField("\`,help\`", "*Shows all commands*", true)
         .addField("\`,invite @BOT / BOTNAME\`", "*gives u an invite link for a BOT*", true)
         .addField("\`,ping\`", "*Shows the Ping of the Bot*", true)
@@ -33,7 +33,7 @@ module.exports = {
 
     var embed2 = new Discord.MessageEmbed()
         .setColor("YELLOW")
-        .setAuthor("Nexuss | Free Bots Shop | STAFF TEAM Help", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
+        .setAuthor("nexusx | Free Bots Shop | STAFF TEAM Help", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
         .addField("\`,rank [@User]\`", "Shows the Rank of a User!",true)
         .addField("\`,leaderboard [Days to Show]\`", "Shows the Staff Leaderboard\n**Alias**: \`,lb\`",true)
             //.addField("\u200b", "\u200b")                
@@ -54,7 +54,7 @@ module.exports = {
 
     var embed3 = new Discord.MessageEmbed()
         .setColor("ORANGE")
-        .setAuthor("Nexuss | Free Bots Shop | Higher Staff (Bot Management Commands)", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
+        .setAuthor("nexusx | Free Bots Shop | Higher Staff (Bot Management Commands)", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
         .addField("\`,addbot <@USER> <@Bot <BOTTYPE>\`", "*Adds a Bot to a User*", true)
         .addField("\`,removebot <@USER> <@Bot>\`", "*Removes a Bot to a User*", true)
         .addField("\`,changebot <@USER> <@Bot> <BOTTYPE>\`", "*Changes a Bot*", true)
@@ -84,7 +84,7 @@ module.exports = {
         //togglegeneral, togglepartnerapply, toggleteamapply
     var embed4 = new Discord.MessageEmbed()
         .setColor("RED")
-        .setAuthor("Nexuss | Free Bots Shop | Setup Commands", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
+        .setAuthor("nexusx | Free Bots Shop | Setup Commands", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
         .addField("\`,togglepartnerapply\`", "*Enables/Disables the Partner Apply System*", true)
         .addField("\`,toggleteamapply\`", "*Enables/Disables the Team Apply System*", true)
             //.addField("\u200b", "\u200b")

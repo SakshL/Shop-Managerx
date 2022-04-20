@@ -49,7 +49,7 @@ module.exports = async (client) => {
                 member.roles.add(verifiedRoleId).then(() => {
                     interaction?.update({
                         ephemeral: true,
-                        content: "👍 **Good Job!**\n> You successfully Verified yourself and I granted access to you for **Nexuss Development**\n> :wave: Enjoy! Just incase you need to know something check out <#924696982264610846>",
+                        content: "👍 **Good Job!**\n> You successfully Verified yourself and I granted access to you for **nexusx Development**\n> :wave: Enjoy! Just incase you need to know something check out <#924696982264610846>",
                         components: [],
                     }).catch(() => {});
                 }).catch((e) => {

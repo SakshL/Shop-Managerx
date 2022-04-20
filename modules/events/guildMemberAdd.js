@@ -50,13 +50,13 @@ module.exports = async (client) => {
         }
         if (!member.user.bot) {
             try {
-                welcomeChannel.send(`👋! ${member.user} welcome to **Nexuss**`);
+                welcomeChannel.send(`👋! ${member.user} welcome to **nexusx**`);
 member.send({embeds: [new Discord.MessageEmbed()
 .setColor("#6861fe")
 .setFooter(member.guild.name, member.guild.iconURL({dynamic:true}))
 
 .setDescription(`
-Welcome ${member.user} to <:Discord:933238543973773383>  [Nexuss Development](https://Nexuss.me)<:Discord:933238543973773383>!
+Welcome ${member.user} to <:Discord:933238543973773383>  [nexusx Development](https://nexusx.me)<:Discord:933238543973773383>!
 
 > We are very happy to see you here!
 

@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="/sweetalert.css">
         
         <title>
-            Nexuss | Dashboard
+            nexusx | Dashboard
         </title>
     </head>  
 
@@ -44,16 +44,16 @@
                                 <p style="font-style: italic;" class="disabled">Select the Customer Ticket! [Ticket - Categories are greyed out for Orientation]</p>
                                 <select required class="form-control"data-width="100%"data-height="100%"data-live-search="true" autocomplete="off"  required="" aria-label="Ticket Channel"name="channel">
                                   
-                                  <% if(milratoGuild.channels.cache.get(`${mainconfig.ApplyTickets.PartnerApply}`) && milratoGuild.channels.cache.get(`${mainconfig.ApplyTickets.PartnerApply}`).children && milratoGuild.channels.cache.get(`${mainconfig.ApplyTickets.PartnerApply}`).children.size >= 1) { %>
-                                  <option disabled > #<%= milratoGuild.channels.cache.get(`${mainconfig.ApplyTickets.PartnerApply}`).name %></option>
-                                  <% [...milratoGuild.channels.cache.get(`${mainconfig.ApplyTickets.PartnerApply}`).children.values()].sort((a, b) => a.rawPosition - b.rawPosition).forEach((channel, i) => { %>
+                                  <% if(milratoGuild.channels.cache.get("964370140986736725") && milratoGuild.channels.cache.get("964370141452312606").children && milratoGuild.channels.cache.get("965412925185589298").children.size >= 1) { %>
+                                  <option disabled > #<%= milratoGuild.channels.cache.get("964370140986736725").name %></option>
+                                  <% [...milratoGuild.channels.cache.get("964370140986736725").children.values()].sort((a, b) => a.rawPosition - b.rawPosition).forEach((channel, i) => { %>
                                       <option value="<%= channel.id %>"> #<%= channel.name %></option>
                                   <% })} %>
                                   </div>
 
-                                  <% if(milratoGuild.channels.cache.get(`${mainconfig.ApplyTickets.PartnerApply}`) && milratoGuild.channels.cache.get(`${mainconfig.ApplyTickets.PartnerApply}`).children && milratoGuild.channels.cache.get(`${mainconfig.ApplyTickets.PartnerApply}`).children.size >= 1) { %>
-                                  <option disabled> #<%= milratoGuild.channels.cache.get(`${mainconfig.ApplyTickets.PartnerApply}`).name %></option>
-                                  <% [...milratoGuild.channels.cache.get(`${mainconfig.ApplyTickets.PartnerApply}`).children.values()].sort((a, b) => a.rawPosition - b.rawPosition).forEach((channel, i) => { %>
+                                  <% if(milratoGuild.channels.cache.get("964370141452312606") && milratoGuild.channels.cache.get("964370141452312606").children && milratoGuild.channels.cache.get("964370141452312606").children.size >= 1) { %>
+                                  <option disabled> #<%= milratoGuild.channels.cache.get("964370141452312606").name %></option>
+                                  <% [...milratoGuild.channels.cache.get("964370141452312606").children.values()].sort((a, b) => a.rawPosition - b.rawPosition).forEach((channel, i) => { %>
                                       <option value="<%= channel.id %>"> #<%= channel.name %></option>
                                   <% })} %>
                                 </select>
@@ -75,7 +75,7 @@
                                 
                                 <h5 style="margin-bottom: 0.5rem; margin-top: 10px;color:#6861fe"><b><font size="4">Status</font></b</h5>
                                     <p style="font-style: italic;" class="disabled">The Status to display</p>
-                                <input maxlength="128" minlength="1" required style="margin-top: -10px;" type="text" class="form-control" name="status" placeholder="!help | by: discord.gg/Nexuss">
+                                <input maxlength="128" minlength="1" required style="margin-top: -10px;" type="text" class="form-control" name="status" placeholder="!help | by: discord.gg/nexusx">
                                 <br>
                                 
                                 <h5 style="margin-bottom: 0.5rem; margin-top: 10px;color:#6861fe"><b><font size="4">Statustype</font></b</h5>
@@ -98,12 +98,12 @@
                                 
                                 <h5 style="margin-bottom: 0.5rem; margin-top: 10px;color:#6861fe"><b><font size="4">Owner ID</font></b</h5>
                                     <p style="font-style: italic;" class="disabled">The ID of the USER who, OWNS the BOT</p>
-                                <input maxlength="19" minlength="17" required style="margin-top: -10px;" type="text" class="form-control" name="owner" placeholder="921430546813419550">
+                                <input maxlength="19" minlength="17" required style="margin-top: -10px;" type="text" class="form-control" name="owner" placeholder="717416034478456925">
                                 <br>
                                 
                                 <h5 style="margin-bottom: 0.5rem; margin-top: 10px;color:#6861fe"><b><font size="4">Avatar URL</font></b</h5>
                                     <p style="font-style: italic;" class="disabled">The Avatar of the Bot</p>
-                                <input required style="margin-top: -10px;" type="text" class="form-control" name="avatar" placeholder="https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png">
+                                <input required style="margin-top: -10px;" type="text" class="form-control" name="avatar" placeholder="https://cdn.discordapp.com/attachments/936985190016897055/938911526683811860/LOGOTRANSPARENT.png">
                                 <br>
                                 
                                 <h5 style="margin-bottom: 0.5rem; margin-top: 10px;color:#6861fe"><b><font size="4">Footertext</font></b</h5>
@@ -158,7 +158,7 @@
                         return Swal.fire({
                             icon: 'error',
                             title: 'Someone else is alread creating a Bot',
-                            text: 'Please retry, once he/she is finished!',
+                            text: 'Please Retry, once he/she is finished!',
                             timer: 5000,
                             showCloseButton: true
                         })
@@ -184,7 +184,7 @@
             title: 'Success!',
             showCloseButton: true,
             text: urlParams.get('message'),
-            footer: 'Copyright 2021 &copy Nexuss Development - All right reserved.'
+            footer: 'Copyright 2021 &copy nexusx Development - All right reserved.'
         }).then((result) => {
             window.location.href = `/createbot`;
         })
@@ -195,7 +195,7 @@
             title: 'An Error occurred!',
             text: urlParams.get('message'),
             showCloseButton: true,
-            footer: 'Copyright 2021 &copy Nexuss Development - All right reserved.'
+            footer: 'Copyright 2021 &copy nexusx Development - All right reserved.'
         }).then((result) => {
             window.location.href = `/createbot`;
         })
@@ -206,7 +206,7 @@
             title: 'Sucessfully Created the Bot',
             showCloseButton: true,
             text: 'Please notify the Customer and ask him/her for Feedback!',
-            footer: 'Copyright 2021 &copy Nexuss Development - All right reserved.'
+            footer: 'Copyright 2021 &copy Nexusx Development - All right reserved.'
         }).then((result) => {
             window.location.href = `/createbot`;
         })

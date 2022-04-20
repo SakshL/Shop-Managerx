@@ -487,7 +487,7 @@ module.exports = client => {
                     content: `<@${owner}> | **Created by: <@${member.id}> (\`${member.user.tag}\` | \`${member.id}\`)**`,
                     embeds: [new Discord.MessageEmbed().setColor(client.config.color).addField("📯 Invite link: ", `> [Click here](https://discord.com/oauth2/authorize?client_id=${botuser.id}&scope=bot&permissions=8)`)
                         .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#941439058629001246> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready to be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
-                        .addField("<:like:938142052087124008> Rate us on TRUSTPILOT", `> ***We would love it, if you could give us a __HONEST__ Rating on [Trustpilot](https://de.trustpilot.com/review/Nexuss.me)*** <3`)
+                        .addField("<:like:938142052087124008> Rate us on TRUSTPILOT", `> ***We would love it, if you could give us a __HONEST__ Rating on [Trustpilot](https://de.trustpilot.com/review/nexusx.me)*** <3`)
                     ]
                 }).catch(() => { });
                 client.bots.push(owner, botid, "bots")
@@ -601,7 +601,7 @@ module.exports = client => {
                             content: `<@${owner}> | **Created by: <@${member.id}> (\`${member.user.tag}\` | \`${member.id}\`)**`,
                             embeds: [new Discord.MessageEmbed().setColor(client.config.color).addField("📯 Invite link: ", `> [Click here](https://discord.com/oauth2/authorize?client_id=${botuser.id}&scope=bot&permissions=8)`)
                                 .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#941439058629001246> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready 2 be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
-                                .addField("Rate us on TRUSTPILOT", `> ***We would love it, if you could give us a __HONEST__ Rating on [Trustpilot](https://de.trustpilot.com/review/Nexuss.me)*** <3`)
+                                .addField("Rate us on TRUSTPILOT", `> ***We would love it, if you could give us a __HONEST__ Rating on [Trustpilot](https://de.trustpilot.com/review/nexusx.me)*** <3`)
                             ]
                         }).catch(() => {});
                         client.bots.push(owner, botid, "bots")
@@ -644,17 +644,17 @@ module.exports = client => {
                 if (req.headers['x-forwarded-proto'] !== 'https')  return res.redirect('https://' + req.headers.host + req.url);
                 else return next();
             });
-            const key = fs.readFileSync("/etc/letsencrypt/live/dash.Nexuss.me/privkey.pem", `utf8`);
-            const cert = fs.readFileSync("/etc/letsencrypt/live/dash.Nexuss.me/fullchain.pem", `utf8`);
-            const ca = fs.readFileSync("/etc/letsencrypt/live/dash.Nexuss.me/chain.pem", `utf8`);
+            const key = fs.readFileSync("/etc/letsencrypt/live/dash.nexusx.dev/privkey.pem", `utf8`);
+            const cert = fs.readFileSync("/etc/letsencrypt/live/dash.nexusx.dev/fullchain.pem", `utf8`);
+            const ca = fs.readFileSync("/etc/letsencrypt/live/dash.nexusx.dev/chain.pem", `utf8`);
             var httpsoptions = { key: key, cert: cert, ca: ca };
             const https = require(`https`).createServer(httpsoptions, app);
             https.listen(443, () => { console.log(`[${client.config.callback.replace("/callback", "").replace("http://", "https://")}]: HTTPS-Website running on 443 port.`)});
         }catch(e){
             console.warn(e)
         }
-        app.listen(8000, () => {
-            console.log(`[${client.config.callback.replace("/callback", "").replace("https://", "http://")}]: HTTP-Website running on 80 port.`)
+        app.listen(8080, () => {
+            console.log(`[${client.config.callback.replace("/callback", "").replace("https://", "http://")}]: HTTP-Website running on 8080 port.`)
         });
     })
 

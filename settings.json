@@ -30,13 +30,13 @@
 
         {
             "value": "Staff Application",
-            "description": "Apply as a Staff for Nexuss",
+            "description": "Apply as a Staff for nexusx",
             "emoji": "<:staff:955479654028935248>",
             "type": "TEAMAPPLY"
         },
         {
             "value": "Partner Application",
-            "description": "Apply for a partnership with Nexuss",
+            "description": "Apply for a partnership with nexusx",
             "emoji": "<:partner:946846491971043338>",
             "type": "PARTNERAPPLY"
         }

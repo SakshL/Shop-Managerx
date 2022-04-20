@@ -57,7 +57,8 @@ require("./modules/dashboard/index")(client)
 require("./modules/tickets/OrderSystem")(client)
 require("./modules/tickets/TicketSystem")(client)
 require("./modules/others/payment_system")(client)
-//require('./index_other_tasks')
+require("./modules/others/getleastServer")(client)
+// require('./index_other_tasks')
 /**
  * @INFO LOGGING INTO THE BOT CLIENT
  */
@@ -78,7 +79,7 @@ client.on("ready", () => {
             console.log(" [Status Update] :: ".bgCyan.red + String(counter).bgCyan.brightRed)
             switch(counter){
                 case 0: {
-                    try{client.user.setActivity(`https://nexuss.dev/`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`https://nexusx.dev/`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter++;
                 }break;
                 case 1: {

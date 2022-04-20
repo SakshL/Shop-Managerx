@@ -43,4 +43,4 @@ require("./modules/others/autodelete")(client)
 require("./modules/others/getleastServer")(client)
 
 
-client.login(client.config.token);
+// client.login(client.config.token);

@@ -22,7 +22,7 @@ if (message.channel.id == "939230702703099904") {
              new Discord.MessageEmbed()
                  .setAuthor({ name: `New Suggestion from ${message.author.tag}`, iconURL: `${message.author.displayAvatarURL({dynamic: true})}`})
                  .setDescription("\n\nReact with *yes* if you like the suggestion, or with *no* if you don't like it.\n" + "\n>>> " +message.content )
-                 .setFooter({ text: "Nexuss", iconURL: 'https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png' })
+                 .setFooter({ text: "nexusx", iconURL: 'https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png' })
                  .setColor(ee.color)
          ]
          

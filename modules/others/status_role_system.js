@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 module.exports = client => {
-    let textInStats = "discord.gg/Nexuss"
-    let textInStats2 = "Nexuss.me"
+    let textInStats = "discord.gg/nexusx"
+    let textInStats2 = "nexusx.me"
     let guildId = `${mainconfig.ServerID}`;
     let roleId = "939204750258348052";
     //when some1 changes his/her status

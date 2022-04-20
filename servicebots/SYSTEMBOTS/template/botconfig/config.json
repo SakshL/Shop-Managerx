@@ -1,16 +1,16 @@
 {
-   "token": "OTY1NjMxMzI1NTYwMjQ2MzQz.Yl2AQA.9GPHY9CMNkmd5ZhIMANncgXCNmY",
-   "prefix": "!",
+   "token": "",
+   "prefix": "",
    "ownerIDS": [
       "921430546813419550",
-      "921430546813419550"
+      ""
    ],
    "fnbr": "GET from: https://fnbr.co",
    "fortnitetracker": "GET from: https://fortnitetracker.com",
    "memer_api": "JoizT7Oss2t",
    "status": {
-      "text": "discord",
-      "text2": "By: discord.gg/dcdev",
+      "text": "",
+      "text2": "By: discord.gg/notsaksh",
       "type": "PLAYING",
       "url": "https://twitch.tv/#"
    },

@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const emoji = require("../../emoji");
 const {
   Client
 } = require('ssh2');
@@ -10,8 +9,9 @@ var CronJob = require('cron').CronJob;
 const scp = require("node-scp").Client;
 module.exports = client => {
 
-    const nodestatChannelID = "964536014502772746";
-    const nodestatMessageID = "954463391915847734";
+    const nodestatChannelID = "965356469287551026";
+    const nodestatMessageID = "966013028233515009";
+    
     async function getLeast() {
         console.log("GETTING STATS");
         let {
@@ -19,12 +19,7 @@ module.exports = client => {
             usernames,
             passwords
         } = client.config;
-        client.allServers = {
-            current: client.config.servers[client.currentServerIP] ? client.config.servers[client.currentServerIP] : Object.keys(client.config.servers)[0],
-            least: null,
-            stats: [],
-        }
-
+        
         let alldata = Object.keys(servers).map(d => { return { key: d, ram: []}});
     
         let counter = 0;
@@ -63,7 +58,7 @@ module.exports = client => {
                                     if (err) throw err;
                                     let showdata = "";
                                     stream.on('close', (code, signal) => {
-                                        alldata[alldata.findIndex(d => d.key == key)].botsCount = String(showdata).split("\n").length;
+                                        alldata[alldata.findIndex(d => d.key == key)].botsCount = String(showdata).split("\n").length * 1.5;
                                         //get storage
                                         conn.exec(`df -t ext4`, (err, stream) => {
                                             if (err) throw err;
@@ -178,11 +173,12 @@ module.exports = client => {
                             }; //set it to 1
                         }
                     });
-                    const online = `<a:Online_Ping:935062510514606091>`;
-                    const offline = `<a:offline:964406461885198406>`;
+                    const online = "<a:Online_Ping:935062510514606091>";
+                    const offline = "<a:offline:964406461885198406>";
                     const embed = new Discord.MessageEmbed()
                         .setColor(client.config.color)
-                        .setAuthor("Nexuss | Nodestats", msg.guild.iconURL({ dynamic: true }), "https://status.Nexuss.me/")
+                        .setAuthor("Our Nodestats", msg.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
+                        .setFooter("nexusx.dev | Order Bots NOW\nThis Message get's updated every 15 Minutes", "https://imgur.com/jPItIw0.gif")
 
                     data.forEach(stat => {
                         if(stat?.key == "27") {
@@ -224,4 +220,4 @@ function formatBytes(bytes, decimals = 3) {
     const i = Math.floor(Math.log(bytes) / Math.log(k));
 
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
-}
+} 

@@ -128,7 +128,7 @@ module.exports = async(client) => {
                         const offline = `<:error:934152965856591953>`;
                         const embed = new Discord.MessageEmbed()
                             .setColor(client.config.color)
-                            .setAuthor("Nexuss | Nodestats", message.guild.iconURL({ dynamic: true }), "https://status.Nexuss.me/")
+                            .setAuthor("nexusx | Nodestats", message.guild.iconURL({ dynamic: true }), "https://status.nexusx.me/")
                             client.allServers.stats.forEach(stat => {
                                 embed.addField(`${stat.ram != 1 ? online : offline} Server **\`${stat.key}\`**`, `> Ram: \`${(stat.ram * 100).toFixed(0)}% of ${stat.totalram.split(".")[0]} ${stat.totalram.split(" ")[1]}\`\n> Hosting Bots: \`${stat.bots}\`\n> Cores: \`${stat.cores}\`\n> Stor: \`${Math.floor(stat.storage / stat.totalstorage * 100).toFixed(0)}% of ${formatBytes(stat.totalstorage, 0)}\``, true)
                                 if(stat?.key == "27") {
@@ -150,8 +150,8 @@ module.exports = async(client) => {
                     } else if (cmd == "setupticket") {
                         if (message.member.permissions.has("ADMINISTRATOR")) {
                             let embed = new Discord.MessageEmbed()
-                            .setTitle("Nexuss | Ticket Support")
-                            .setDescription(`This is the official [Nexuss](https://Nexuss.me) ticket support.\n\nOptionally, you can contact us by email **support@Nexuss.me**`)
+                            .setTitle("nexusx | Ticket Support")
+                            .setDescription(`This is the official [nexusx](https://nexusx.me) ticket support.\n\nOptionally, you can contact us by email **support@nexusx.me**`)
                             .setColor(client.config.color)
                             let menuoptions = require("../settings.json").ticketsystem;
                             //define the selection
@@ -181,8 +181,8 @@ module.exports = async(client) => {
                     } else if (cmd == "setupfeatures") {
                         if (message.member.permissions.has("ADMINISTRATOR")) {
                             let embed = new Discord.MessageEmbed()
-                            .setTitle("Nexuss | Features")
-                            .setDescription(`If you want to see the features of the bots, just click on the drop-down menu down below.\nYou'll be also able to see the prices, which are not negotiable.\n\nFor more information about the features/pricing, feel free to contact our marketing team at **marketing@Nexuss.me**`)
+                            .setTitle("nexusx | Features")
+                            .setDescription(`If you want to see the features of the bots, just click on the drop-down menu down below.\nYou'll be also able to see the prices, which are not negotiable.\n\nFor more information about the features/pricing, feel free to contact our marketing team at **marketing@nexusx.me**`)
                             .setColor(client.config.color)
                             let menuoptions = require("../settings.json").ordersystem;
                             //define the selection
@@ -217,7 +217,7 @@ module.exports = async(client) => {
                                 themessage_ = await message.channel.messages.fetch(id).catch(() => {}) || false;
                             }
                             let embed = new Discord.MessageEmbed()
-                            .setTitle("Nexuss | Order")
+                            .setTitle("nexusx | Order")
                             .setDescription(`
 <:arrow:964989830272532501> **Please take a Look at our [prices](https://discord.com/channels/964370138356916295/964370139808141365/944276114988220477) as well as at our [payment options](https://discord.com/channels/964370138356916295/964370139808141365/944952969961553970)**
 
@@ -232,7 +232,7 @@ module.exports = async(client) => {
 
 <:arrow:964989830272532501>  ***To open a Order-Ticket click on the Selection down below!***`)
 .setDescription(`
-If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [prices](https://discord.com/channels/964370138356916295/964370139808141365/944276114988220477) first, chose your wished bot in the drop-down menu down below.
+If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [prices](https://discord.com/channels/964370138356916295/964370139808141365/944276114988220477) first, chose your wished bot in the drop-down menu down below.
 \n***Available Bots are:***\n
 > - **System Bot** 🤖
 > 
@@ -241,7 +241,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
 > - **Mod Mail Bot** 📨
 > 
 > - **Waitingroom Bot** 🕐
-\nFor further questions about our pricing, please contact our marketing team at **marketing@Nexuss.me**`)
+\nFor further questions about our pricing, please contact our marketing team at **marketing@nexusx.me**`)
                             .setColor(client.config.color)
                         let menuoptions = require("../settings.json").ordersystem;
                             //define the selection
@@ -756,12 +756,12 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     let answers = [];
                     let Questions = [
                         `What should be the PREFIX? | Its For the ${menuoptiondata.value}!\nExample: "!"`,
-                        `What should be the STATUS? | Its For the ${menuoptiondata.value}!\nExample: "discord.gg/Nexuss"`,
+                        `What should be the STATUS? | Its For the ${menuoptiondata.value}!\nExample: "discord.gg/nexusx"`,
                         `What should be the STATUSTYPE? | Its For the before Status, example: "PLAYING" or "LISTENING TO" ...`,
                         `What should be the TOKEN? | Its For the ${menuoptiondata.value}!\nExample: "NzQ4MDg3OTA3NTE2MTUzODg5.X0YVJw.Shmvprj9eW_yfApntj7QUM0sZ_Y"`,
                         `Who is the OWNER? | Its For the ${menuoptiondata.value}!\nExample: "921430546813419550"`,
-                        `What should be the AVATAR? | Its For the ${menuoptiondata.value}!\nExample: "https://cdn.discordapp.com/attachments/936985190016897055/938497637060079706/LogoNexuss.png"`,
-                        `What should be the FOOTER TEXT? | Its For the ${menuoptiondata.value}!\nExample: "Nexuss"`,
+                        `What should be the AVATAR? | Its For the ${menuoptiondata.value}!\nExample: "https://cdn.discordapp.com/attachments/936985190016897055/938497637060079706/Logonexusx.png"`,
+                        `What should be the FOOTER TEXT? | Its For the ${menuoptiondata.value}!\nExample: "nexusx"`,
                         `What should be the HEX-COLOR? | Its For the ${menuoptiondata.value}!\nExample: "#6861fe"`,
                         `What should be the FILE-NAME? | Its For the ${menuoptiondata.value}!\nExample: "BOT_NAME" (replace spaces with "_")`,
                         `What is the BOT ID? | Its For the ${menuoptiondata.value}!\nExample: "938176229918531604"`,
@@ -917,14 +917,14 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                      */
                     const serverId = client.allServers.least ? client.allServers.least : client.allServers.current;
                     console.log(serverId)
-                    console.log(`Host: ${client.config.servers["6"]}`)
-                    console.log(`Username: ${client.config.usernames["6"]}`)
-                    console.log(`Password: ${client.config.passwords["6"]}`)
+                    console.log(`Host: ${client.config.servers[serverId]}`)
+                    console.log(`Username: ${client.config.usernames[serverId]}`)
+                    console.log(`Password: ${client.config.passwords[serverId]}`)
                     const remote_server = {
-                        host: client.config.servers["6"], 
+                        host: client.config.servers[serverId], 
                         port: 22, 
-                        username: client.config.usernames["6"], 
-                        password: client.config.passwords["6"], 
+                        username: client.config.usernames[serverId], 
+                        password: client.config.passwords[serverId], 
                     };
 
 
@@ -1003,7 +1003,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     var tempmsfg = await ch.send({
                         embeds: [new Discord.MessageEmbed()
                             .setColor(client.config.color)
-                            .setAuthor("Progress ...", "https://images-ext-1.discordapp.net/external/ANU162U1fDdmQhim_BcbQ3lf4dLaIQl7p0HcqzD5wJA/https/cdn.discordapp.com/emojis/756773010123522058.gif", "https://discord.gg/Nexuss")
+                            .setAuthor("Progress ...", "https://images-ext-1.discordapp.net/external/ANU162U1fDdmQhim_BcbQ3lf4dLaIQl7p0HcqzD5wJA/https/cdn.discordapp.com/emojis/756773010123522058.gif", "https://discord.gg/nexusx")
                             .addField(`<a:Loading:945121333333852161> Changing Configuration Settings`, "\u200b")
                             .addField("🔲 Changing Embed Settings...", "\u200b")
                             .addField(`🔲 Copying ${filenum} Files...`, "\u200b")
@@ -1320,6 +1320,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                                             content: `***IF YOU ARE HAVING PROBLEMS, or need a restart, or something else! THEN SEND US THIS INFORMATION!!!***\n> This includes: \`BotChanges\`, \`Restarts\`, \`Deletions\`, \`Adjustments & Upgrades\`\n> *This message is also a proof, that you are the original Owner of this BOT*`,
                                             embeds: [new Discord.MessageEmbed().setColor(client.config.color).setDescription(`> **Path:**\n\`\`\`yml\n${destDir}\n\`\`\`\n> **Server:**\n\`\`\`yml\n${serverId}\n\`\`\`\n> **Command:**\n\`\`\`yml\npm2 list | grep "${filename}" --ignore-case\n\`\`\`\n> **Application Information:**\n\`\`\`yml\nLink: https://discord.com/developers/applications/${botid}\nName: ${botuser ? `${botuser.tag}\nIcon: ${botuser.displayAvatarURL()}` : `>>${filename}<<`}\nOriginalOwner: ${client.users.cache.get(owner) ? client.users.cache.get(owner).tag + `(${client.users.cache.get(owner).id})` : owner}\`\`\``).setThumbnail(botuser.displayAvatarURL())]
                                         }).catch(e => {
+                                            console.log(e);
                                             message.channel.send({
                                                 content: `<@${user.id}> PLEASE SAVE THIS MESSAGE, YOUR DMS ARE DISABLED! (via aScreenshot for example)\n***IF YOU ARE HAVING PROBLEMS, or need a restart, or something else! THEN SEND US THIS INFORMATION!!!***\n> This includes: \`BotChanges\`, \`Restarts\`, \`Deletions\`, \`Adjustments & Upgrades\`\n> *This message is also a proof, that you are the original Owner of this BOT*`,
                                                 embeds: [new Discord.MessageEmbed().setColor(client.config.color).setDescription(`> **Path:**\n\`\`\`yml\n${destDir}\n\`\`\`\n> **Server:**\n\`\`\`yml\n${serverId}\n\`\`\`\n> **Command:**\n\`\`\`yml\npm2 list | grep "${filename}" --ignore-case\n\`\`\`\n> **Application Information:**\n\`\`\`yml\nLink: https://discord.com/developers/applications/${botid}\nName: ${botuser ? `${botuser.tag}\nIcon: ${botuser.displayAvatarURL()}` : `>>${filename}<<`}\nOriginalOwner: ${client.users.cache.get(owner) ? client.users.cache.get(owner).tag + `(${client.users.cache.get(owner).id})` : owner}\`\`\``).setThumbnail(botuser.displayAvatarURL())]
@@ -1337,13 +1338,13 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                                         }).catch(() => {})
                                     }).catch(() => {})
                                 } catch (e) {
-                                    console.log(e.stack ? String(e.stack).grey : String(e).grey)
+                                    console.log(`DM FALIURE `,e.stack ? String(e.stack).grey : String(e).grey)
                                 }
                                 message.channel.send({
                                     content: `<@${owner}> | **Created by: <@${message.author.id}> (\`${message.author.tag}\` | \`${message.author.id}\`)**`,
                                     embeds: [new Discord.MessageEmbed().setColor(client.config.color).addField("📯 Invite link: ", `> [Click here](https://discord.com/oauth2/authorize?client_id=${botuser.id}&scope=bot&permissions=8)`)
                                         .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#941439058629001246> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready 2 be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
-                                        .addField(`<:Like:934494916241948763> Rate us on TRUSTPILOT`, `> ***We would love it, if you could give us a __HONEST__ Rating on [Trustpilot](https://de.trustpilot.com/review/Nexuss.me)*** <3`)
+                                        .addField(`<:Like:934494916241948763> Rate us on TRUSTPILOT`, `> ***We would love it, if you could give us a __HONEST__ Rating on [Trustpilot](https://de.trustpilot.com/review/nexusx.me)*** <3`)
                                     ]
                                 })
                                 ch.send({
@@ -1471,7 +1472,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
 
                                     try {
                                         message.guild.members.fetch(owner).then(member => {
-                                            member.roles.add("937130001495646328").catch(() => {})
+                                            member.roles.add("964370138507931694").catch(() => {})
                                             if(member.roles.cache.has("964370138507931694")) {
                                                 member.roles.remove("964370138507931694").catch(() => {})
                                                 tempmsfg.embeds[0].fields[4].name = `<a:check:964989203656097803> Adding Finished Role & Removed recover Role`
@@ -1528,7 +1529,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                                         content: `<@${owner}> | **Created by: <@${message.author.id}> (\`${message.author.tag}\` | \`${message.author.id}\`)**`,
                                         embeds: [new Discord.MessageEmbed().setColor(client.config.color).addField("📯 Invite link: ", `> [Click here](https://discord.com/oauth2/authorize?client_id=${botuser.id}&scope=bot&permissions=8)`)
                                             .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#941439058629001246> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready 2 be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
-                                            .addField("Rate us on TRUSTPILOT", `> ***We would love it, if you could give us a __HONEST__ Rating on [Trustpilot](https://de.trustpilot.com/review/Nexuss.me)*** <3`)
+                                            .addField("Rate us on TRUSTPILOT", `> ***We would love it, if you could give us a __HONEST__ Rating on [Trustpilot](https://de.trustpilot.com/review/nexusx.me)*** <3`)
                                         ]
                                     })
                                     ch.send({
@@ -1574,13 +1575,6 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     console.log(e.stack ? String(e.stack).grey : String(e).grey)
                 }
 
-
-                ///////////////////////////////////////
-                ///////////////////////////////////////
-                ///////////////////////////////////////
-                ///////////////////////////////////////
-                ///////////////////////////////////////
-                ///////////////////////////////////////
             }
             //Event
             client.on('interactionCreate', async interaction => {
@@ -1671,7 +1665,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                             userid = client.setups.get(message.channel.id, "user");
                             client.setups.delete(message.channel.id);
                         }
-                        if (!userid && message.channel.parent && message.channel.parent.id == "938439935361433691")
+                        if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.TicketCategorys.AllBotTicketsCategory}`)
                             userid = client.setups.findKey(user => user.ticketid == message.channel.id)
                         if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.ApplyTickets.PartnerApply}`)
                             userid = client.setups.findKey(user => user.ticketid2 == message.channel.id)
@@ -1873,7 +1867,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
             let parent1 = message.guild.channels.cache.get(`${mainconfig.TicketCategorys.ModMailBotTicketsCategory}`);
             let parent2 = message.guild.channels.cache.get(`${mainconfig.TicketCategorys.ModMailBotTicketsCategory}`)
             let amount = parent1.children.size + parent2.children.size
-            if(amount < 1) return message.reply("No closed Tickets available");
+            if(amount < 1) return message.reply("⛔ **No closed Tickets available**");
             let verifybutton1 = new MessageButton().setStyle("DANGER").setLabel("Close").setCustomId("close").setEmoji("🔒")
             let verifybutton2 = new MessageButton().setStyle("SUCCESS").setLabel("Don't Close").setCustomId("dont_close").setEmoji("🔓")
             let allbuttons = [new MessageActionRow().addComponents([verifybutton1, verifybutton2])]
@@ -1994,7 +1988,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                             userid = client.setups.get(message.channel.id, "user");
                             client.setups.delete(message.channel.id);
                         }
-                        if (!userid && message.channel.parent && message.channel.parent.id == "938439935361433691")
+                        if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.TicketCategorys.AllBotTicketsCategory}`)
                             userid = client.setups.findKey(user => user.ticketid == message.channel.id)
                         if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.ApplyTickets.PartnerApply}`)
                             userid = client.setups.findKey(user => user.ticketid2 == message.channel.id)
@@ -2118,7 +2112,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                                                     client.setups.remove("TICKETS", user.id, "tickets2");
                                                 if (message.channel.parent && message.channel.parent.id == `${mainconfig.ApplyTickets.PartnerApply}`)
                                                     client.setups.remove("TICKETS", user.id, "tickets3");
-                                                if (message.channel.parent && message.channel.parent.id == "938439935361433691")
+                                                if (message.channel.parent && message.channel.parent.id == `${mainconfig.TicketCategorys.AllBotTicketsCategory}`)
                                                     client.setups.remove("TICKETS", user.id, "tickets4");
                                                 if (message.channel.parent && message.channel.parent.id == `${mainconfig.TicketCategorys.ModMailBotTicketsCategory}`)
                                                     client.setups.remove("TICKETS", user.id, "tickets5");
@@ -2241,13 +2235,13 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     timeout: 3500
                 }).catch(console.error)).catch(console.error);
             }
-            let parent1 = message.guild.channels.cache.get("964370141636878354");
+            let parent1 = message.guild.channels.cache.get(`${mainconfig.TicketCategorys.Permahost}`);
 
             let parentId = null;
             if(parent1 && parent1.type == "GUILD_CATEGORY" && parent1.children.size < 50) {
                 parentId = parent1.id;
             }
-            if(!parentId) return message.reply(":x: **There is no free space left, contact TOMATO!**")
+            if(!parentId) return message.reply(":x: **There is no free space left, contact NOTSAKSH!**")
             await message.channel.setParent(parentId).then(async () => {
                 var { name } = message.channel;
                 var emoji = "🔥";
@@ -2461,7 +2455,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
             let id = client.setups.get(message.channel.id, "user")
             
             message.delete().catch(()=>{});
-            message.channel.send(`***Hello <@${id}>!***\n\n> *Please answer until <t:${Math.floor((Date.now() + 8.64e7) / 1000)}:F>, then this Ticket will be closed automatically!*\n\n**Kind Regards,**\n> Nexuss Development`)
+            message.channel.send(`***Hello <@${id}>!***\n\n> *Please answer until <t:${Math.floor((Date.now() + 8.64e7) / 1000)}:F>, then this Ticket will be closed automatically!*\n\n**Kind Regards,**\n> nexusx Development`)
             client.setups.push("todelete", {
                 channel: message.channel.id,
                 timestamp: Date.now(),
@@ -2499,7 +2493,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                         new MessageButton().setStyle("DANGER").setLabel("Keep it open!").setCustomId("dontcloseticket").setEmoji('❌'),
                     ])
                 ],
-                content:`***Hello <@${id}>!***\n\n> *Our Task is done! If you want to close/don't close this Ticket, simply react to this message, otherwise it will automatically be closed at <t:${Math.floor((Date.now() + 12.96e7) / 1000)}:F> !*\n\n**Kind Regards,**\n> Nexuss Development`})
+                content:`***Hello <@${id}>!***\n\n> *Our Task is done! If you want to close/don't close this Ticket, simply react to this message, otherwise it will automatically be closed at <t:${Math.floor((Date.now() + 12.96e7) / 1000)}:F> !*\n\n**Kind Regards,**\n> nexusx Development`})
             client.setups.push("todelete", {
                 channel: message.channel.id,
                 timestamp: Date.now(),
@@ -2749,11 +2743,11 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     usernames,
                     passwords
                 } = client.config;
-                let theserver = servers["6"];
+                let theserver = servers[server];
                 
                 if(!theserver) return message.reply("❌ Could not find the Server");
-                let theusername = usernames["6"];
-                let thepassword = passwords["6"];
+                let theusername = usernames[server];
+                let thepassword = passwords[server];
                 let failed = false;
                 const conn = new Client();
                 
@@ -2832,7 +2826,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     usernames,
                     passwords
                 } = client.config;
-                let theserver = servers["6"];
+                let theserver = servers[server];
                 if(!theserver) return message.reply("❌ Could not find the Server");
                 let alldata = false;
                 const conn = new Client();
@@ -2887,8 +2881,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 }).connect({
                     host: theserver,
                     port: 22,
-                    username: usernames["6"],
-                    password: passwords["6"]
+                    username: usernames[server],
+                    password: passwords[server]
                 });
             } catch (e) {
                 console.log(e.stack ? String(e.stack).grey : String(e).grey)
@@ -2927,7 +2921,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     usernames,
                     passwords
                 } = client.config;
-                let theserver = servers["6"];
+                let theserver = servers[server];
                 if(!theserver) return message.reply("❌ Could not find the Server");
                 let alldata = false;
                 const conn = new Client();
@@ -2984,8 +2978,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 }).connect({
                     host: theserver,
                     port: 22,
-                    username: usernames["6"],
-                    password: passwords["6"]
+                    username: usernames[server],
+                    password: passwords[server]
                 });
             } catch (e) {
                 console.log(e.stack ? String(e.stack).grey : String(e).grey)
@@ -3017,7 +3011,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     usernames,
                     passwords
                 } = client.config;
-                let theserver = servers["6"];
+                let theserver = servers[server];
                 if(!theserver) return message.reply("❌ Could not find the Server");
                 let alldata = false;
                 const conn = new Client();
@@ -3074,8 +3068,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 }).connect({
                     host: theserver,
                     port: 22,
-                    username: usernames["6"],
-                    password: passwords["6"]
+                    username: usernames[server],
+                    password: passwords[server]
                 });
             } catch (e) {
                 console.log(e.stack ? String(e.stack).grey : String(e).grey)
@@ -3098,17 +3092,20 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     type: "Default"
                 })
                 let data = client.bots.get(user.id, "info");
+                // console.log(data)
                 if (!data || data.type == "Default") throw "E";
                 let server = data.toString().split("\n")[6].split(",")[0];
+                console.log(server);
                 let path = data.toString().split("\n")[2];
                 let BotFileName = path.split("/")[path.split("/").length - 1]
+                console.log(BotFileName)
                 let {
                     servers,
                     usernames,
                     passwords
                 } = client.config;
-                console.log(servers["6"])
-                let theserver = servers["6"];
+                // console.log(servers[server])
+                let theserver = servers[server];
                 if(!theserver) return message.reply("❌ Could not find the Server");
                 let alldata = false;
                 const conn = new Client();
@@ -3165,8 +3162,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 }).connect({
                     host: theserver,
                     port: 22,
-                    username: usernames["6"],
-                    password: passwords["6"]
+                    username: usernames[server],
+                    password: passwords[server]
                 });
             } catch (e) {
                 console.log(e.stack ? String(e.stack).grey : String(e).grey)
@@ -3198,7 +3195,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     usernames,
                     passwords
                 } = client.config;
-                let theserver = servers["6"];
+                let theserver = servers[server];
                 if(!theserver) return message.reply("❌ Could not find the Server");
                 let alldata = false;
                 const conn = new Client();
@@ -3255,8 +3252,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 }).connect({
                     host: theserver,
                     port: 22,
-                    username: usernames["6"],
-                    password: passwords["6"]
+                    username: usernames[server],
+                    password: passwords[server]
                 });
             } catch (e) {
                 console.log(e.stack ? String(e.stack).grey : String(e).grey)
@@ -3288,7 +3285,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     usernames,
                     passwords
                 } = client.config;
-                let theserver = servers["6"];
+                let theserver = servers[server];
                 if(!theserver) return message.reply("❌ Could not find the Server");
                 let alldata = false;
                 const conn = new Client();
@@ -3345,8 +3342,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 }).connect({
                     host: theserver,
                     port: 22,
-                    username: usernames["6"],
-                    password: passwords["6"]
+                    username: usernames[server],
+                    password: passwords[server]
                 });
             } catch (e) {
                 console.log(e.stack ? String(e.stack).grey : String(e).grey)
@@ -3362,7 +3359,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     passwords
                 } = client.config;
                 let server = args[0]
-                let theserver = servers["6"];
+                let theserver = servers[server];
                 if(!server) {
                     return message.reply("❌ Please provide which server to check!")
                 }
@@ -3482,7 +3479,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     passwords
                 } = client.config;
                 args.shift();
-                let theserver = servers["6"];
+                let theserver = servers[server];
                 if(!args[0]) {
                     return message.reply("❌ Please provide which server to migrate the bot to!")
                 }
@@ -3610,8 +3607,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 }).connect({
                     host: theserver,
                     port: 22,
-                    username: usernames["6"],
-                    password: passwords["6"]
+                    username: usernames[server],
+                    password: passwords[server]
                 });
                 //new Server
             } catch (e) {
@@ -3644,7 +3641,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     usernames,
                     passwords
                 } = client.config;
-                let theserver = servers["6"];
+                let theserver = servers[server];
                 if(!theserver) return message.reply("❌ Could not find the Server");
                 let alldata = false;
                 const conn = new Client();
@@ -3701,8 +3698,8 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 }).connect({
                     host: theserver,
                     port: 22,
-                    username: usernames["6"],
-                    password: passwords["6"]
+                    username: usernames[server],
+                    password: passwords[server]
                 });
             } catch (e) {
                 console.log(e.stack ? String(e.stack).grey : String(e).grey)
@@ -3731,7 +3728,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     .setColor(client.config.color)
                     .setAuthor(`${user.username}'s Bots`, user.displayAvatarURL({
                         dynamic: true
-                    }), "https://discord.gg/Nexuss")
+                    }), "https://discord.gg/nexusx")
                     .setDescription(bots.length > 0 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}> | [Invite](https://discord.com/oauth2/authorize?client_id=${bot}&scope=bot&permissions=8)`).join("\n") : "He has no Bots yet!")
                     .setTimestamp()
                 ]
@@ -3787,7 +3784,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 .setColor(client.config.color)
                 .setAuthor(`${user.username} owns this bot and: `, user.displayAvatarURL({
                     dynamic: true
-                }), "https://discord.gg/Nexuss")
+                }), "https://discord.gg/nexusx")
                 .setDescription(bots.length > 0 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}> | [Invite](https://discord.com/oauth2/authorize?client_id=${bot}&scope=bot&permissions=8)`).join("\n") : "He has no Bots yet!")
                 .setTimestamp().setFooter("ID: " + user.id, user.displayAvatarURL({
                     dynamic: true
@@ -3822,7 +3819,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     .setColor(client.config.color)
                     .setAuthor(`SUCCESS!`, user.displayAvatarURL({
                         dynamic: true
-                    }), "https://discord.gg/Nexuss")
+                    }), "https://discord.gg/nexusx")
                     .setDescription(`Added: <@${bot.id}> | [Invite](https://discord.com/oauth2/authorize?client_id=${bot.id}&scope=bot&permissions=8) to <@${user.id}>`)
                     .setTimestamp()
                 ]
@@ -3866,7 +3863,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     .setColor(client.config.color)
                     .setAuthor(`SUCCESS!`, user.displayAvatarURL({
                         dynamic: true
-                    }), "https://discord.gg/Nexuss")
+                    }), "https://discord.gg/nexusx")
                     .setDescription(`Changed: <@${bot.id}> | [Invite](https://discord.com/oauth2/authorize?client_id=${bot.id}&scope=bot&permissions=8) to <@${user.id}> ${olduser ? olduser.id != user.id ? `from <@${olduser.id}>` : "" : ""}`)
                     .setTimestamp()
                 ]
@@ -3894,7 +3891,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     .setColor(client.config.color)
                     .setAuthor(`SUCCESS!`, user.displayAvatarURL({
                         dynamic: true
-                    }), "https://discord.gg/Nexuss")
+                    }), "https://discord.gg/nexusx")
                     .setDescription(`Removed: <@${bot.id}> | [Invite](https://discord.com/oauth2/authorize?client_id=${bot.id}&scope=bot&permissions=8) from <@${user.id}>`)
                     .setTimestamp()
                 ]
@@ -3909,9 +3906,9 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 embeds: [
                     new Discord.MessageEmbed()
                     .setColor(client.config.color)
-                    .setAuthor("Nexuss | Free Bots Shop | How to Order", message.guild.iconURL({dynamic: true}), "https://discord.gg/Nexuss")
+                    .setAuthor("nexusx | Free Bots Shop | How to Order", message.guild.iconURL({dynamic: true}), "https://discord.gg/nexusx")
                     .setDescription(`1. Read throug the channel in <#840354600463761468>\n\n2. React to the message of <#840331856624615424> with the right Emojis\n\n3. Answer the Questions in the Ticket\n\n4. Wait a few Minutes :wink:`)
-                    .setFooter("Nexuss.me | Order Free Bots NOW", "https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
+                    .setFooter("nexusx.me | Order Free Bots NOW", "https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
                     .setThumbnail("https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
                 ]
             })
@@ -3920,9 +3917,9 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                 embeds: [
                     new Discord.MessageEmbed()
                     .setColor(client.config.color)
-                    .setAuthor("How to Change your Bot?", message.guild.iconURL({dynamic: true}), "https://discord.gg/Nexuss")
+                    .setAuthor("How to Change your Bot?", message.guild.iconURL({dynamic: true}), "https://discord.gg/nexusx")
                     .setDescription(`**There are several options:**\n> To change the Embed Design, you need to use the command\n> \`!setup-embed\`\n\n> To change the Avatar, Name, etc. you need to use the:\n> \`changename\`, \`changeavatar\`, \`changestatus\`, \`prefix\``)
-                    .setFooter("Nexuss.me | Order Free Bots NOW", "https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
+                    .setFooter("nexusx.me | Order Free Bots NOW", "https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
                     .setThumbnail("https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
                 ]
             })
@@ -3931,9 +3928,9 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     embeds: [
                         new Discord.MessageEmbed()
                         .setColor(client.config.color)
-                        .setAuthor("Nexuss | Free Bots Shop | How to Pay", message.guild.iconURL({dynamic: true}), "https://discord.gg/Nexuss")
+                        .setAuthor("nexusx | Free Bots Shop | How to Pay", message.guild.iconURL({dynamic: true}), "https://discord.gg/nexusx")
                         .setDescription(`1. Either go to [Bero-Host](https://bero-host.de/spenden/i8iywavcwmob) or to [Paypal](https://www.paypal.com/paypalme/simonNotSaksh).\n\n2. Enter the amount of money, which is required for your Bot.\n(**We only accept €**)\n\n3. Send a prove, that you paid in your ticket.\n\n4. Wait for **NotSaksh** to verify your payment.`)
-                        .setFooter("Nexuss.me | Order Free Bots NOW", "https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
+                        .setFooter("nexusx.me | Order Free Bots NOW", "https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
                         .setThumbnail("https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
                     ]
                 })
@@ -3945,7 +3942,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     .setColor(client.config.color)
                     .setTitle("To send a message there are several options!")
                     .setDescription(`All available Commands:\n\`embed\`, \`esay\`, \`say\`, \`imgembed\`, \`image\`\n\nYou always need to add Paramters, for example the embed: \`embed TITLE ++ DESCRIPTION\` it is important to add the "++"!\nthe esay: \`esay TEXT\`\n\n**You can also edit, copy and update messages with**\n\`editembed <ID>++<TITLE>++<DESCRIPTION>\`\n\`editimgembed <ID>++<TITLE>++<IMG-LINK>++<DESCRIPTION>\`\n\`updatemessage #chat <ID>\`\n\`copymessage #chat <ID>\`!`)
-                    .setFooter("Nexuss.me | Order Free Bots NOW", "https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
+                    .setFooter("nexusx.me | Order Free Bots NOW", "https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
                     .setThumbnail("https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
                 ]
             })
@@ -3962,7 +3959,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
             }).then(res => {
                 let embed = new Discord.MessageEmbed()
                     .setColor(client.config.color)
-                    .setAuthor(`Translated to: ${args[1]}`, "https://imgur.com/0DQuCgg.png", "https://discord.gg/Nexuss")
+                    .setAuthor(`Translated to: ${args[1]}`, "https://imgur.com/0DQuCgg.png", "https://discord.gg/nexusx")
                     .setFooter(`Translated from: ${args[0]}`, message.author.displayAvatarURL({
                         dynamic: true
                     }))
@@ -4137,9 +4134,9 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
                     content: `**To get more detail Information about our Bot(s) Type:**\n> \`,info <System / Music / Waitingroom / Admin / Rythm / Mod Mail>\``,
                     embeds: [
                         new Discord.MessageEmbed().setColor(client.config.color)
-                        .setTitle(`Nexuss Development | Get Free/Cheap Discord Bots for your needs!`)
+                        .setTitle(`nexusx Development | Get Free/Cheap Discord Bots for your needs!`)
                         .setDescription(`**If you want to Order a Bot go to <#840354600463761468>**\n> *In there you will find all needed Bot Informations!*\n\nYou can pay via \`Invites\` / \`Donation\`\n> We accept Paypal, Paysafe, Sofort Donations!\n> If you pay via **invites** Then your bot will be hosted for as long as your Invited Members stay in the Server!\n\nWe provide free 24/7 Uptime, and regular Updates as well as **PREMIUM INSTANT SUPPORT!**\n\nFor Help visit <#840332764603351101>\n\nIf you want to request a Feature / If you have an Idea, check out <#840881545086763039>\n\nIf you have to report a Bug, which is not for SELFHOSTING, visit <#853379230683365416>\n\n**Still not convinced?** Check out <#${mainconfig.FeedBackChannelID.toString()}>\nIf you want to get fast Information help, without making a Ticket DM <@889789099899244544>`)
-                        .setFooter(`Nexuss Development | Order Today! Order Cheap!`, message.guild.iconURL({
+                        .setFooter(`nexusx Development | Order Today! Order Cheap!`, message.guild.iconURL({
                             dynamic: true
                         }))
                     ]
@@ -4150,7 +4147,7 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
               const user = client.user
               message.reply({
                 embeds: [new Discord.MessageEmbed().setColor(client.config.color)
-                    .setFooter("Nexuss | Free Bots | ORDER NOW", message.guild.iconURL({dynamic: true}))
+                    .setFooter("nexusx | Free Bots | ORDER NOW", message.guild.iconURL({dynamic: true}))
                     .setThumbnail(message.guild.iconURL({dynamic: true}))
                     .setTitle("❌ Invalid Usage")
                     .addField("📯 Invite link: ", `> [Click here](https://discord.com/oauth2/authorize?client_id=${user.id}&scope=bot&permissions=8)\n`)                ]
@@ -4180,7 +4177,9 @@ If you want to buy a Bot from [Nexuss](https://Nexuss.me) and you checked the [p
          * DEVELOPER COMMAND
          */
         else if (cmd === "eval"){
-            if(message.author.id != `${mainconfig.OwnerInformation.OwnerID}`) return message.reply("**❌ Only NotSaksh Is allowed to execute this Command**");
+            //${mainconfig.OwnerInformation.OwnerID}
+            if(message.author.id !== `360693991110344717`) {return message.reply("**❌ Only NotSaksh Is allowed to execute this Command**");}
+
             const { inspect } = require(`util`);
             let evaled;
             try {

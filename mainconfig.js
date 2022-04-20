@@ -62,6 +62,7 @@ module.exports = {
    SystemBotOrderCategory: "964370140986736724",
    MusicBotOrderCategory: "964370141452312606",
    WaitingBotOrderCategory: "964370141452312609",
+   Permahost: "964370141636878354",
    AllBotTicketsCategory: "964370140986736725",
    ModMailBotTicketsCategory: "964370141452312613",
    CustomBotsTicketCategory: "964370141636878352",
