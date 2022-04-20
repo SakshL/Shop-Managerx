@@ -4,19 +4,19 @@
     "color": "#6861fe",
     "pastebinapi": "sdsd",
     "secret": "RCiFAz2b0sSu1fGYtwIY_e3MRwR_5r_8", 
-    "callback": "localhost:6969", 
+    "callback": "https://dash.nexusx.dev/callback", 
 
     "paypal": {
         "clientId": "AUv5QHdR6T69UrZdHrvWfcCIian0IQebwfN188wPkd4u1XLN5Napq7kMZFf1skIKnaLHBz2AgwEZePNy",
         "clientSecret": "EAyDFfh7_nIsP6ncDVT55YfeITo0E5izmwGTbnyLXiCDNRbJ1CjHnynL_4bUsVzI98fVJcJUqeyvRQb1"
     },
     "servers": {
-        "6": "109.71.253.6"
+        "1": "109.71.253.6"
     },
     "passwords": {
-        "6": "NotUnknown@6969"
+        "1": "NotUnknownIsCool"
     },
     "usernames": {
-        "6": "root"
+        "1": "root"
     }
 }
