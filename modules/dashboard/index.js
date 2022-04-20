@@ -120,8 +120,8 @@ module.exports = client => {
                 }
             }
             if (!member) return res.redirect("/?error=true&message=" + encodeURIComponent("I don't have any Data of you, try asking NotSaksh about it."));
-            if (member && !member.permissions.has("ADMINISTRATOR") && !member.roles.cache.has("935689526586790028") && !member.roles.cache.has("935689219458863214") && !member.roles.cache.has("936782688495497226") && !member.roles.cache.has("936392972952543282"))
-                return res.redirect("/?error=true&message=" + encodeURIComponent("This site is not meant for you! :)"));
+            if (member && !member.permissions.has("ADMINISTRATOR") && !member.roles.cache.has("935689526586790028") && !member.roles.cache.has(`${mainconfig.SeverRoles.BotCreatorRoleId}`) && !member.roles.cache.has("936782688495497226") && !member.roles.cache.has("936392972952543282"))
+                return res.redirect("/?error=true&message=" + encodeURIComponent("You Are Not Allowed To Manage."));
             res.render("staff", {
                 req: req,
                 user: req.isAuthenticated() ? req.user : null,
@@ -143,9 +143,9 @@ module.exports = client => {
                     console.error(`Couldn't fetch ${req.user.id} in ${milratoGuild.name}: ${err}`);
                 }
             }
-            if (!member) return res.redirect("/?error=true&message=" + encodeURIComponent("I don't have any Data of you, try asking Saksh about it."));
-            if (member && !member.permissions.has("ADMINISTRATOR") && !member.roles.cache.has("935689526586790028") && !member.roles.cache.has("935689219458863214") && !member.roles.cache.has("936782688495497226") && !member.roles.cache.has("936392972952543282"))
-                return res.redirect("/?error=true&message=" + encodeURIComponent("This site is not meant for you! :)"));
+            if (!member) return res.redirect("/?error=true&message=" + encodeURIComponent("No Information Found. Please Contact The Owner"));
+            if (member && !member.permissions.has("ADMINISTRATOR") && !member.roles.cache.has(`${mainconfig.SeverRoles.NewSupporterRoleId}`) && !member.roles.cache.has(`${mainconfig.SeverRoles.BotCreatorRoleId}`) && !member.roles.cache.has(`${mainconfig.SeverRoles.ChiefBotCreatorRoleId}`) && !member.roles.cache.has(`${mainconfig.SeverRoles.ModRoleId}`))
+                return res.redirect("/?error=true&message=" + encodeURIComponent("You Are Not Allowed To Manage."));
             res.render("profile", {
                 req: req,
                 user: req.isAuthenticated() ? req.user : null,
@@ -168,11 +168,11 @@ module.exports = client => {
                     console.error(`Couldn't fetch ${req.user.id} in ${milratoGuild.name}: ${err}`);
                 }
             }
-            if (!member) return res.redirect("/?error=true&message=" + encodeURIComponent("I don't have any Data of you, try asking Saksh about it."));
-            if (client.createingbotmap.has("Creating")) return res.redirect("/?error=true&message=" + encodeURIComponent("Someone else is alread creating a Bot"));
-            if (client.getStats) return res.redirect("/?error=true&message=" + encodeURIComponent("I'm starting right now, Please wait until i fetched the least Used node!"));
-            if (!member.permissions.has("ADMINISTRATOR") && !member.roles.cache.has("935689219458863214") && !member.roles.cache.has("964370138570842160") && !member.roles.cache.has("831972877480755251"))
-                return res.redirect("/?error=true&message=" + encodeURIComponent("This site is not meant for you! :)"));
+            if (!member) return res.redirect("/?error=true&message=" + encodeURIComponent("No Information Found. Please Contact The Owner"));
+            if (client.createingbotmap.has("Creating")) return res.redirect("/?error=true&message=" + encodeURIComponent("Someone Else Is Creating a BOT, Please Wait"));
+            if (client.getStats) return res.redirect("/?error=true&message=" + encodeURIComponent("I'm Starting Right Now, Please Wait Until I Fetched The Last Used Node!"));
+            if (!member.permissions.has("ADMINISTRATOR") && !member.roles.cache.has(`${mainconfig.SeverRoles.BotCreatorRoleId}`) && !member.roles.cache.has("964370138570842160") && !member.roles.cache.has("831972877480755251"))
+                return res.redirect("/?error=true&message=" + encodeURIComponent("You Are Not Allowed To Manage."));
             res.render("createbot", {
                 req: req,
                 user: req.isAuthenticated() ? req.user : null,
@@ -194,7 +194,7 @@ module.exports = client => {
                 }
                 await delay(750);
                 if (!member) return res.redirect("/createbot?error=true&message=" + encodeURIComponent("Can't Information Data about you!"));
-                if (!member.permissions.has("ADMINISTRATOR") && !member.roles.cache.has("935689219458863214") && !member.roles.cache.has("964370138570842160") && !member.roles.cache.has("831972877480755251"))
+                if (!member.permissions.has("ADMINISTRATOR") && !member.roles.cache.has(`${mainconfig.SeverRoles.BotCreatorRoleId}`) && !member.roles.cache.has("964370138570842160") && !member.roles.cache.has("831972877480755251"))
                     return res.redirect("/createbot?error=true&message=" + encodeURIComponent("You are not allowed to do that!"));
                 let { bottype, channel, prefix, status, statustype, token, owner, avatar, footertext, color, filename, botid } = req.body;
                 if (!channel)
