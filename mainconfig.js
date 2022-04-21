@@ -41,12 +41,6 @@ module.exports = {
    OwnerID: ["921430546813419550"],
    NotSakshTicket: "964528353531011173"
   },
- 
-  Directory: {
-    SystemBot: "921430546813419550",
-    MusicBot: "964528353531011173"
-   },
-
 
   OrdersChannelID: {
    RecoverChannelId: "964370139808141370",
