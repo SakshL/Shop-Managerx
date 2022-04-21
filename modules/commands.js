@@ -567,7 +567,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                                 components: [new MessageActionRow().addComponents([button_close, button_delete])],
                                 embeds: [new Discord.MessageEmbed().setColor("#ED4245").setTitle("Are you sure you want to use that as the Answer for the Parameter-Question?")
                                     .setDescription(`**Your Answer:**\n>>> \`\`\`${result.substr(0, 2000)}\`\`\``)
-                                    .setFooter("Please react within 60 Seconds", ch.displayAvatarURL({
+                                    .setFooter("Please Answer within 60 Seconds", ch.displayAvatarURL({
                                         dynamic: true
                                     }))
                                 ]
@@ -652,9 +652,9 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                             let index = Questions.findIndex(v => v.toLowerCase() == Question.toLowerCase())
                             let sendData = {
                                 content: `<@${ch.id}>`,
-                                embeds: [new Discord.MessageEmbed().setColor("#6861fe").setTitle(`**Here is my ${index + 1}. Parameter-Question!**`)
+                                embeds: [new Discord.MessageEmbed().setColor("#6861fe").setTitle(`**Here Is my ${index + 1}. Parameter-Question!**`)
                                     .setDescription(`**\`\`\`bash\n${Question}\`\`\`**\n\n> *You have 3 Minutes to answer this Parameter-Question, if you don't then your Bot Creation will get cancelled!*`)
-                                    .setFooter(`Please answer it carefully! | Question: ${index + 1} / ${Questions.length}`, ch.displayAvatarURL({
+                                    .setFooter(`Please Answer it carefully! | Question: ${index + 1} / ${Questions.length}`, ch.displayAvatarURL({
                                         dynamic: true
                                     }))
                                 ]
@@ -1334,7 +1334,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                                         user.send({
                                             content: `<@${owner}> | **Created by: <@${member.id}> (\`${member.user.tag}\` | \`${member.id}\`)**`,
                                             embeds: [new Discord.MessageEmbed().setColor(client.config.color).addField("📯 Invite link: ", `> [Click here](https://discord.com/oauth2/authorize?client_id=${botuser.id}&scope=bot&permissions=8)`)
-                                                .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#941439058629001246> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready to be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
+                                                .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#${mainconfig.DonationChannelID.toString()}> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready to be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
                                             ]
                                         }).catch(console.error);
                                     }).catch(() => { });
@@ -1344,7 +1344,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                                 message.channel.send({
                                     content: `<@${owner}> | **Created by: <@${message.author.id}> (\`${message.author.tag}\` | \`${message.author.id}\`)**`,
                                     embeds: [new Discord.MessageEmbed().setColor(client.config.color).addField("📯 Invite link: ", `> [Click here](https://discord.com/oauth2/authorize?client_id=${botuser.id}&scope=bot&permissions=8)`)
-                                        .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#941439058629001246> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready 2 be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
+                                        .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#${mainconfig.DonationChannelID.toString()}> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready 2 be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
                                         .addField(`<:Like:934494916241948763> Rate us on TRUSTPILOT`, `> ***We would love it, if you could give us a __HONEST__ Rating on [Trustpilot](https://de.trustpilot.com/review/nexusx.me)*** <3`)
                                     ]
                                 })
@@ -1519,7 +1519,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                                             user.send({
                                                 content: `<@${owner}> | **Created by: <@${message.author.id}> (\`${message.author.tag}\` | \`${message.author.id}\`)**`,
                                                 embeds: [new Discord.MessageEmbed().setColor(client.config.color).addField("📯 Invite link: ", `> [Click here](https://discord.com/oauth2/authorize?client_id=${botuser.id}&scope=bot&permissions=8)`)
-                                                    .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#941439058629001246> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready 2 be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
+                                                    .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#${mainconfig.DonationChannelID.toString()}> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready 2 be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
                                                 ]
                                             }).catch(() => {})
                                         }).catch(() => {})
@@ -1529,7 +1529,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                                     message.channel.send({
                                         content: `<@${owner}> | **Created by: <@${message.author.id}> (\`${message.author.tag}\` | \`${message.author.id}\`)**`,
                                         embeds: [new Discord.MessageEmbed().setColor(client.config.color).addField("📯 Invite link: ", `> [Click here](https://discord.com/oauth2/authorize?client_id=${botuser.id}&scope=bot&permissions=8)`)
-                                            .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#941439058629001246> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready 2 be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
+                                            .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#${mainconfig.DonationChannelID.toString()}> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready 2 be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
                                             .addField("Rate us on TRUSTPILOT", `> ***We would love it, if you could give us a __HONEST__ Rating on [Trustpilot](https://de.trustpilot.com/review/nexusx.me)*** <3`)
                                         ]
                                     })
@@ -4185,7 +4185,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
          */
         else if (cmd === "eval"){
             //${mainconfig.OwnerInformation.OwnerID}
-            if(message.author.id !== `360693991110344717`) {return message.reply("**❌ Only NotSaksh Is allowed to execute this Command**");}
+            if(message.author.id !== `966411522106605608`) {return message.reply("**❌ Only NotSaksh Is allowed to execute this Command**");}
 
             const { inspect } = require(`util`);
             let evaled;

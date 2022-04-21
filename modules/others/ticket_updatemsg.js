@@ -4,11 +4,11 @@ const emoji = require("../../emoji")
 module.exports = client => {
 
   var job3 = new CronJob('0 */15 * * * *', function () {
-    client.channels.fetch("964370140013658145").then(ch => {
-      ch.messages.fetch("881566678989828126").then(async msg => {
+    client.channels.fetch(`${mainconfig.OrdersChannelID.TicketChannelID}`).then(ch => {
+      ch.messages.fetch(`${mainconfig.OrdersChannelID.TicketMessageID}`).then(async msg => {
         let allmembers = await msg.guild.members.fetch();
         let onlinesupporters = [
-          ...allmembers.filter(m => !m.user.bot && m.roles.highest.rawPosition >= msg.guild.roles.cache.get("935689419757854780").rawPosition)
+          ...allmembers.filter(m => !m.user.bot && m.roles.highest.rawPosition >= msg.guild.roles.cache.get(`${mainconfig.SeverRoles.NewSupporterRoleId}`).rawPosition)
           .filter(m => m.presence)
           .values()
         ]
@@ -40,7 +40,7 @@ module.exports = client => {
         ch.messages.fetch("881566678922698802").then(async msg => {
           let allmembers = await msg.guild.members.fetch();
           let onlinesupporters = [
-            ...allmembers.filter(m => !m.user.bot && m.roles.highest.rawPosition >= msg.guild.roles.cache.get("935689419757854780").rawPosition)
+            ...allmembers.filter(m => !m.user.bot && m.roles.highest.rawPosition >= msg.guild.roles.cache.get(`${mainconfig.SeverRoles.NewSupporterRoleId}`).rawPosition)
             .filter(m => m.presence)
             .values()
           ]

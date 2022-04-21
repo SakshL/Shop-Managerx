@@ -171,7 +171,7 @@ module.exports = client => {
             if (!member) return res.redirect("/?error=true&message=" + encodeURIComponent("No Information Found. Please Contact The Owner"));
             if (client.createingbotmap.has("Creating")) return res.redirect("/?error=true&message=" + encodeURIComponent("Someone Else Is Creating a BOT, Please Wait"));
             if (client.getStats) return res.redirect("/?error=true&message=" + encodeURIComponent("I'm Starting Right Now, Please Wait Until I Fetched The Last Used Node!"));
-            if (!member.permissions.has("ADMINISTRATOR") && !member.roles.cache.has(`${mainconfig.SeverRoles.BotCreatorRoleId}`) && !member.roles.cache.has("964370138570842160") && !member.roles.cache.has("831972877480755251"))
+            if (!member.permissions.has("ADMINISTRATOR") && !member.roles.cache.has(`${mainconfig.SeverRoles.BotCreatorRoleId}`) && !member.roles.cache.has(`${mainconfig.SeverRoles.FounderId}`) && !member.roles.cache.has(`${mainconfig.SeverRoles.ChiefBotCreatorRoleId}`))
                 return res.redirect("/?error=true&message=" + encodeURIComponent("You Are Not Allowed To Manage."));
             res.render("createbot", {
                 req: req,
@@ -194,7 +194,7 @@ module.exports = client => {
                 }
                 await delay(750);
                 if (!member) return res.redirect("/createbot?error=true&message=" + encodeURIComponent("Can't Information Data about you!"));
-                if (!member.permissions.has("ADMINISTRATOR") && !member.roles.cache.has(`${mainconfig.SeverRoles.BotCreatorRoleId}`) && !member.roles.cache.has("964370138570842160") && !member.roles.cache.has("831972877480755251"))
+                if (!member.permissions.has("ADMINISTRATOR") && !member.roles.cache.has(`${mainconfig.SeverRoles.BotCreatorRoleId}`) && !member.roles.cache.has(`${mainconfig.SeverRoles.FounderId}`) && !member.roles.cache.has(`${mainconfig.SeverRoles.ChiefBotCreatorRoleId}`))
                     return res.redirect("/createbot?error=true&message=" + encodeURIComponent("You are not allowed to do that!"));
                 let { bottype, channel, prefix, status, statustype, token, owner, avatar, footertext, color, filename, botid } = req.body;
                 if (!channel)
@@ -479,7 +479,7 @@ module.exports = client => {
                         user.send({
                             content: `<@${owner}> | **Created by: <@${member.id}> (\`${member.user.tag}\` | \`${member.id}\`)**`,
                             embeds: [new Discord.MessageEmbed().setColor(client.config.color).addField("📯 Invite link: ", `> [Click here](https://discord.com/oauth2/authorize?client_id=${botuser.id}&scope=bot&permissions=8)`)
-                                .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#941439058629001246> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready to be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
+                                .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#${mainconfig.DonationChannelID.toString()}> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready to be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
                             ]
                         }).catch(console.error);
                     }).catch(() => { });
@@ -489,7 +489,7 @@ module.exports = client => {
                 ticketChannel.send({
                     content: `<@${owner}> | **Created by: <@${member.id}> (\`${member.user.tag}\` | \`${member.id}\`)**`,
                     embeds: [new Discord.MessageEmbed().setColor(client.config.color).addField("📯 Invite link: ", `> [Click here](https://discord.com/oauth2/authorize?client_id=${botuser.id}&scope=bot&permissions=8)`)
-                        .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#941439058629001246> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready to be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
+                        .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#${mainconfig.DonationChannelID.toString()}> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready to be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
                         .addField("<:like:938142052087124008> Rate us on TRUSTPILOT", `> ***We would love it, if you could give us a __HONEST__ Rating on [Trustpilot](https://de.trustpilot.com/review/nexusx.me)*** <3`)
                     ]
                 }).catch(() => { });
@@ -593,7 +593,7 @@ module.exports = client => {
                                 user.send({
                                     content: `<@${owner}> | **Created by: <@${member.id}> (\`${member.user.tag}\` | \`${member.id}\`)**`,
                                     embeds: [new Discord.MessageEmbed().setColor(client.config.color).addField("📯 Invite link: ", `> [Click here](https://discord.com/oauth2/authorize?client_id=${botuser.id}&scope=bot&permissions=8)`)
-                                        .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#941439058629001246> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready 2 be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
+                                        .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#${mainconfig.DonationChannelID.toString()}> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready 2 be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
                                     ]
                                 }).catch(() => {});
                             }).catch(() => {});
@@ -603,7 +603,7 @@ module.exports = client => {
                         ticketChannel.send({
                             content: `<@${owner}> | **Created by: <@${member.id}> (\`${member.user.tag}\` | \`${member.id}\`)**`,
                             embeds: [new Discord.MessageEmbed().setColor(client.config.color).addField("📯 Invite link: ", `> [Click here](https://discord.com/oauth2/authorize?client_id=${botuser.id}&scope=bot&permissions=8)`)
-                                .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#941439058629001246> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready 2 be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
+                                .addField("💛 Support us", `> **Please give us <#${mainconfig.FeedBackChannelID.toString()}> and stop at <#${mainconfig.DonationChannelID.toString()}> so that we can continue hosting Bots!**`).setTitle(`\`${botuser.tag}\` is online and ready 2 be used!`).setDescription(`<@${botuser.id}> is a **${BotType}** and got added to: <@${owner}> Wallet!\nTo get started Type: \`${prefix}help\``).setThumbnail(botuser.displayAvatarURL())
                                 .addField("Rate us on TRUSTPILOT", `> ***We would love it, if you could give us a __HONEST__ Rating on [Trustpilot](https://de.trustpilot.com/review/nexusx.me)*** <3`)
                             ]
                         }).catch(() => {});

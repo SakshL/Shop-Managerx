@@ -1,22 +1,23 @@
 const express = require('express');
 const paypal = require('paypal-rest-sdk');
 const config = require("../../config.json")
+const mainconfig = require("../../mainconfig.js")
 const fs = require(`fs`);
 const path = require("path")
 module.exports = client => {
     var webConfig = {
-        httpPort: 80,
+        httpPort: 8000,
         https: {
             enabled: true,
             Port: 443,
-            key: "/etc/letsencrypt/live/pay.nexusx.me/privkey.pem",
-            cert: "/etc/letsencrypt/live/pay.nexusx.me/fullchain.pem",
-            chain: "/etc/letsencrypt/live/pay.nexusx.me/chain.pem",
+            key: "/etc/letsencrypt/live/pay.nexusx.dev/privkey.pem",
+            cert: "/etc/letsencrypt/live/pay.nexusx.dev/fullchain.pem",
+            chain: "/etc/letsencrypt/live/pay.nexusx.dev/chain.pem",
         },
-        domain: `https://pay.nexusx.me`,
-        guildId: `964370138356916295`,
-        logChannelId: `876417014074339368`,
-        AdminlogChannelId: `877178666046599200`,
+        domain: `https://pay.nexusx.dev`,
+        guildId: `${mainconfig.ServerID}`,
+        logChannelId: `${mainconfig.LoggingChannelID.FinancesLogChannelID}`,
+        AdminlogChannelId: `${mainconfig.LoggingChannelID.FinancesLogChannelID}`,
     }
     client.on("ready", async() => {
         console.log("STARTING THE PAYPAL WEBSITE");

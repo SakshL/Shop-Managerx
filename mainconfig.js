@@ -13,8 +13,10 @@ module.exports = {
   OwnerTicket: "964528353531011173",
   FeedBackChannelID: "964370139808141367",
   AutoDeleteChannelID: "964370140189831244",
+  DonationChannelID: "966400824987222056",
  
   LoggingChannelID: {
+   FinancesLogChannelID: "964370139225145489",
    PaymentLogChannelID: "964370139225145488",
    TicketLogChannelID: "964370139225145486",
    BotManagementChannelID: "964370139225145487"
@@ -50,7 +52,8 @@ module.exports = {
    RecoverChannelId: "964370139808141370",
    TicketChannelID: "964370139808141365",
    FeaturesChannelID: "964370139808141367",
-   OrderChannelID: "964370139808141365"
+   OrderChannelID: "964370139808141365",
+   TicketMessageID: "966759789738754130"
   },
  
   ApplyTickets: {

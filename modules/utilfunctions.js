@@ -38,7 +38,7 @@ function isValidTicket(channel) {
 }
 //get a bot search
 function GetBot(message, arg) {
-    var errormessage = `<:no:933239221836206131> I failed finding that Bot...`;
+    var errormessage = `<:no:933239221836206131> I Failed Finding That Bot...`;
     return new Promise(async (resolve, reject) => {
         var args = arg,
             client = message.client;
@@ -49,7 +49,7 @@ function GetBot(message, arg) {
             user = await client.users.fetch(args[0])
             if (!user) return reject(errormessage)
             if (user.bot) return resolve(user);
-            return reject(`<:no:933239221836206131> USER IS NOT A BOT...`)
+            return reject(`<:no:933239221836206131> **User Is Not A Discord Bot**...`)
         } else if (!user && args[0]) {
             let alluser = await message.guild.members.fetch()
             alluser = [...alluser.values()].filter(member => member.user.bot == true).map(member => String(member.user.tag).toLowerCase())
@@ -65,11 +65,11 @@ function GetBot(message, arg) {
             user = await client.users.fetch(user.user.id)
             if (!user) return reject(errormessage)
             if (user.bot) return resolve(user);
-            return reject(`<:no:933239221836206131> USER IS NOT A BOT...`)
+            return reject(`<:no:933239221836206131> **User Is Not A Discord Bot**...`)
         } else {
             user = message.mentions.users.first() || message.author;
             if (user.bot) return resolve(user);
-            return reject(`<:no:933239221836206131> USER IS NOT A BOT...`)
+            return reject(`<:no:933239221836206131> **User Is Not A Discord Bot**...`)
         }
     })
 }

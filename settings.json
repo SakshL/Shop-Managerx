@@ -43,32 +43,79 @@
     ],
     "ordersystem": [    
         {
-            "value": "System Bot",
-            "description": "6 Invites ・ 1€/30 Days ・ 4€/Year",
-            "emoji": "🤖",
-            "type": "SYSTEMBOTS"
+            "value": "Clan Bot",
+            "description": "10 Invites ・ 3€ / Year ・ 6€ Lifetime",
+            "emoji": "832697296687726654",
+            "type": "CLANBOT"
+        },
+        {
+            "value": "24/7 Music Bot",
+            "description": "9 Invites ・ 3€ / Year ・ 6€ Lifetime",
+            "emoji": "🎵",
+            "type": "24_7_MUSIC_BOT"
         },
         {
             "value": "Music Bot",
-            "description": "7 Invites ・ 1€/60 Days ・ 3€/Year",
-            "emoji": "🎵",
-            "type": "MusicBots"
+            "description": "7 Invites ・ 2€ / Year ・ 5€ Lifetime",
+            "emoji": "867718814325669888",
+            "type": "MUSICBOT"
         },
-
+        {
+            "value": "Lava Music Bot",
+            "description": "7 Invites ・ 2€ / Year ・ 5€ Lifetime",
+            "emoji": "867718814279139369",
+            "type": "LAVAMUSICBOT"
+        },
+        {
+            "value": "Rythm Clone",
+            "description": "7 Invites ・ 2€ / Year ・ 5€ Lifetime",
+            "emoji": "840354002747260960",
+            "type": "RYTHMCLONE"
+        },
         {
             "value": "Waitingroom Bot",
-            "description": "3 Invites ・ 1€/100 Days ・ 2€/Year",
-            "emoji": "🕓",
+            "description": "6 Invites ・ 2€ / Year ・ 5€ Lifetime",
+            "emoji": "867718814015684618",
             "type": "WAITINGROOMBOT"
         },
-
+        {
+            "value": "Administration Bot",
+            "description": "5 Invites ・ 2€ / Year ・ 5€ Lifetime",
+            "emoji": "🚫",
+            "type": "ADMINISTRATIONBOT"
+        },
+        {
+            "value": "Security Bot",
+            "description": "4 Invites ・ 2€ / Year ・ 5€ Lifetime",
+            "emoji": "🚨",
+            "type": "SECURITYBOT"
+        },
         {
             "value": "Mod Mail Bot",
-            "description": "3 Invites ・ 1€/100 Days ・ 2€/Year",
-            "emoji": "📨",
+            "description": "3 Invites ・ 1.5€ / Year ・ 4€ Lifetime",
+            "emoji": "890251890414215168",
             "type": "MODMAILBOT"
+        },
+        {
+            "value": "FUN & NSFW Bot",
+            "description": "3 Invites ・ 1.5€ / Year ・ 4€ Lifetime",
+            "emoji": "🕹️",
+            "type": "NSFW_AND_FUN_BOT"
+        },
+        {
+            "value": "Order a custom Bot",
+            "description": "Order a payed custom Bot with Source Code!",
+            "emoji": "858405056238714930",
+            "type": "CUSTOMBOT"
+        },
+        {
+            "value": "Buy a Source Code",
+            "description": "Order a Source Code of our Public Bots!",
+            "emoji": "867718814346379294",
+            "type": "SOURCECODE"
         }
     ],
+    
     "createbot": [
         {
             "value": "System Bot",

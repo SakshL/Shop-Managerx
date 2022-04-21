@@ -56,7 +56,7 @@ member.send({embeds: [new Discord.MessageEmbed()
 .setFooter(member.guild.name, member.guild.iconURL({dynamic:true}))
 
 .setDescription(`
-Welcome ${member.user} to <:Discord:933238543973773383>  [nexusx Development](https://nexusx.me)<:Discord:933238543973773383>!
+Welcome ${member.user} to <:Discord:933238543973773383>  [Nexusx Development](https://nexusx.me)<:Discord:933238543973773383>!
 
 > We are very happy to see you here!
 

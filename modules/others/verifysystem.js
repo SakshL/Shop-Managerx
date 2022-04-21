@@ -31,11 +31,11 @@ module.exports = async (client) => {
                 content: "**First Question:**\n> What is the __Keyword__ inside of the RULES?",
                 components: [
                     new MessageActionRow().addComponents([
-                        new MessageButton().setLabel("Key2022Milrato").setStyle("SECONDARY").setCustomId("Key2022Milrato"),
-                        new MessageButton().setLabel("KeyMilrato2022").setStyle("SECONDARY").setCustomId("KeyMilrato2022"),
-                        new MessageButton().setLabel("KeyMilrato2021").setStyle("SECONDARY").setCustomId("KeyMilrato2021"),
-                        new MessageButton().setLabel("Key2021Milrato").setStyle("SECONDARY").setCustomId("Key2021Milrato"),
-                        new MessageButton().setLabel("KeyOfMilrato").setStyle("SECONDARY").setCustomId("KeyOfMilrato"),
+                        new MessageButton().setLabel("Key2022Nexusx").setStyle("SECONDARY").setCustomId("Key2022Nexusx"),
+                        new MessageButton().setLabel("KeyNexusx2022").setStyle("SECONDARY").setCustomId("KeyNexusx2022"),
+                        new MessageButton().setLabel("KeyNexusx2021").setStyle("SECONDARY").setCustomId("KeyNexusx2021"),
+                        new MessageButton().setLabel("Key2021Nexusx").setStyle("SECONDARY").setCustomId("Key2021Nexusx"),
+                        new MessageButton().setLabel("KeyOfNexusx").setStyle("SECONDARY").setCustomId("KeyOfNexusx"),
                     ]),
                     new MessageActionRow().addComponents([
                         new MessageButton().setLabel("Cancel Verification").setStyle("DANGER").setCustomId("Cancel_Verify")
@@ -78,7 +78,7 @@ module.exports = async (client) => {
         }
         
         if(channel.id == rulesChannel && interaction?.customId.startsWith("Key")) {
-            if(interaction?.customId == "Key2022Milrato") {
+            if(interaction?.customId == "Key2022Nexusx") {
                 interaction?.update({
                     ephemeral: true,
                     content: "**SECOND Question:**\n> Am I allowed to ping People?",
@@ -101,11 +101,11 @@ module.exports = async (client) => {
                     content: ":x: **WRONG KEYWORD**\n> Verification Cancelled, Make sure to Read the RULES AGAIN!\n> Tipp: ||Check my very first message!||",
                     components: [
                         new MessageActionRow().addComponents([
-                            new MessageButton().setLabel("Key2021Milrato").setStyle("DANGER").setCustomId("Key2021Milrato").setDisabled(),
-                            new MessageButton().setLabel("KeyMilrato2022").setStyle("DANGER").setCustomId("KeyMilrato2022").setDisabled(),
-                            new MessageButton().setLabel("KeyMilrato2021").setStyle("DANGER").setCustomId("KeyMilrato2021").setDisabled(),
-                            new MessageButton().setLabel("Key2022Milrato").setStyle("SUCCESS").setCustomId("Key2022Milrato").setDisabled(),
-                            new MessageButton().setLabel("KeyOfMilrato").setStyle("DANGER").setCustomId("KeyOfMilrato").setDisabled(),
+                            new MessageButton().setLabel("Key2021Nexusx").setStyle("DANGER").setCustomId("Key2021Nexusx").setDisabled(),
+                            new MessageButton().setLabel("KeyNexusx2022").setStyle("DANGER").setCustomId("KeyNexusx2022").setDisabled(),
+                            new MessageButton().setLabel("KeyNexusx2021").setStyle("DANGER").setCustomId("KeyNexusx2021").setDisabled(),
+                            new MessageButton().setLabel("Key2022Nexusx").setStyle("SUCCESS").setCustomId("Key2022Nexusx").setDisabled(),
+                            new MessageButton().setLabel("KeyOfNexusx").setStyle("DANGER").setCustomId("KeyOfNexusx").setDisabled(),
                         ])
                     ]
                 }).catch(() => {});
