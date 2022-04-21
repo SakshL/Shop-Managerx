@@ -25,7 +25,7 @@ cp.exec(`rm ${process.cwd()}/toupdate/* -rf`, { maxBuffer: 1024 * 500 * 1024 }, 
                 console.log(files, `\nStarting with the 1. / ${files.length} Files: ${files[0]} in:\n NOW!`);
             }
         }
-        //copy paste into each new folder with overwrite but without deletion + a secure copy which means to try again for any "mistakes"
+        
         for (const file of files) {;
             const destDir = `${process.cwd()}/'${file}'/`;
             if (!fs.lstatSync(`./${file}`).isDirectory()) { console.log(destDir + " | Not a Folder, continue"); continue; }
