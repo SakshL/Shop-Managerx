@@ -25,6 +25,7 @@ client.on("warn", e => console.log(e.stack ? String(e.stack).grey : String(e).gr
 client.on("debug", e => console.log(e.stack ? String(e.stack).grey : String(e).grey))
 client.on("rateLimit", e => console.log(JSON.stringify(e).grey))
 //DEFINE THE CONFIGURATION FILE
+const mainconfig = require("./mainconfig.js");
 client.config = require("./config.json");
 //Define some global collections
 client.createingbotmap = new Discord.Collection();
@@ -79,19 +80,19 @@ client.on("ready", () => {
             console.log(" [Status Update] :: ".bgCyan.red + String(counter).bgCyan.brightRed)
             switch(counter){
                 case 0: {
-                    try{client.user.setActivity(`https://nexusx.dev/`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`${mainconfig.BotSettings.StatusOne}`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter++;
                 }break;
                 case 1: {
-                    try{client.user.setActivity(`Best Bots`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`${mainconfig.BotSettings.StatusTwo}`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter++;
                 }break;
                 case 2: {
-                    try{client.user.setActivity(`Best Free Bots`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`${mainconfig.BotSettings.StatusThree}`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter++;
                 }break;
                 case 3: {
-                    try{client.user.setActivity(`Best Bots of 2022`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`${mainconfig.BotSettings.StatusFour}`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter++;
                 }break;
                 case 4: {
@@ -99,15 +100,15 @@ client.on("ready", () => {
                     counter++;
                 }break;
                 case 5: {
-                    try{client.user.setActivity(`Best Bots on Discord`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`${mainconfig.BotSettings.StatusFive}`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter++;
                 }break;
                 case 6: {
-                    try{client.user.setActivity(`Order Today!`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`${mainconfig.BotSettings.StatusSix}`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter=0;
                 }break;
                 default: {
-                    try{client.user.setActivity(`Free Bots`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`${mainconfig.BotSettings.StatusSeven}`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter = 0;
                     counter++;
                 }break;

@@ -11,15 +11,12 @@
         "clientSecret": "EAyDFfh7_nIsP6ncDVT55YfeITo0E5izmwGTbnyLXiCDNRbJ1CjHnynL_4bUsVzI98fVJcJUqeyvRQb1"
     },
     "servers": {
-        "6": "109.71.253.6",
-        "53": "129.146.186.53"
+        "6": "109.71.253.6"
     },
     "passwords": {  
-        "6": "NotUnknownIsCoolHotLmao@6969",
-        "53": "NotSaksh@6969"
+        "6": "NotUnknownIsCoolHotLmao@6969"
     },
     "usernames": {
-        "6": "root",
-        "53": "root"
+        "6": "root"
     }
 }

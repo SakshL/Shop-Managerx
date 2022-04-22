@@ -21,6 +21,23 @@ module.exports = {
    TicketLogChannelID: "964370139225145486",
    BotManagementChannelID: "964370139225145487"
   },
+
+  /*Directory: {
+    MusicBot: `${process.cwd()}/servicebots/MusicBot/template/`,
+    SystemBot: `${process.cwd()}/servicebots/SYSTEMBOTS/template`
+   },*/
+
+
+  BotSettings: {
+    StatusOne: "Best Free Discord Bots",
+    StatusTwo: "Best Free Discord Bots",
+    StatusThree: "Best Free Discord Bots",
+    StatusFour: "Best Free Discord Bots",
+    StatusFive: "2022 Best Discord Bots",
+    StatusSix: "Order Now.",
+    StatusSeven: "2022 Best Discord Bots"
+   },
+
  
   SeverRoles: {
    FounderId: "964370138570842160",

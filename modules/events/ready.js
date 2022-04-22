@@ -3,6 +3,8 @@ var CronJob = require('cron').CronJob;
  * STARTING THE MODULE WHILE EXPORTING THE CLIENT INTO IT
  * @param {*} client 
  */
+const mainconfig = require("./../../mainconfig.js");
+
  module.exports = async (client) => {
 
 
@@ -22,19 +24,19 @@ var CronJob = require('cron').CronJob;
             console.log(" [Status Update] :: ".bgCyan.red + String(counter).bgCyan.brightRed)
             switch(counter){
                 case 0: {
-                    try{client.user.setActivity(`https://nexusx.dev/`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`${mainconfig.BotSettings.StatusOne}`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter++;
                 }break;
                 case 1: {
-                    try{client.user.setActivity(`Best Bots`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`${mainconfig.BotSettings.StatusTwo}`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter++;
                 }break;
                 case 2: {
-                    try{client.user.setActivity(`Best Discord Bots`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`${mainconfig.BotSettings.StatusThree}`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter++;
                 }break;
                 case 3: {
-                    try{client.user.setActivity(`Best Bots of 2022`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`${mainconfig.BotSettings.StatusFour}`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter++;
                 }break;
                 case 4: {
@@ -42,15 +44,15 @@ var CronJob = require('cron').CronJob;
                     counter++;
                 }break;
                 case 5: {
-                    try{client.user.setActivity(`Best Bots on Discord`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`${mainconfig.BotSettings.StatusFive}`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter++;
                 }break;
                 case 6: {
-                    try{client.user.setActivity(`Order Today!`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`${mainconfig.BotSettings.StatusSix}`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter=0;
                 }break;
                 default: {
-                    try{client.user.setActivity(`Free Bots`, {type: "PLAYING"})}catch(e){console.log(String(e))}
+                    try{client.user.setActivity(`${mainconfig.BotSettings.StatusSeven}`, {type: "PLAYING"})}catch(e){console.log(String(e))}
                     counter = 0;
                     counter++;
                 }break;

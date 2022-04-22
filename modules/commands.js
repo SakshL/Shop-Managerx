@@ -128,7 +128,7 @@ module.exports = async(client) => {
                         const offline = `<:error:934152965856591953>`;
                         const embed = new Discord.MessageEmbed()
                             .setColor(client.config.color)
-                            .setAuthor("nexusx | Nodestats", message.guild.iconURL({ dynamic: true }), "https://status.nexusx.me/")
+                            .setAuthor("Nexusx | Nodestats", message.guild.iconURL({ dynamic: true }), "https://status.nexusx.me/")
                             client.allServers.stats.forEach(stat => {
                                 embed.addField(`${stat.ram != 1 ? online : offline} Server **\`${stat.key}\`**`, `> Ram: \`${(stat.ram * 100).toFixed(0)}% of ${stat.totalram.split(".")[0]} ${stat.totalram.split(" ")[1]}\`\n> Hosting Bots: \`${stat.bots}\`\n> Cores: \`${stat.cores}\`\n> Stor: \`${Math.floor(stat.storage / stat.totalstorage * 100).toFixed(0)}% of ${formatBytes(stat.totalstorage, 0)}\``, true)
                                 if(stat?.key == "27") {
@@ -539,12 +539,6 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 } catch (e) {
                     console.log(e.stack ? String(e.stack).grey : String(e).grey)
                 }
-                ///////////////////////////////////////
-                ///////////////////////////////////////
-                ///////////////////////////////////////
-                ///////////////////////////////////////
-                ///////////////////////////////////////
-                ///////////////////////////////////////
 
 
                 var filenum, Files = [];
@@ -555,7 +549,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                         else return Files.push(Absolute);
                     });
                 }
-                ThroughDirectory(`${mainconfig.Directory.MusicBot}`);
+                ThroughDirectory(`${process.cwd()}/servicebots/${BotDir}/template/`);
                 filenum = Files.length;
                 try {
                     const ch = message.author;
@@ -916,10 +910,10 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                      * CREATE THE REMOTE HOST CONNECTION DATA
                      */
                     const serverId = client.allServers.least ? client.allServers.least : client.allServers.current.split(".")[3];
-                    console.log(serverId)
-                    console.log(`Host: ${client.config.servers[serverId]}`)
-                    console.log(`Username: ${client.config.usernames[serverId]}`)
-                    console.log(`Password: ${client.config.passwords[serverId]}`)
+                    //console.log(serverId)
+                    //console.log(`Host: ${client.config.servers[serverId]}`)
+                    //console.log(`Username: ${client.config.usernames[serverId]}`)
+                    //console.log(`Password: ${client.config.passwords[serverId]}`)
                     const remote_server = {
                         host: client.config.servers[serverId], 
                         port: 22, 
@@ -2738,8 +2732,8 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 let data = client.bots.get(user.id, "info");
                 if (!data || data.type == "Default") throw "E";
                 let server = data.toString().split("\n")[6].split(",")[0];
-                if (server.includes(".")) server = server.split(".")[3]
                 let path = data.toString().split("\n")[2];
+                let BotFileName = path.split("/")[path.split("/").length - 1]
                 let {
                     servers,
                     usernames,
@@ -2889,13 +2883,13 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 });
             } catch (e) {
                 console.log(e.stack ? String(e.stack).grey : String(e).grey)
-                return message.reply("❌ There is no detail Data about this Bot :c")
+                return message.reply("❌ ***There Is No Data About This Bot***")
             }
         } else if (cmd === "noguildremovebothost") {
             if (message.member.roles.highest.rawPosition < message.guild.roles.cache.get(Roles.FounderId).rawPosition)
                 return message.reply("❌ You are not allowed to execute this Command! (Only FOUNDERS)");
                 
-                return message.reply("❌**This Command is currently not available;**") 
+                return message.reply("❌**This Command Is Currently Not Aavailable;**") 
         } 
         
         else if (cmd === "startbot") {
@@ -2909,7 +2903,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                     console.log(e.stack ? String(e.stack).grey : String(e).grey)
                     return message.reply("ERROR:" + e)
                 }
-                if (!user || !user.id) return message.reply("❌ Did not find the BOT ... ERROR")
+                if (!user || !user.id) return message.reply("❌ **Did Not Find The BOT ... ERROR**")
                 client.bots.ensure(user.id, {
                     info: "No Info available",
                     type: "Default"
@@ -3622,7 +3616,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 return message.reply("❌ There is no detail Data about this Bot :c")
             }
         } else if (cmd === "forcestopbot") {
-            if (message.member.roles.highest.rawPosition < message.guild.roles.cache.get(Roles.CoOwnerRoleId).rawPosition)
+            if (message.member.roles.highest.rawPosition < message.guild.roles.cache.get(Roles.OwnerRoleId).rawPosition)
                 return message.reply("❌ You are not allowed to execute this Command! (Only OWNERS)");
             try {
                 var user;
