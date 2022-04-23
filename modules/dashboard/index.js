@@ -263,7 +263,7 @@ module.exports = client => {
                 client.createingbotmap.set("Creating", ticketChannel.id);
                 client.bots.ensure(owner, { "bots": [] });
                 client.staffrank.push(member.id, Date.now(), "createdbots")
-                client.channels.fetch(`${mainconfig.BoosterID.toString()}`).then(channel => {
+                client.channels.fetch(`${mainconfig.BotManagerLogs.toString()}`).then(channel => {
                     try {
                         client.users.fetch(owner).then(user => {
                             channel.send({ embeds: [new Discord.MessageEmbed().setColor("#57F287").setFooter(member.user.tag + " | ID: " + member.id, member.user.displayAvatarURL({ dynamic: true })).setDescription(`<@${member.id}> Executed: \`BotCreation - Website\`, for: ${user}, \`CLANBOT_${filename}\`, BOT: <@${botid}>`)] }).catch(console.log)
@@ -455,7 +455,7 @@ module.exports = client => {
                 if (failed) return;
 
                 try {
-                    milratoGuild.members.fetch(owner).then(member => member.roles.add("964370138507931694"))
+                    milratoGuild.members.fetch(owner).then(member => member.roles.add(`${mainconfig.FinishedOrderID}`))
                 } catch (e) {
                     console.error(e)
                 }

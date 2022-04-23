@@ -960,7 +960,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                     //update the db for the staff person
                     client.staffrank.push(message.author.id, Date.now(), "createdbots")
                     //send informational data
-                    client.channels.fetch(`${mainconfig.BoosterID.toString()}`).then(channel => {
+                    client.channels.fetch(`${mainconfig.BotManagerLogs.toString()}`).then(channel => {
                         try {
                             client.users.fetch(owner).then(user => {
                                 channel.send({
@@ -1272,9 +1272,9 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                                  */
                                 try {
                                     message.guild.members.fetch(owner).then(member => {
-                                        member.roles.add("937130001495646328").catch(() => {})
-                                        if(member.roles.cache.has("964370138507931694")) {
-                                            member.roles.remove("964370138507931694").catch(() => {})
+                                        member.roles.add(`${mainconfig.FinishedOrderID}`).catch(() => {})
+                                        if(member.roles.cache.has(`${mainconfig.FinishedOrderID}`)) {
+                                            member.roles.remove(`${mainconfig.FinishedOrderID}`).catch(() => {})
                                             tempmsfg.embeds[0].fields[4].name = `<a:check:964989203656097803> Adding Finished Role & Removed recover Role`
                                             tempmsfg.embeds[0].fields[5].name = `<a:Loading:945121333333852161> Writing Database`
                                         } else {
@@ -1467,9 +1467,9 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
 
                                     try {
                                         message.guild.members.fetch(owner).then(member => {
-                                            member.roles.add("964370138507931694").catch(() => {})
-                                            if(member.roles.cache.has("964370138507931694")) {
-                                                member.roles.remove("964370138507931694").catch(() => {})
+                                            member.roles.add(`${mainconfig.FinishedOrderID}`).catch(() => {})
+                                            if(member.roles.cache.has(`${mainconfig.FinishedOrderID}`)) {
+                                                member.roles.remove(`${mainconfig.FinishedOrderID}`).catch(() => {})
                                                 tempmsfg.embeds[0].fields[4].name = `<a:check:964989203656097803> Adding Finished Role & Removed recover Role`
                                                 tempmsfg.embeds[0].fields[5].name = `<a:Loading:945121333333852161> Writing Database`
                                             } else {
@@ -4186,12 +4186,17 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
             try {
                 evaled = await eval(args.join(` `));
                 let string = inspect(evaled);
-                message.channel.send({content :`\`\`\`\n${String(string).substr(0, 1950)}\n\`\`\``});
+                message.channel.send({embeds :[new Discord.MessageEmbed()
+                    .setColor("WHITE")
+                    .setTitle("Nexusx Development | Evaluation")
+                    .setDescription(`\`\`\`\n${String(string).substr(0, 1950)}\n\`\`\``)
+                ]});
+        //({content :`\`\`\`\n${String(string).substr(0, 1950)}\n\`\`\``});
             } catch (e) {
                 console.log(e)
                 return message.channel.send({embeds :[new Discord.MessageEmbed()
                     .setColor("RED")
-                    .setTitle("Something Went Wrong")
+                    .setTitle("Please Provide a Valid Code")
                     .setDescription(`\`\`\`\n${String(e.message ? e.message : e).substr(0, 1950)}\n\`\`\``)
                 ]});
             }
@@ -4208,7 +4213,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
             }
             let bot = message.mentions.members.filter(u => u.user.bot).first() || message.guild.members.cache.get(args[0]);
             if (!bot || !bot.user || !bot.user.bot) {
-                return message.reply("❌ **Please ping a __BOT__**");
+                return message.reply("❌ **Please Ping a __BOT__**");
             }
             bot = bot.user;
             let normaldata = client.payments.get("payments", "users");
@@ -4357,7 +4362,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 args.shift();
                 let member = message.mentions.members.filter(m => m.guild.id == message.guild.id).first() || await message.guild.members.fetch(args[0])
                 if (!member || !member.user || member.user.bot) return message.reply("❌ **You forgot to Ping a MEMBER**\nUsage: `,invitepayment 30d @USER @BOT`");
-                if (!member.roles.cache.has(`${mainconfig.BoosterID.toString()}`)) return message.reply("❌ **He is not boosting this Server!**");
+                if (!member.roles.cache.has(`${mainconfig.BotManagerLogs.toString()}`)) return message.reply("❌ **He is not boosting this Server!**");
                 let user = member.user;
                 args.shift()
                 let bot = message.mentions.members.filter(m => m.guild.id == message.guild.id && m.user.bot).first() || await message.guild.members.fetch(args[0])

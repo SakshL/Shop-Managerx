@@ -501,7 +501,7 @@ module.exports = client => {
                 }
                 switch(menuIndex.type){
                     case "SYSTEMBOTS" : {
-                        await interaction.reply({content: `:notes: Creating your Ticket ... `, ephemeral: true}).catch(e => {console.warn(e.stack ? String(e.stack).grey : String(e).grey)});
+                        await interaction.reply({content: `:loading: **Creating Your Ticket**... (Usually Takes 2-4 Seconds) `, ephemeral: true}).catch(e => {console.warn(e.stack ? String(e.stack).grey : String(e).grey)});
                         ////////////////////////
                         /////////////////////////
                         Cooldown.set(user.id, Date.now())
@@ -589,7 +589,7 @@ module.exports = client => {
                         }).catch(e => {console.warn(e.stack ? String(e.stack).grey : String(e).grey)});
                     } break;
                     case "MusicBots" : {
-                        await interaction.reply({content: `Creating your Ticket ... `, ephemeral: true}).catch(e => {console.warn(e.stack ? String(e.stack).grey : String(e).grey)});
+                        await interaction.reply({content: `:loading: **Creating Your Ticket**... (Usually Takes 2-4 Seconds)`, ephemeral: true}).catch(e => {console.warn(e.stack ? String(e.stack).grey : String(e).grey)});
                         ////////////////////////
                         /////////////////////////
                         Cooldown.set(user.id, Date.now())
@@ -674,7 +674,7 @@ module.exports = client => {
                         })
                     } break;
                     case "RYTHMCLONE" : {
-                        await interaction.reply({content: `Creating your Ticket ... `, ephemeral: true}).catch(e => {console.warn(e.stack ? String(e.stack).grey : String(e).grey)});
+                        await interaction.reply({content: `:loading: **Creating Your Ticket**... (Usually Takes 2-4 Seconds)`, ephemeral: true}).catch(e => {console.warn(e.stack ? String(e.stack).grey : String(e).grey)});
                         ////////////////////////
                         /////////////////////////
                         Cooldown.set(user.id, Date.now())
@@ -750,7 +750,7 @@ module.exports = client => {
                         }).catch(e => {console.warn(e.stack ? String(e.stack).grey : String(e).grey)});
                     }break;
                     case "WAITINGROOMBOT" : {
-                        await interaction.reply({content: `<:Public_Waitingroom:964413129389912134> Creating your Ticket ... `, ephemeral: true}).catch(e => {console.warn(e.stack ? String(e.stack).grey : String(e).grey)});
+                        await interaction.reply({content: `<:Public_Waitingroom:964413129389912134> :loading: **Creating Your Ticket**... (Usually Takes 2-4 Seconds)`, ephemeral: true}).catch(e => {console.warn(e.stack ? String(e.stack).grey : String(e).grey)});
                         ////////////////////////
                         /////////////////////////
                         Cooldown.set(user.id, Date.now())
@@ -835,7 +835,7 @@ module.exports = client => {
                         }).catch(e => {console.warn(e.stack ? String(e.stack).grey : String(e).grey)});
                     }break;
                     case "ADMINISTRATIONBOT" : {
-                        await interaction.reply({content: `🚫 Creating your Ticket ... `, ephemeral: true})
+                        await interaction.reply({content: `:loading: **Creating Your Ticket**... (Usually Takes 2-4 Seconds) `, ephemeral: true})
                         ////////////////////////
                         /////////////////////////
                         Cooldown.set(user.id, Date.now())
@@ -921,7 +921,7 @@ module.exports = client => {
                     }break;
                     //ticketsystem13
                     case "24_7_MUSIC_BOT" : {
-                        await interaction.reply({content: `:notes: Creating your Ticket ... `, ephemeral: true})
+                        await interaction.reply({content: `:loading: **Creating Your Ticket**... (Usually Takes 2-4 Seconds) `, ephemeral: true})
                         ////////////////////////
                         /////////////////////////
                         Cooldown.set(user.id, Date.now())
@@ -1007,7 +1007,7 @@ module.exports = client => {
                     }break;
                     //ticketsystem9
                     case "MODMAILBOT": {
-                        await interaction.reply({content: `Creating your Ticket ... `, ephemeral: true})
+                        await interaction.reply({content: `:loading: **Creating Your Ticket**... (Usually Takes 2-4 Seconds)`, ephemeral: true})
                         ////////////////////////
                         /////////////////////////
                         Cooldown.set(user.id, Date.now())
@@ -1093,7 +1093,7 @@ module.exports = client => {
                     }break;
                     //ticketsystem12
                     case "LAVAMUSICBOT": {
-                        await interaction.reply({content: ` Creating your Ticket ... `, ephemeral: true})
+                        await interaction.reply({content: ` :loading: **Creating Your Ticket**... (Usually Takes 2-4 Seconds)`, ephemeral: true})
                         ////////////////////////
                         /////////////////////////
                         Cooldown.set(user.id, Date.now())
@@ -1179,7 +1179,7 @@ module.exports = client => {
                     }break;
                     //ticketsystem11
                     case "SECURITYBOT": {
-                        await interaction.reply({content: `<:Super_Mod:935065637636685836> Creating your Ticket ... `, ephemeral: true})
+                        await interaction.reply({content: `<:Super_Mod:935065637636685836> :loading: **Creating Your Ticket**... (Usually Takes 2-4 Seconds)`, ephemeral: true})
                         ////////////////////////
                         /////////////////////////
                         Cooldown.set(user.id, Date.now())
@@ -1265,7 +1265,7 @@ module.exports = client => {
                     }break;
                     //ticketsystem10
                     case "NSFW_AND_FUN_BOT": {
-                        await interaction.reply({content: `🕹️ Creating your Ticket ... `, ephemeral: true})
+                        await interaction.reply({content: `🕹️ :loading: **Creating Your Ticket**... (Usually Takes 2-4 Seconds)`, ephemeral: true})
                         ////////////////////////
                         /////////////////////////
                         Cooldown.set(user.id, Date.now())
