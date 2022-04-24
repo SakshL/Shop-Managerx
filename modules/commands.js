@@ -3960,8 +3960,8 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
             }).then(res => {
                 let embed = new Discord.MessageEmbed()
                     .setColor(client.config.color)
-                    .setAuthor(`Translated to: ${args[1]}`, "https://imgur.com/0DQuCgg.png", "https://discord.gg/nexusx")
-                    .setFooter(`Translated from: ${args[0]}`, message.author.displayAvatarURL({
+                    .setAuthor(`Translated To: ${args[1]}`, "https://imgur.com/0DQuCgg.png", "https://discord.gg/notsaksh")
+                    .setFooter(`Translated From: ${args[0]}`, message.author.displayAvatarURL({
                         dynamic: true
                     }))
                     .setDescription("```" + res.text.substr(0, 2000) + "```")

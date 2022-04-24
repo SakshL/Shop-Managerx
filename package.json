@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@sentry/node": "^6.19.6",
+    "@sentry/tracing": "^6.19.6",
     "abab": "^2.0.5",
     "abbrev": "^1.1.1",
     "abort-controller": "^3.0.0",

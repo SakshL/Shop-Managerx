@@ -29,7 +29,7 @@ module.exports = {
         embeds: [new MessageEmbed()
           .setColor(es.wrongcolor)
           .setFooter(client.user.username, es.footericon && (es.footericon.includes("http://") || es.footericon.includes("https://")) ? es.footericon : client.user.displayAvatarURL())
-          .setTitle("Only Tomato is allowed to deploy the SLASH-COMMANDS")
+          .setTitle("Only NotSaksh is allowed to deploy the SLASH-COMMANDS")
           .setDescription(`Go to the [Discord-Server](https://discord.gg/milrato), open a Ticket and ask for it!`)
         ]
       });
