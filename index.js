@@ -116,5 +116,3 @@ client.on("ready", () => {
         }, null, true, 'Europe/Berlin');
         job.start();
     })
-
-/*           ANTI CRASHING            ¦¦           ANTI CRASHING           */ 
