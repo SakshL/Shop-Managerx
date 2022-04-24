@@ -42,7 +42,7 @@ module.exports = async (client) => {
             stopBot(client, botdelete, bot, member)
             await ch.send({content: `<:leave:933722870734024724> **${member.user} | ${member.user.tag} (\`${member.user.id}\`) Bots can be deleted, he/she left the Server!!**\n__The Bot:__\n> ${bot.user} | ${bot.user.tag} (\`${bot.user.id}\`)`, 
 				embeds: [
-				  new Discord.MessageEmbed().setColor("RED").setDescription(`${botdelete.data}`).setAuthor(bot.user.tag + " - Is Deleteable", bot.user.displayAvatarURL()).setFooter(member.user.id, member.user.displayAvatarURL({dynamic: true})).addField("__ALL OF HIS/HER BOTS:__", ">>> " + bots.length > 0 ? bots.length <= 10 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") : bots.slice(0, 10).map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") + bots.length - 10 + " More ..." : "He has no Bots yet!")
+				  new Discord.MessageEmbed().setColor("RED").setDescription(`${botdelete.data}`).setAuthor(bot.user.tag + " - Is Deleteable", bot.user.displayAvatarURL()).setFooter(member.user.id, member.user.displayAvatarURL({dynamic: true})).addField("__ALL OF HIS/HER BOTS:__", ">>> " + bots.length > 0 ? bots.length <= 10 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") : bots.slice(0, 10).map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") + bots.length - 10 + " More ..." : "He Doesn't Have Any Bots Yet!")
 				]
 			}).catch(e => {console.warn(e.stack ? String(e.stack).grey : String(e).grey)});
             botdelete.sent = true;
@@ -96,7 +96,7 @@ module.exports = async (client) => {
             await ch.send({content: `<a:Money_Price:935490603909799957> **${member.user} | ${member.user.tag} (\`${member.user.id}\`) needs to Pay after ${duration(botdelete.time).map(i=>`\`${i}\``).join(" ")} (Payed at: <t:${Math.floor((Date.now() - botdelete.time) / 1000)}>) again!**\n__The Bot:__\n> ${bot.user} | ${bot.user.tag} (\`${bot.user.id}\`)`,
               embeds: [new Discord.MessageEmbed()
                 .setColor("YELLOW")
-                .addField("__ALL OF HIS/HER BOTS:__", ">>> " + bots.length > 0 ? bots.length <= 10 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") : bots.slice(0, 10).map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") + bots.length - 10 + " More ..." : "He has no Bots yet!")
+                .addField("__ALL OF HIS/HER BOTS:__", ">>> " + bots.length > 0 ? bots.length <= 10 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") : bots.slice(0, 10).map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") + bots.length - 10 + " More ..." : "He Doesn't Have Any Bots Yet!")
                 .setDescription(`${botdelete.data}`).setAuthor(bot.user.tag + " - Needs to be payed again!", bot.user.displayAvatarURL()).setFooter(member.user.id, member.user.displayAvatarURL({
                   dynamic: true
                 }))]
@@ -269,7 +269,7 @@ module.exports = async (client) => {
             stopBot(client, botdelete, bot, member)
             await ch.send({content: `<:leave:933722870734024724> **${member.user} | ${member.user.tag} (\`${member.user.id}\`) Bots can be deleted, he/she left the Server!!**\n__The BOOSTPAYMENT-Bot:__\n> ${bot.user} | ${bot.user.tag} (\`${bot.user.id}\`)`, 
               embeds: [ new Discord.MessageEmbed().setColor("RED").setDescription(`${botdelete.data}`).setAuthor(bot.user.tag + " - Is Deleteable", bot.user.displayAvatarURL())
-                .addField("__ALL OF HIS/HER BOTS:__", ">>> " + bots.length > 0 ? bots.length <= 10 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") : bots.slice(0, 10).map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") + bots.length - 10 + " More ..." : "He has no Bots yet!")
+                .addField("__ALL OF HIS/HER BOTS:__", ">>> " + bots.length > 0 ? bots.length <= 10 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") : bots.slice(0, 10).map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") + bots.length - 10 + " More ..." : "He Doesn't Have Any Bots Yet!")
                 .setFooter(member.user.id, member.user.displayAvatarURL({
                   dynamic: true
                 }))]
@@ -315,7 +315,7 @@ module.exports = async (client) => {
               stopBot(client, botdelete, bot, member)
               await ch.send({content: `<a:Server_Boosts:933787999387390032> **${member.user} | ${member.user.tag} (\`${member.user.id}\`) Bots can be deleted, he/she stopped boosting us!!**\n__The BOOSTPAYMENT-Bot:__\n> ${bot.user} | ${bot.user.tag} (\`${bot.user.id}\`)`, 
                 embeds: [new Discord.MessageEmbed().setColor("RED").setDescription(`${botdelete.data}`).setAuthor(bot.user.tag + " - Is Deleteable", bot.user.displayAvatarURL())
-                  .addField("__ALL OF HIS/HER BOTS:__", ">>> " + bots.length > 0 ? bots.length <= 10 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") : bots.slice(0, 10).map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") + bots.length - 10 + " More ..." : "He has no Bots yet!")
+                  .addField("__ALL OF HIS/HER BOTS:__", ">>> " + bots.length > 0 ? bots.length <= 10 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") : bots.slice(0, 10).map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") + bots.length - 10 + " More ..." : "He Doesn't Have Any Bots Yet!")
                   .setFooter(member.user.id, member.user.displayAvatarURL({
                     dynamic: true
                   }))]
@@ -372,7 +372,7 @@ module.exports = async (client) => {
             await ch.send({content: `<a:Money_Price:935490603909799957> **${member.user} | ${member.user.tag} (\`${member.user.id}\`) needs to Pay after ${duration(botdelete.time).map(i=>`\`${i}\``).join(" ")} (Payed at: <t:${Math.floor((Date.now() - botdelete.time) / 1000)}>) again!**\n__The BOOSTPAYMENT-Bot:__\n> ${bot.user} | ${bot.user.tag} (\`${bot.user.id}\`)`,
               embeds: [new Discord.MessageEmbed()
                 .setColor("YELLOW")
-                .addField("__ALL OF HIS/HER BOTS:__", ">>> " + bots.length > 0 ? bots.length <= 10 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") : bots.slice(0, 10).map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") + bots.length - 10 + " More ..." : "He has no Bots yet!")
+                .addField("__ALL OF HIS/HER BOTS:__", ">>> " + bots.length > 0 ? bots.length <= 10 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") : bots.slice(0, 10).map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}>`).join("\n") + bots.length - 10 + " More ..." : "He Doesn't Have Any Bots Yet!")
                 .setDescription(`${botdelete.data}`).setAuthor(bot.user.tag + " - Needs to be payed again!", bot.user.displayAvatarURL()).setFooter(member.user.id, member.user.displayAvatarURL({
                   dynamic: true
                 }))]

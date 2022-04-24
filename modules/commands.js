@@ -1002,7 +1002,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                     var tempmsfg = await ch.send({
                         embeds: [new Discord.MessageEmbed()
                             .setColor(client.config.color)
-                            .setAuthor("Progress ...", "https://images-ext-1.discordapp.net/external/ANU162U1fDdmQhim_BcbQ3lf4dLaIQl7p0HcqzD5wJA/https/cdn.discordapp.com/emojis/756773010123522058.gif", "https://discord.gg/nexusx")
+                            .setAuthor("Progress ...", "https://images-ext-1.discordapp.net/external/ANU162U1fDdmQhim_BcbQ3lf4dLaIQl7p0HcqzD5wJA/https/cdn.discordapp.com/emojis/756773010123522058.gif", "https://discord.gg/notsaksh")
                             .addField(`<a:Loading:945121333333852161> Changing Configuration Settings`, "\u200b")
                             .addField("🔲 Changing Embed Settings...", "\u200b")
                             .addField(`🔲 Copying ${filenum} Files...`, "\u200b")
@@ -3787,7 +3787,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                     .setColor(client.config.color)
                     .setAuthor(`${user.username}'s Bots`, user.displayAvatarURL({
                         dynamic: true
-                    }), "https://discord.gg/nexusx")
+                    }), "https://discord.gg/notsaksh")
                     .setDescription(bots.length > 0 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}> | [Invite](https://discord.com/oauth2/authorize?client_id=${bot}&scope=bot&permissions=8)`).join("\n") : "He/She Has No Bots Yet!")
                     .setTimestamp()
                 ]
@@ -3843,8 +3843,8 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 .setColor(client.config.color)
                 .setAuthor(`${user.username} owns this bot and: `, user.displayAvatarURL({
                     dynamic: true
-                }), "https://discord.gg/nexusx")
-                .setDescription(bots.length > 0 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}> | [Invite](https://discord.com/oauth2/authorize?client_id=${bot}&scope=bot&permissions=8)`).join("\n") : "He has no Bots yet!")
+                }), "https://discord.gg/notsaksh")
+                .setDescription(bots.length > 0 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}> | [Invite](https://discord.com/oauth2/authorize?client_id=${bot}&scope=bot&permissions=8)`).join("\n") : "He Doesn't Have Any Bots Yet!")
                 .setTimestamp().setFooter("ID: " + user.id, user.displayAvatarURL({
                     dynamic: true
                 }));
@@ -3878,7 +3878,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                     .setColor(client.config.color)
                     .setAuthor(`SUCCESS!`, user.displayAvatarURL({
                         dynamic: true
-                    }), "https://discord.gg/nexusx")
+                    }), "https://discord.gg/notsaksh")
                     .setDescription(`Added: <@${bot.id}> | [Invite](https://discord.com/oauth2/authorize?client_id=${bot.id}&scope=bot&permissions=8) to <@${user.id}>`)
                     .setTimestamp()
                 ]
@@ -3922,7 +3922,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                     .setColor(client.config.color)
                     .setAuthor(`SUCCESS!`, user.displayAvatarURL({
                         dynamic: true
-                    }), "https://discord.gg/nexusx")
+                    }), "https://discord.gg/notsaksh")
                     .setDescription(`Changed: <@${bot.id}> | [Invite](https://discord.com/oauth2/authorize?client_id=${bot.id}&scope=bot&permissions=8) to <@${user.id}> ${olduser ? olduser.id != user.id ? `from <@${olduser.id}>` : "" : ""}`)
                     .setTimestamp()
                 ]
@@ -3950,7 +3950,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                     .setColor(client.config.color)
                     .setAuthor(`SUCCESS!`, user.displayAvatarURL({
                         dynamic: true
-                    }), "https://discord.gg/nexusx")
+                    }), "https://discord.gg/notsaksh")
                     .setDescription(`Removed: <@${bot.id}> | [Invite](https://discord.com/oauth2/authorize?client_id=${bot.id}&scope=bot&permissions=8) from <@${user.id}>`)
                     .setTimestamp()
                 ]
@@ -3965,7 +3965,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 embeds: [
                     new Discord.MessageEmbed()
                     .setColor(client.config.color)
-                    .setAuthor("nexusx | Free Bots Shop | How to Order", message.guild.iconURL({dynamic: true}), "https://discord.gg/nexusx")
+                    .setAuthor("nexusx | Free Bots Shop | How to Order", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
                     .setDescription(`1. Read throug the channel in <#840354600463761468>\n\n2. React to the message of <#840331856624615424> with the right Emojis\n\n3. Answer the Questions in the Ticket\n\n4. Wait a few Minutes :wink:`)
                     .setFooter("nexusx.me | Order Free Bots NOW", "https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
                     .setThumbnail("https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
@@ -3976,7 +3976,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 embeds: [
                     new Discord.MessageEmbed()
                     .setColor(client.config.color)
-                    .setAuthor("How to Change your Bot?", message.guild.iconURL({dynamic: true}), "https://discord.gg/nexusx")
+                    .setAuthor("How to Change your Bot?", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
                     .setDescription(`**There are several options:**\n> To change the Embed Design, you need to use the command\n> \`!setup-embed\`\n\n> To change the Avatar, Name, etc. you need to use the:\n> \`changename\`, \`changeavatar\`, \`changestatus\`, \`prefix\``)
                     .setFooter("nexusx.me | Order Free Bots NOW", "https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
                     .setThumbnail("https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
@@ -3987,7 +3987,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                     embeds: [
                         new Discord.MessageEmbed()
                         .setColor(client.config.color)
-                        .setAuthor("nexusx | Free Bots Shop | How to Pay", message.guild.iconURL({dynamic: true}), "https://discord.gg/nexusx")
+                        .setAuthor("nexusx | Free Bots Shop | How to Pay", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
                         .setDescription(`1. Either go to [Bero-Host](https://bero-host.de/spenden/i8iywavcwmob) or to [Paypal](https://www.paypal.com/paypalme/simonNotSaksh).\n\n2. Enter the amount of money, which is required for your Bot.\n(**We only accept €**)\n\n3. Send a prove, that you paid in your ticket.\n\n4. Wait for **NotSaksh** to verify your payment.`)
                         .setFooter("nexusx.me | Order Free Bots NOW", "https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
                         .setThumbnail("https://cdn.discordapp.com/attachments/936372059305566219/964968487250436206/unknown.png")
@@ -4039,21 +4039,23 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
         } else if (cmd === "ping") {
             message.reply({
                 embeds: [new Discord.MessageEmbed()
+                    .setColor("GREEN")
+                    .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
                     .setColor(client.config.color)
-                    .setTitle(`📶 Ping: \`${Math.round(Date.now() - message.createdTimestamp)}ms\`\n\n📶Api Latency: \`${Math.round(client.ws.ping)}ms\``),
-                    new Discord.MessageEmbed()
-                    .setColor(client.config.color)
-                    .setTitle(`:white_check_mark: **${client.user.username}** is since ${duration(client.uptime).map(i => `\`${i}\``).join(" ")} online`)
+                    .setTitle(`📶 **Bot Ping:** \`${Math.round(Date.now() - message.createdTimestamp)}ms\`\n\n⌛ **Api Latency:** \`${Math.round(client.ws.ping)}ms\`\n\n ⏱️ Bot Uptime ${duration(client.uptime).map(i => `\`${i}\``).join(" ")} `)
+                    .setFooter('It Takes longer, because i am getting my host ping!' , client.user.displayAvatarURL({ dynamic: true}))
+
                 ]
             })
         } else if (cmd === "uptime") {
             message.reply({
                 embeds: [new Discord.MessageEmbed()
+                    .setColor("GREEN")
+                    .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
                     .setColor(client.config.color)
-                    .setTitle(`:white_check_mark: **${client.user.username}** is since ${duration(client.uptime).map(i => `\`${i}\``).join(" ")} online`),
-                    new Discord.MessageEmbed()
-                    .setColor(client.config.color)
-                    .setTitle(`📶 Ping: \`${Math.round(Date.now() - message.createdTimestamp)}ms\`\n\n📶Api Latency: \`${Math.round(client.ws.ping)}ms\``)
+                    .setTitle(`📶 **Bot Ping:** \`${Math.round(Date.now() - message.createdTimestamp)}ms\`\n\n⌛ **Api Latency:** \`${Math.round(client.ws.ping)}ms\`\n\n ⏱️ Bot Uptime ${duration(client.uptime).map(i => `\`${i}\``).join(" ")} `)
+                    .setFooter('It Takes longer, because i am getting my host ping!' , client.user.displayAvatarURL({ dynamic: true}))
+
                 ]
             })
         } else if (cmd === "info" || cmd == "stats" || cmd == "about" || cmd == "features") {

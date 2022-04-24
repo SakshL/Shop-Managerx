@@ -425,7 +425,7 @@ function theDB(client, guild) {
     > *(The Color on the Left Side of Embeds)*
     > 
     > <:arrow:964989830272532501> **\` 5. \` What should be the STATUS?**
-    > *(e.g: \`!help | https://discord.gg/nexusx\`)*
+    > *(e.g: \`!help | https://discord.gg/notsaksh\`)*
     > 
     > <:arrow:964989830272532501> **\` 6. \` What should be the STATUS TYPE?** 
     > *(\`PLAYING\` / \`WATCHING\` / \`LISTENING\` / \`STREAMING\` / \`COMPETING\`)*
@@ -463,7 +463,7 @@ function theDB(client, guild) {
     > *(The Color on the Left Side of Embeds)*
     > 
     > <:arrow:964989830272532501> **\` 5. \` What should be the STATUS?**
-    > *(e.g: \`!help | https://discord.gg/nexusx\`)*
+    > *(e.g: \`!help | https://discord.gg/notsaksh\`)*
     > 
     > <:arrow:964989830272532501> **\` 6. \` What should be the STATUS TYPE?** 
     > *(\`PLAYING\` / \`WATCHING\` / \`LISTENING\` / \`STREAMING\` / \`COMPETING\`)*
@@ -615,7 +615,7 @@ function theDB(client, guild) {
     > *(The Color on the Left Side of Embeds)*
     > 
     > <:arrow:964989830272532501> **\` 5. \` What should be the STATUS?**
-    > *(e.g: \`!help | https://discord.gg/nexusx\`)*
+    > *(e.g: \`!help | https://discord.gg/notsaksh\`)*
     > 
     > <:arrow:964989830272532501> **\` 6. \` What should be the STATUS TYPE?** 
     > *(\`PLAYING\` / \`WATCHING\` / \`LISTENING\` / \`STREAMING\` / \`COMPETING\`)*
