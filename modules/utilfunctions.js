@@ -981,7 +981,7 @@ async function swap_pages2(client, message, embeds) {
     const allbuttons = [new Discord.MessageActionRow().addComponents([button_back, button_home, button_forward])]
     //Send message with buttons
     let swapmsg = await message.channel.send({
-        content: `https://nexusx.dev/ - Help Menu`,
+        content: `***Click on the __Buttons__ to swap the Pages*** `,
         embeds: [embeds[0]],
         components: allbuttons
     });
@@ -990,7 +990,7 @@ async function swap_pages2(client, message, embeds) {
     //array of all embeds, here simplified just 10 embeds with numbers 0 - 9
     collector.on('collect', async b => {
         if (b?.user.id !== message.author.id)
-            return b?.reply({ content: `<:no:933239221836206131> **Only the one who typed ${config.prefix}help is allowed to react!**`, ephemeral: true })
+            return b?.reply({ content: `<:no:933239221836206131> **Only The One Who Typed ${config.prefix}help Is Allowed To React!**`, ephemeral: true })
         //page forward
         if (b?.customId == "1") {
             //b?.reply("***Swapping a PAGE FORWARD***, *please wait 2 Seconds for the next Input*", true)

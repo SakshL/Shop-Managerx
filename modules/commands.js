@@ -82,7 +82,12 @@ module.exports = async(client) => {
             const cmd = args.length > 0 ? args.shift().toLowerCase() : null;
             if (!cmd || cmd.length == 0) {
                 if (mPrefix.includes(client.user.id)) {
-                    return message.reply("My prefix is `,`");
+                    message.channel.send({embeds :[new Discord.MessageEmbed()
+                        .setColor("WHITE")
+                        .setTitle(`<a:yes:933239140718358558> **To See All Commands Type:** \`${config.prefix}help\` ! `)
+                    ]});
+
+                    // return message.reply("My prefix is `,`");
                 }
                 return;
             }
@@ -128,7 +133,7 @@ module.exports = async(client) => {
                         const offline = `<:error:934152965856591953>`;
                         const embed = new Discord.MessageEmbed()
                             .setColor(client.config.color)
-                            .setAuthor("Nexusx | Nodestats", message.guild.iconURL({ dynamic: true }), "https://status.nexusx.me/")
+                            .setAuthor("Nexusx | Nodestats", message.guild.iconURL({ dynamic: true }), "https://status.nexusx.dev/")
                             client.allServers.stats.forEach(stat => {
                                 embed.addField(`${stat.ram != 1 ? online : offline} Server **\`${stat.key}\`**`, `> Ram: \`${(stat.ram * 100).toFixed(0)}% of ${stat.totalram.split(".")[0]} ${stat.totalram.split(" ")[1]}\`\n> Hosting Bots: \`${stat.bots}\`\n> Cores: \`${stat.cores}\`\n> Stor: \`${Math.floor(stat.storage / stat.totalstorage * 100).toFixed(0)}% of ${formatBytes(stat.totalstorage, 0)}\``, true)
                                 if(stat?.key == "27") {
@@ -1588,7 +1593,11 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
          * TICKET SYSTEM
          */
         else if (cmd === "addticket") {
-            if(!isValidTicket(message.channel)) return message.reply("❌ This Channel is not a Ticket!");
+            if(!isValidTicket(message.channel)) return message.channel.send({embeds :[new Discord.MessageEmbed()
+                .setColor("RED")
+                .setTitle("<:no:933239221836206131> ERROR | An Error Occurred!")
+                .setDescription(` \`\`\`This Channel is not a Ticket!\`\`\` `)
+            ]});
             
             if (message.member.roles.highest.rawPosition < message.guild.roles.cache.get(Roles.SupporterRoleId).rawPosition) {
                 return message.reply("❌ **You are not allowed to execute this Command!** Only Supporters or Higher!").then(m => m.delete({
@@ -1612,7 +1621,11 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 message.channel.send(`✅ Successfully Added <@${user.id}> to this Ticket`);
             })
         } else if (cmd === "removeticket") {
-            if(!isValidTicket(message.channel)) return message.reply("❌ This Channel is not a Ticket!");
+            if(!isValidTicket(message.channel)) return message.channel.send({embeds :[new Discord.MessageEmbed()
+                .setColor("RED")
+                .setTitle("<:no:933239221836206131> ERROR | An Error Occurred!")
+                .setDescription(` \`\`\`This Channel is not a Ticket!\`\`\` `)
+            ]});
             if (message.member.roles.highest.rawPosition < message.guild.roles.cache.get(Roles.SupporterRoleId).rawPosition) {
                 return message.reply("❌ **You are not allowed to execute this Command!** Only Supporters or Higher!").then(m => m.delete({
                     timeout: 3500
@@ -1632,7 +1645,11 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
             let verifybutton1 = new MessageButton().setStyle("DANGER").setLabel("Close").setCustomId("close").setEmoji("🔒")
             let verifybutton2 = new MessageButton().setStyle("SUCCESS").setLabel("Don't Close").setCustomId("dont_close").setEmoji("🔓")
             let allbuttons = [new MessageActionRow().addComponents([verifybutton1, verifybutton2])]
-            if(!isValidTicket(message.channel)) return message.reply("❌ This Channel is not a Ticket!");
+            if(!isValidTicket(message.channel)) return message.channel.send({embeds :[new Discord.MessageEmbed()
+                .setColor("RED")
+                .setTitle("<:no:933239221836206131> ERROR | An Error Occurred!")
+                .setDescription(` \`\`\`This Channel is not a Ticket!\`\`\` `)
+            ]});
             let tmp = await message.reply({
                 embeds: [new Discord.MessageEmbed()
                     .setColor(client.config.color)
@@ -1955,7 +1972,11 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
             let verifybutton1 = new MessageButton().setStyle("DANGER").setLabel("Delete").setCustomId("delete").setEmoji("🔒")
             let verifybutton2 = new MessageButton().setStyle("SUCCESS").setLabel("Don't Delete").setCustomId("dont_close").setEmoji("🔓")
             let allbuttons = [new MessageActionRow().addComponents([verifybutton1, verifybutton2])]
-            if(!isValidTicket(message.channel)) return message.reply("❌ This Channel is not a Ticket!");
+            if(!isValidTicket(message.channel)) return message.channel.send({embeds :[new Discord.MessageEmbed()
+                .setColor("RED")
+                .setTitle("<:no:933239221836206131> ERROR | An Error Occurred!")
+                .setDescription(` \`\`\`This Channel is not a Ticket!\`\`\` `)
+            ]});
             let tmp = await message.reply({
                 embeds: [new Discord.MessageEmbed()
                     .setColor(client.config.color)
@@ -2157,7 +2178,11 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 }
             });
         }else if (cmd === "setsaksh") {
-            if(!isValidTicket(message.channel)) return message.reply("❌ This Channel is not a Ticket!");
+            if(!isValidTicket(message.channel)) return message.channel.send({embeds :[new Discord.MessageEmbed()
+                .setColor("RED")
+                .setTitle("<:no:933239221836206131> ERROR | An Error Occurred!")
+                .setDescription(` \`\`\`This Channel is not a Ticket!\`\`\` `)
+            ]});
             if (message.member.roles.highest.rawPosition < message.guild.roles.cache.get(Roles.SupporterRoleId).rawPosition) {
                 return message.reply("❌ **You are not allowed to execute this Command!** Only Supporters or Higher!").then(m => m.delete({
                     timeout: 3500
@@ -2224,7 +2249,11 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 })
             })
         } else if (cmd === "setmigrate") {
-            if(!isValidTicket(message.channel)) return message.reply("❌ This Channel is not a Ticket!");
+            if(!isValidTicket(message.channel)) return message.channel.send({embeds :[new Discord.MessageEmbed()
+                .setColor("RED")
+                .setTitle("<:no:933239221836206131> ERROR | An Error Occurred!")
+                .setDescription(` \`\`\`This Channel is not a Ticket!\`\`\` `)
+            ]});
             if (message.member.roles.highest.rawPosition < message.guild.roles.cache.get(Roles.SupporterRoleId).rawPosition) {
                 return message.reply("❌ **You are not allowed to execute this Command!** Only Supporters or Higher!").then(m => m.delete({
                     timeout: 3500
@@ -2236,7 +2265,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
             if(parent1 && parent1.type == "GUILD_CATEGORY" && parent1.children.size < 50) {
                 parentId = parent1.id;
             }
-            if(!parentId) return message.reply(":x: **There is no free space left, contact NOTSAKSH!**")
+            if(!parentId) return message.reply(":x: **There is no free space left, contact NotSaksh!**")
             await message.channel.setParent(parentId).then(async () => {
                 var { name } = message.channel;
                 var emoji = "🔥";
@@ -2299,7 +2328,11 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 message.channel.send(":x: **Could not find the Ticket Opener in the Database**").catch(() => {});
             }
         } else if (cmd === "setowner") {
-            if(!isValidTicket(message.channel)) return message.reply("❌ This Channel is not a Ticket!");
+            if(!isValidTicket(message.channel)) return message.channel.send({embeds :[new Discord.MessageEmbed()
+                .setColor("RED")
+                .setTitle("<:no:933239221836206131> ERROR | An Error Occurred!")
+                .setDescription(` \`\`\`This Channel is not a Ticket!\`\`\` `)
+            ]});
             if (message.member.roles.highest.rawPosition < message.guild.roles.cache.get(Roles.SupporterRoleId).rawPosition) {
                 return message.reply("❌ **You are not allowed to execute this Command!** Only Supporters or Higher!").then(m => m.delete({
                     timeout: 3500
@@ -2343,7 +2376,11 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 })
             })
         } else if (cmd === "setmod") {
-            if(!isValidTicket(message.channel)) return message.reply("❌ This Channel is not a Ticket!");
+            if(!isValidTicket(message.channel)) return message.channel.send({embeds :[new Discord.MessageEmbed()
+                .setColor("RED")
+                .setTitle("<:no:933239221836206131> ERROR | An Error Occurred!")
+                .setDescription(` \`\`\`This Channel is not a Ticket!\`\`\` `)
+            ]});
             if (message.member.roles.highest.rawPosition < message.guild.roles.cache.get(Roles.SupporterRoleId).rawPosition) {
                 return message.reply("❌ **You are not allowed to execute this Command!** Only Supporters or Higher!").then(m => m.delete({
                     timeout: 3500
@@ -2390,7 +2427,11 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 })
             })
         } else if (cmd === "setimportant") {
-            if(!isValidTicket(message.channel)) return message.reply("❌ This Channel is not a Ticket!");
+            if(!isValidTicket(message.channel)) return message.channel.send({embeds :[new Discord.MessageEmbed()
+                .setColor("RED")
+                .setTitle("<:no:933239221836206131> ERROR | An Error Occurred!")
+                .setDescription(` \`\`\`This Channel is not a Ticket!\`\`\` `)
+            ]});
             if (message.member.roles.highest.rawPosition < message.guild.roles.cache.get(Roles.SupporterRoleId).rawPosition) {
                 return message.reply("❌ **You are not allowed to execute this Command!** Only Supporters or Higher!").then(m => m.delete({
                     timeout: 3500
@@ -2437,7 +2478,11 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 })
             })
         } else if (cmd === "setwaiting") {
-            if(!isValidTicket(message.channel)) return message.reply("❌ This Channel is not a Ticket!");
+            if(!isValidTicket(message.channel)) return message.channel.send({embeds :[new Discord.MessageEmbed()
+                .setColor("RED")
+                .setTitle("<:no:933239221836206131> ERROR | An Error Occurred!")
+                .setDescription(` \`\`\`This Channel is not a Ticket!\`\`\` `)
+            ]});
             if (message.member.roles.highest.rawPosition < message.guild.roles.cache.get(Roles.SupporterRoleId).rawPosition) {
                 return message.reply("❌ **You are not allowed to execute this Command!** Only Supporters or Higher!").then(m => m.delete({
                     timeout: 3500
@@ -2468,7 +2513,11 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 })
             })
         } else if (cmd === "setfinished") {
-            if(!isValidTicket(message.channel)) return message.reply("❌ This Channel is not a Ticket!");
+            if(!isValidTicket(message.channel)) return message.channel.send({embeds :[new Discord.MessageEmbed()
+                .setColor("RED")
+                .setTitle("<:no:933239221836206131> ERROR | An Error Occurred!")
+                .setDescription(` \`\`\`This Channel is not a Ticket!\`\`\` `)
+            ]});
             if (message.member.roles.highest.rawPosition < message.guild.roles.cache.get(Roles.SupporterRoleId).rawPosition) {
                 return message.reply("❌ **You are not allowed to execute this Command!** Only Supporters or Higher!").then(m => m.delete({
                     timeout: 3500
@@ -2506,7 +2555,11 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 })
             })
         } else if (cmd === "setbot") {
-            if(!isValidTicket(message.channel)) return message.reply("❌ This Channel is not a Ticket!");
+            if(!isValidTicket(message.channel)) return  message.channel.send({embeds :[new Discord.MessageEmbed()
+                .setColor("RED")
+                .setTitle("<:no:933239221836206131> ERROR | An Error Occurred!")
+                .setDescription(` \`\`\`This Channel is not a Ticket!\`\`\` `)
+            ]}); // message.channel.send({embeds :[new Discord.MessageEmbed()
             if (message.member.roles.highest.rawPosition < message.guild.roles.cache.get(Roles.SupporterRoleId).rawPosition) {
                 return message.reply("❌ **You are not allowed to execute this Command!** Only Supporters or Higher!").then(m => m.delete({
                     timeout: 3500
@@ -2516,7 +2569,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
             var emoji = "💠";
             if(name.includes(emoji)) return message.reply(`:x: **This Channel is already defined as \`${cmd}\`**`)
             console.log("SETBOT");
-            message.reply(`👍 **Dear <@&${Roles.BotCreatorRoleId}>!**\n> *<The Customer is waiting for his bot to be created!>*`)
+            message.reply(`👍 **Dear <@&${Roles.BotCreatorRoleId}>!**\n> *The Customer is waiting for his bot to be created!*`)
             message.channel.setName(`${name.slice(0, name.indexOf("│") - 1)}${emoji}${name.slice(name.indexOf("│"))}`).catch((e) => {
                 message.reply("❌ **Something went wrong, maybe ratelimited..**").then(m => {
                     setTimeout(() => m.delete().catch(() => {}), 3000);
@@ -2765,7 +2818,10 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                                         if (err) return console.log(err);
                                         stream.on('close', (code, signal) => {
                                             message.reply(`👍 **Recovered the Bot:** ${user} | ${user.tag} (\`${user.id}\`)\n**Path:** \`${path}\`\n**Host:** \`${server}\``);
-                                            conn.end();
+                                            conn.end(); 
+                                            //Log The Command In BOT Management CHANNEL
+                                            logAction(client, "botmanagement", message.author, `BLUE`, `https://media2.giphy.com/media/1Zr8FAKBPA6Rfr2lai/200w.gif?cid=82a1493b05r18y8dejqk3hb7er7v6ah3mp0ermkaew178c9i&rid=200w.gif&ct=g`, `👍 **Recovered the Bot-Host of:** ${user} | ${user.tag} (\`${user.id}\`)\n**Path:** \`${path}\`\n**Host:** \`${server}\``)
+
                                         }).on('data', (data) => { 
 
                                         }).stderr.on('data', (data) => {
@@ -2775,11 +2831,13 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                                 }, 250);
                             }).on('data', (data) => { 
 
+
                             }).stderr.on('data', (data) => {
                                 if(data && data.toString().length > 1){
                                     console.log(data.toString());
                                     failed = true;
                                     return message.reply("❌ This Bot Path is not existing")
+                                    
                                 }
                             });
                         })
@@ -2798,7 +2856,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
             }
         } else if (cmd === "removebothost") {
             if (message.member.roles.highest.rawPosition < message.guild.roles.cache.get(Roles.CoOwnerRoleId).rawPosition)
-                return message.reply("❌ You are not allowed to execute this Command! (Only OWNERS)");
+                return message.reply("❌** You are not allowed to execute this Command! (Only OWNERS)**");
             try {
                 var user;
                 try {
@@ -2809,7 +2867,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 }
                 if (!user || !user.id) return message.reply("❌ Did not find the BOT ... ERROR")
                 client.bots.ensure(user.id, {
-                    info: "No Info available",
+                    info: "There Is No information on This Bot Available.",
                     type: "Default"
                 })
                 let data = client.bots.get(user.id, "info");
@@ -3730,7 +3788,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                     .setAuthor(`${user.username}'s Bots`, user.displayAvatarURL({
                         dynamic: true
                     }), "https://discord.gg/nexusx")
-                    .setDescription(bots.length > 0 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}> | [Invite](https://discord.com/oauth2/authorize?client_id=${bot}&scope=bot&permissions=8)`).join("\n") : "He has no Bots yet!")
+                    .setDescription(bots.length > 0 ? bots.map(bot => `**${client.bots.get(bot, "type")}** | <@${bot}> | [Invite](https://discord.com/oauth2/authorize?client_id=${bot}&scope=bot&permissions=8)`).join("\n") : "He/She Has No Bots Yet!")
                     .setTimestamp()
                 ]
             })

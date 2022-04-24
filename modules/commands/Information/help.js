@@ -33,10 +33,25 @@ module.exports = {
 
     var embed2 = new Discord.MessageEmbed()
         .setColor("YELLOW")
-        .setAuthor("Nexus | Free Bots Shop | STAFF TEAM Help", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
-        .addField("\`,rank [@User]\`", "Shows the Rank of a User!",true)
-        .addField("\`,leaderboard [Days to Show]\`", "Shows the Staff Leaderboard\n**Alias**: \`,lb\`",true)
-            //.addField("\u200b", "\u200b")                
+        .setAuthor("Nexus | Free Bots Shop | BOT CREATOR Help", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
+        .addField("\`,createbot\` --> Pick the Bot", "*Creates a Order-Bot*", true)
+        .addField("\`,cancelcreation\`", "*Cancels the Bot Creation Protection*", true)
+        .addField("\`,startbot <@Bot>\`", "*Starts a Bot*", true)
+        .addField("\`,restartbot <@Bot>\`", "*Restarts a Bot*", true)
+        .addField("\`,stopbot <@Bot>\`", "*Stops a Bot*", true)
+        .addField("\`,shell\`", "*Run Somethig In Console/Shell*", true)
+        .addField("\`,removebothost <@Bot>\`", "*Removes a Bot from the Host*", true)
+        .addField("\`,recoverbothost <@Bot>\`", "*Recovers a Bot, which got removed from the Host*", true)
+        .addField("\`,forcestartbot <@Bot>\`", "*Force-Starts a Bot*", true)
+        .addField("\`,forcerestartbot <@Bot>\`", "*Force-Restarts a Bot*", true)
+        .addField("\`,forcestopbot <@Bot>\`", "*Force-Stops a Bot*", true)
+        .addField("\`,botmanagement\` | \`,bm\`", "*Manages the Bots on all hosts [Use only when needed]*", true)
+
+
+
+    var embed3 = new Discord.MessageEmbed()
+        .setColor("RED")
+        .setAuthor("Nexus | Free Bots Shop | Ticket Commands (STAFF Only)", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
         .addField("\`,close\`", "*Closes the Current Ticket*", true)
         .addField("\`,setsaksh\`", "*Sets the Ticket to a Saksh Ticket*", true)
         .addField("\`,setowner\`", "*Sets the Ticket to a Owner Ticket*", true)
@@ -46,46 +61,41 @@ module.exports = {
         .addField("\`,setwaiting\`", "*Sets the Ticket into a Waiting for Customer Response State*", true)
         .addField("\`,setfinished\`", "*Sets the Ticket into a Finish State*", true)
         .addField("\`,setbot\`", "*Notifies the Bot Creators to create the Bot*", true)
-            //.addField("\u200b", "\u200b")
         .addField("\`,addticket <@User>\`", "*Adds a User from the Ticket*", true)
         .addField("\`,removeticket <@User>\`", "*Removes a User from the Ticket*", true)
-            //.addField("\u200b", "\u200b")
-        .addField("\`,createbot\` --> Pick the Bot", "*Creates a Order-Bot*", true)
-        .addField("\`,cancelcreation\`", "*Cancels the Bot Creation Protection*", true)
+        .addField("\`,closeall\`", "*Deletes all closed Tickets*", true)
 
-    var embed3 = new Discord.MessageEmbed()
+
+    var embed4 = new Discord.MessageEmbed()
         .setColor("ORANGE")
         .setAuthor("Nexus | Free Bots Shop | Higher Staff (Bot Management Commands)", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
         .addField("\`,addbot <@USER> <@Bot <BOTTYPE>\`", "*Adds a Bot to a User*", true)
         .addField("\`,removebot <@USER> <@Bot>\`", "*Removes a Bot to a User*", true)
         .addField("\`,changebot <@USER> <@Bot> <BOTTYPE>\`", "*Changes a Bot*", true)
         .addField("\`,setneworiginalbot\`", "*sets a new original Bot info into the DB*", true)
+        .addField("\`,rank [@User]\`", "Shows the Rank of a User!",true)
+        .addField("\`,leaderboard [Days to Show]\`", "Shows the Staff Leaderboard\n**Alias**: \`,lb\`",true)
             //.addField("\u200b", "\u200b")
         .addField("\`,payment <Time> <@User> <@Bot>\`", "*Notes the Payment*", true)
         .addField("\`,invitepayment <Time> <@User> <@Bot>\`", "*Notes the Payment for Invites*", true)
         .addField("\`,boostpayment <Time> <@User> <@Bot>\`", "*Notes the Payment for 2xBoosts*", true)
         .addField("\`,removepayment <Time> <@Bot>\`", "*Removes the Payment(s) of this Bot, so that you can set the Payment(s) again!*", true)
-            //.addField("\u200b", "\u200b")
-        .addField("\`,closeall\`", "*Deletes all closed Tickets*", true)
-            //.addField("\u200b", "\u200b")
-        .addField("\`,botmanagement\` | \`,bm\`", "*Manages the Bots on all hosts [Use only when needed]*", true)
-            //.addField("\u200b", "\u200b")
-        .addField("\`,startbot <@Bot>\`", "*Starts a Bot*", true)
-        .addField("\`,restartbot <@Bot>\`", "*Restarts a Bot*", true)
-        .addField("\`,stopbot <@Bot>\`", "*Stops a Bot*", true)
-            //.addField("\u200b", "\u200b")
-        .addField("\`,removebothost <@Bot>\`", "*Removes a Bot from the Host*", true)
-        .addField("\`,recoverbothost <@Bot>\`", "*Recovers a Bot, which got removed from the Host*", true)
-            //.addField("\u200b", "\u200b")
-        .addField("\`,forcestartbot <@Bot>\`", "*Force-Starts a Bot*", true)
-        .addField("\`,forcerestartbot <@Bot>\`", "*Force-Restarts a Bot*", true)
-        .addField("\`,forcestopbot <@Bot>\`", "*Force-Stops a Bot*", true)
         .addField("\`,noguildremovebothost\`", "*Removes bot host of all no guild bots*", true)
+        .addField("\`,eval\`", "*Eval Command (Only Developers)*", true)
 
-        //togglegeneral, togglepartnerapply, toggleteamapply
-    var embed4 = new Discord.MessageEmbed()
-        .setColor("RED")
-        .setAuthor("Nexus | Free Bots Shop | Setup Commands", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
+        var embed5 = new Discord.MessageEmbed()
+        .setColor("BLUE")
+        .setAuthor("Nexus | Free Bots Shop | Other Setup Commands", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
+        .addField("\`,setuporder\`", "*Setup Order Ticket*", true)
+        .addField("\`,setupverify\`", "*Setup Verification Channel*", true)
+        .addField("\`,setupsuggest\`", "*Setup Suggestion Channel*", true)
+        .addField("\`,setupnodestats\`", "*Setup Status Role System*", true)
+        .addField("\`,setupfeatures\`", "*Setup Features Channel*", true)
+        .addField("\`,setupfeedback\`", "*Setup Feedback Channel*", true)
+
+    var embed6 = new Discord.MessageEmbed()
+        .setColor("WHITE")
+        .setAuthor("Nexus | Free Bots Shop | Order Setup Commands", message.guild.iconURL({dynamic: true}), "https://discord.gg/notsaksh")
         .addField("\`,togglepartnerapply\`", "*Enables/Disables the Partner Apply System*", true)
         .addField("\`,toggleteamapply\`", "*Enables/Disables the Team Apply System*", true)
             //.addField("\u200b", "\u200b")
@@ -102,11 +112,14 @@ module.exports = {
             //.addField("\u200b", "\u200b")
         .addField("\`,ensure\` / \`,savedb\` / \`,resetsettings\`", "*Ensures / Saves the Database, so that the default Data get's applied*", true)
         
+
     swap_pages2(client, message, [
         embed1,
         embed2,
         embed3,
         embed4,
+        embed5,
+        embed6,
     ]);
     }
 }

@@ -10,7 +10,7 @@ const scp = require("node-scp").Client;
 module.exports = client => {
 
     const nodestatChannelID = "965356469287551026";
-    const nodestatMessageID = "966013028233515009";
+    const nodestatMessageID = "967856975662706701";
     
     async function getLeast() {
         console.log("GETTING STATS");
