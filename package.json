@@ -311,6 +311,7 @@
     "object-assign": "^4.1.1",
     "object-inspect": "^1.12.0",
     "officegen": "^0.6.5",
+    "old-wio.db": "^4.0.10",
     "on-change": "^2.2.3",
     "on-finished": "^2.3.0",
     "on-headers": "^1.0.2",

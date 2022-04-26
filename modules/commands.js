@@ -8,7 +8,8 @@ const Path = require("path");
 const {
     MessageActionRow,
     MessageSelectMenu,
-    MessageButton
+    MessageButton,
+    MessageEmbed
 } = require("discord.js");
 
 
@@ -181,7 +182,13 @@ module.exports = async(client) => {
                                 components: [row2]
                             });
                         } else {
-                            message.reply("no Valid Permissions")
+                            message.reply({embeds: [new MessageEmbed()
+                .setColor("RED")
+                .setTitle(`❌ ERROR | An Error Occurred`)
+                .setDescription(`\`\`\`AN Unknown Error Occurred, Please Try Again.\`\`\``)
+                .setFooter(message.guild.name, message.guild.iconURL())
+                .setTimestamp()
+            ]});
                         }
                     } else if (cmd == "setupfeatures") {
                         if (message.member.permissions.has("ADMINISTRATOR")) {
@@ -210,7 +217,13 @@ module.exports = async(client) => {
                                 components: [row]
                             });
                         } else {
-                            message.reply("no Valid Permissions")
+                            message.reply({embeds: [new MessageEmbed()
+                .setColor("RED")
+                .setTitle(`❌ ERROR | An Error Occurred`)
+                .setDescription(`\`\`\`AN Unknown Error Occurred, Please Try Again.\`\`\``)
+                .setFooter(message.guild.name, message.guild.iconURL())
+                .setTimestamp()
+            ]});
                         }
                         //
                     } else if (cmd === "setuporder") {
@@ -284,7 +297,13 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                                 components: [row1, row2]
                             });
                         } else {
-                            message.reply("no Valid Permissions")
+                            message.reply({embeds: [new MessageEmbed()
+                .setColor("RED")
+                .setTitle(`❌ ERROR | An Error Occurred`)
+                .setDescription(`\`\`\`AN Unknown Error Occurred, Please Try Again.\`\`\``)
+                .setFooter(message.guild.name, message.guild.iconURL())
+                .setTimestamp()
+            ]});
                         }
                     }
 
@@ -366,7 +385,14 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                     embeds: [embed1, embed2, embed3, embed4]
                 })
             } else {
-                message.reply("❌ **You are not allowed to execute this Command!** You need to be a part of the STAFF TEAM!")
+                message.reply({embeds: [new MessageEmbed()
+                    .setColor("RED")
+                    .setTitle(`❌ Error | Missing Permission`)
+                    .setDescription(`\`\`\`You are not allowed to execute this Command! You need to be a part in the STAFF TEAM!\`\`\``)
+                    .setFooter(message.guild.name, message.guild.iconURL())
+                    .setTimestamp()
+                ]});
+                await message.react("<:no:933239221836206131>")
             }
         } else if (cmd === "rank") {
             if (message.member.roles.highest.rawPosition >= message.guild.roles.cache.get("964370138549854250").rawPosition) {
@@ -442,7 +468,15 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                     embeds: [embed1, embed2, embed3, embed4]
                 })
             } else {
-                message.reply("❌ **You are not allowed to execute this Command!** You need to be a part in the STAFF TEAM!")
+                message.reply({embeds: [new MessageEmbed()
+                    .setColor("RED")
+                    .setTitle(`❌ ERROR | An Error Occurred`)
+                    .setDescription(`\`\`\`You are not allowed to execute this Command! You need to be a part in the STAFF TEAM!\`\`\``)
+                    .setFooter(message.guild.name, message.guild.iconURL())
+                    .setTimestamp()
+                ]});
+                await message.react("<:no:933239221836206131>")
+                //message.reply("❌ **You are not allowed to execute this Command!** You need to be a part in the STAFF TEAM!")
             }
         } 
         
@@ -452,7 +486,13 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                 message.channel.send(args.join(" "));
                 message.delete()
             } else {
-                message.reply("no Valid Permissions")
+                message.reply({embeds: [new MessageEmbed()
+                .setColor("RED")
+                .setTitle(`❌ ERROR | An Error Occurred`)
+                .setDescription(`\`\`\`AN Unknown Error Occurred, Please Try Again.\`\`\``)
+                .setFooter(message.guild.name, message.guild.iconURL())
+                .setTimestamp()
+            ]});
             }
         } else if (cmd === "cancelcreation"){
             if (!message.member.permissions.has("ADMINISTRATOR") && !message.member.roles.cache.has(Roles.BotCreatorRoleId) && !message.member.roles.cache.has(Roles.OwnerRoleId) && !message.member.roles.cache.has(Roles.ChiefBotCreatorRoleId)) return message.reply("**❌ You are not allowed to execute this cmd**");
@@ -484,7 +524,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                     return Obj;
                 }))
             //define the embed
-            let MenuEmbed = new Discord.MessageEmbed()
+            let MenuEmbed = new MessageEmbed()
                 .setColor("#57F287")
                 .setAuthor("Bot Creation - " + message.author.tag, message.author.displayAvatarURL({
                     dynamic: true

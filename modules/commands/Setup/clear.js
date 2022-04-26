@@ -18,7 +18,14 @@ module.exports = {
                 message.delete().catch(e => console.log("Couldn't delete msg, this is a catch to prevent crash"))
                 
 		}catch{
-			message.cannel.send("ERROR")
+			message.reply({embeds: [new MessageEmbed()
+                .setColor("RED")
+                .setTitle(`❌ ERROR | An Error Occurred`)
+                .setDescription(`\`\`\`AN Unknown Error Occurred, Please Try Again.\`\`\``)
+                .setFooter(message.guild.name, message.guild.iconURL())
+                .setTimestamp()
+            ]});
+            await message.react("<:no:933239221836206131>")
 		}
 		
 	}

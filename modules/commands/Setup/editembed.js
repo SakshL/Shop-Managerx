@@ -100,7 +100,14 @@ const role = require("../../../settings.json");
         return message.reply("error")
       }
     }else {
-      message.reply("You don't have rights")
+      message.reply({embeds: [new MessageEmbed()
+        .setColor("RED")
+        .setTitle(`❌ ERROR | An Error Occurred`)
+        .setDescription(`\`\`\`You Don't Have Permission To Run This Command\`\`\``)
+        .setFooter(message.guild.name, message.guild.iconURL())
+        .setTimestamp()
+    ]});
+    await message.react("<:no:933239221836206131>")
   }
     }
   }

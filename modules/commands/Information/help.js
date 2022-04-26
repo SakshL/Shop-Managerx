@@ -111,7 +111,7 @@ module.exports = {
         .addField("\`,togglemodmail\`", "*Enables/Disables the Mod Mail Bot Order*", true)
             //.addField("\u200b", "\u200b")
         .addField("\`,ensure\` / \`,savedb\` / \`,resetsettings\`", "*Ensures / Saves the Database, so that the default Data get's applied*", true)
-        
+
 
     swap_pages2(client, message, [
         embed1,

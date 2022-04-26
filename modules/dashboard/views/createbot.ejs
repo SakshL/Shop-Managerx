@@ -42,14 +42,21 @@
                             <form method="POST" id ="createBotForm">
                                 <h5 style="margin-bottom: 0.5rem; margin-top: 10px;color:#6861fe"><b><font size="4">Order-Channel</font></b</h5>
                                 <p style="font-style: italic;" class="disabled">Select the Customer Ticket! [Ticket - Categories are greyed out for Orientation]</p>
-                                <select required class="form-control"data-width="100%"data-height="100%"data-live-search="true" autocomplete="off"  required="" aria-label="Ticket Channel"name="channel">
+                                  <select required class="form-control"data-width="100%"data-height="100%"data-live-search="true" autocomplete="off"  required="" aria-label="Ticket Channel"name="channel">
                                   
-                                  <% if(milratoGuild.channels.cache.get("964370140986736725") && milratoGuild.channels.cache.get("964370141452312606").children && milratoGuild.channels.cache.get("965412925185589298").children.size >= 1) { %>
-                                  <option disabled > #<%= milratoGuild.channels.cache.get("964370140986736725").name %></option>
-                                  <% [...milratoGuild.channels.cache.get("964370140986736725").children.values()].sort((a, b) => a.rawPosition - b.rawPosition).forEach((channel, i) => { %>
-                                      <option value="<%= channel.id %>"> #<%= channel.name %></option>
-                                  <% })} %>
-                                  </div>
+                                    <% if(milratoGuild.channels.cache.get("964370140986736725") && milratoGuild.channels.cache.get("964370141452312606").children && milratoGuild.channels.cache.get("965412925185589298").children.size >= 1) { %>
+                                    <option disabled > #<%= milratoGuild.channels.cache.get("964370140986736725").name %></option>
+                                    <% [...milratoGuild.channels.cache.get("964370140986736725").children.values()].sort((a, b) => a.rawPosition - b.rawPosition).forEach((channel, i) => { %>
+                                        <option value="<%= channel.id %>"> #<%= channel.name %></option>
+                                    <% })} %>
+                                    </div>
+  
+                                    <% if(milratoGuild.channels.cache.get("938439892638257172") && milratoGuild.channels.cache.get("938439892638257172").children && milratoGuild.channels.cache.get("938439892638257172").children.size >= 1) { %>
+                                    <option disabled> #<%= milratoGuild.channels.cache.get("938439892638257172").name %></option>
+                                    <% [...milratoGuild.channels.cache.get("938439892638257172").children.values()].sort((a, b) => a.rawPosition - b.rawPosition).forEach((channel, i) => { %>
+                                        <option value="<%= channel.id %>"> #<%= channel.name %></option>
+                                    <% })} %>
+                                  </select>
 
                                   <% if(milratoGuild.channels.cache.get("964370141452312606") && milratoGuild.channels.cache.get("964370141452312606").children && milratoGuild.channels.cache.get("964370141452312606").children.size >= 1) { %>
                                   <option disabled> #<%= milratoGuild.channels.cache.get("964370141452312606").name %></option>
@@ -154,7 +161,7 @@
                 confirmButtonText: 'Yes, create it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    if(<%=botClient.createingbotmap.has("Creating") ? true : false %>) {
+                    if(botClient.createingbotmap.has("Creating") ? true : false) {
                         return Swal.fire({
                             icon: 'error',
                             title: 'Someone else is alread creating a Bot',

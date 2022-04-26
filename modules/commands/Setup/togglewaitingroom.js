@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { Discord, MessageEmbed }  = require("discord.js");
 const { swap_pages2 } = require("../../utilfunctions")
 const { Roles } = require("../../../settings.json");
 const emoji = require("../../../emoji")
@@ -9,7 +9,13 @@ module.exports = {
     description: "", 
     run: async (client, message, args, prefix) => {
         if (message.member.roles.highest.rawPosition < message.guild.roles.cache.get(Roles.OwnerRoleId).rawPosition)
-            return message.reply(`<:no:933239221836206131> You are not allowed to execute this Command!`);
+            return message.reply({embeds: [new MessageEmbed()
+                .setColor("RED")
+                .setTitle(`❌ ERROR | An Error Occurred`)
+                .setDescription(`\`\`\`You are not allowed to execute this Command!\`\`\``)
+                .setFooter(message.guild.name, message.guild.iconURL())
+                .setTimestamp()
+            ]});
         client.setups.set(message.guild.id, !client.setups.get(message.guild.id, "ticketsystem.enabled"), "ticketsystem.enabled")
         return message.reply(`> ✅ **The WAITINGROOM BOT ORDER SYSTEM is now: \`${client.setups.get(message.guild.id, "ticketsystem.enabled") ? "Enabled" : "Disabled"}\`**`)
     }

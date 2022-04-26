@@ -29,7 +29,7 @@ module.exports = {
         return message.reply({embeds: [new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`❌ ERROR | An error occurred`)
+            .setTitle(`❌ ERROR | An Error Occurred`)
             .setDescription(`\`\`\`${e.message ? String(e.message).substr(0, 2000) : String(e).substr(0, 2000)}\`\`\``)
         ]});
     }
