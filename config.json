@@ -1,1 +1,29 @@
+{
+    "token": "OTY3ODU1MjI4Mzc4NTc0OTQ5.YmWXbA.k9C7fW_Sjvkmp5bjf2k9xi6fcAQ",
+    "prefix": ",",
+    "color": "#6861fe",
+    "pastebinapi": "sdsd",
+    "secret": "-6sqBYimrvctm8AN57aHamm6NquudZsO", 
+    "callback": "https://dash.nexusx.dev/callback", 
 
+    "paypal": {
+        "clientId": "AUv5QHdR6T69UrZdHrvWfcCIian0IQebwfN188wPkd4u1XLN5Napq7kMZFf1skIKnaLHBz2AgwEZePNy",
+        "clientSecret": "EAyDFfh7_nIsP6ncDVT55YfeITo0E5izmwGTbnyLXiCDNRbJ1CjHnynL_4bUsVzI98fVJcJUqeyvRQb1"
+    },
+    "servers": {
+        "6": "109.71.253.6",
+        "143": "3.236.160.143",
+        "157": "74.208.116.157"
+    },
+    "passwords": {  
+        "6": "NotUnknownIsCoolHotLmao@6969",
+        "143": "NotSakshyWakshy6969",
+        "157": "NotSaksh@0001"
+        
+    },
+    "usernames": {
+        "6": "root",
+        "143": "root",
+        "157": "root"
+    }
+}
