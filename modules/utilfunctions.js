@@ -26,7 +26,7 @@ function isValidTicket(channel) {
         `${mainconfig.ApplyTickets.PartnerApply}`,
         `${mainconfig.TicketCategorys.AllBotTicketsCategory}`,
         `${mainconfig.TicketCategorys.AllBotTicketsCategory}`,
-        `${mainconfig.OwnerInformation.NotSakshTicket}`,
+        `${mainconfig.OwnerInformation.OwnerTicketCat}`,
         `${mainconfig.StaffApply}`,
         `${mainconfig.OwnerTicket}`,
         `${mainconfig.ApplyTickets.PartnerApply}`,
@@ -104,7 +104,7 @@ function GetUser(message, arg) {
             return resolve(user);
         }
     })
-}5
+} 5
 //format ms
 function duration(duration, useMilli = false) {
     let remain = duration;
@@ -321,7 +321,7 @@ function theDB(client, guild) {
     client.setups.set(guild.id, {
         enabled: true,
         guildid: guild.id,
-        parentid: `${mainconfig.OwnerInformation.NotSakshTicket}`,
+        parentid: `${mainconfig.OwnerInformation.OwnerTicketCat}`,
         message: `Hey {user}! Thanks for opening a TICKET buying a <a:Valid_Code_Developer:933742305398116363> **SOURCE CODE**
     \`\`\`diff
     - Please tell us what Source Code you want to buy and with what Payment Method!

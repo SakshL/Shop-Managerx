@@ -12,7 +12,6 @@ const {
     MessageEmbed
 } = require("discord.js");
 
-
 const {
     Client
 } = require('ssh2');
@@ -114,6 +113,9 @@ module.exports = async (client) => {
                     ]
                 });
             }
+
+            theDB(client, message.guild);
+
             try {
                 command.run(client, message, args, prefix);
             } catch (error) {
@@ -1764,7 +1766,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                             userid = client.setups.findKey(user => user.ticketid5 == message.channel.id)
                         if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.TicketCategorys.ModMailBotTicketsCategory}`)
                             userid = client.setups.findKey(user => user.ticketid6 == message.channel.id)
-                        if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.OwnerInformation.NotSakshTicket}`)
+                        if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.OwnerInformation.OwnerTicketCat}`)
                             userid = client.setups.findKey(user => user.ticketid7 == message.channel.id)
                         if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.ApplyTickets.PartnerApply}`)
                             userid = client.setups.findKey(user => user.ticketid8 == message.channel.id)
@@ -2108,7 +2110,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                             userid = client.setups.findKey(user => user.ticketid5 == message.channel.id)
                         if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.TicketCategorys.ModMailBotTicketsCategory}`)
                             userid = client.setups.findKey(user => user.ticketid6 == message.channel.id)
-                        if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.OwnerInformation.NotSakshTicket}`)
+                        if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.OwnerInformation.OwnerTicketCat}`)
                             userid = client.setups.findKey(user => user.ticketid7 == message.channel.id)
                         if (!userid && message.channel.parent && message.channel.parent.id == `${mainconfig.ApplyTickets.PartnerApply}`)
                             userid = client.setups.findKey(user => user.ticketid8 == message.channel.id)
@@ -2286,7 +2288,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                     timeout: 3500
                 }).catch(console.error)).catch(console.error);
             }
-            message.channel.setParent(`${mainconfig.OwnerInformation.NotSakshTicket}`).then(async () => {
+            message.channel.setParent(`${mainconfig.OwnerInformation.OwnerTicketCat}`).then(async () => {
                 var {
                     name
                 } = message.channel;

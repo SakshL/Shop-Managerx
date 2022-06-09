@@ -1,17 +1,17 @@
 const { MessageEmbed, MessageActionRow, MessageButton, MessageSelectMenu } = require("discord.js");
 module.exports = async (client) => {
     const RulesChannel = `${mainconfig.RulesChannel.toString()}`;
-    const verifiedRoleId = `${mainconfig.MemberID.toString()}`
+    const verifiedRoleId = `${mainconfig.MemberRoleID.toString()}`
 
     client.on("interactionCreate", async (interaction) => {
-        if(!interaction?.isButton()) return;
+        if (!interaction?.isButton()) return;
         const { member, channel, message } = interaction;
-        if(channel.id == RulesChannel.toString() && interaction?.customId == "milratoverify") {
-            if(member.roles.cache.has(verifiedRoleId)) {
+        if (channel.id == RulesChannel.toString() && interaction?.customId == "milratoverify") {
+            if (member.roles.cache.has(verifiedRoleId)) {
                 return interaction?.reply({
                     ephemeral: true,
                     content: "❌ You are already Verified"
-                }).catch(() => {});
+                }).catch(() => { });
             }
             interaction?.reply({
                 ephemeral: true,
@@ -22,10 +22,10 @@ module.exports = async (client) => {
                         new MessageButton().setLabel("No Sorry, No verification").setStyle("SUCCESS").setCustomId("no-verification"),
                     ])
                 ]
-            }).catch(() => {});
+            }).catch(() => { });
         }
         // ASK FIRST QUESTION
-        if(channel.id == RulesChannel.toString() && interaction?.customId == "okay-go-ahead") {
+        if (channel.id == RulesChannel.toString() && interaction?.customId == "okay-go-ahead") {
             interaction?.update({
                 ephemeral: true,
                 content: "**First Question:**\n> What is the __Keyword__ inside of the RULES?",
@@ -41,24 +41,24 @@ module.exports = async (client) => {
                         new MessageButton().setLabel("Cancel Verification").setStyle("DANGER").setCustomId("Cancel_Verify")
                     ]),
                 ]
-            }).catch(() => {});
+            }).catch(() => { });
         }
-        
-        if(channel.id == rulesChannel && interaction?.customId.startsWith("Ping")) {
-            if(interaction?.customId == "PingNo" || interaction?.customId == "PingTickets2") {
+
+        if (channel.id == rulesChannel && interaction?.customId.startsWith("Ping")) {
+            if (interaction?.customId == "PingNo" || interaction?.customId == "PingTickets2") {
                 member.roles.add(verifiedRoleId).then(() => {
                     interaction?.update({
                         ephemeral: true,
                         content: "👍 **Good Job!**\n> You successfully Verified yourself and I granted access to you for **nexusx Development**\n> :wave: Enjoy! Just incase you need to know something check out <#924696982264610846>",
                         components: [],
-                    }).catch(() => {});
+                    }).catch(() => { });
                 }).catch((e) => {
                     console.log(e)
                     interaction?.update({
                         ephemeral: true,
                         content: "❌ Something went terrible Wrong I'm Sorry please check out <#924718628732031026>\n> **Please send a SCREENSHOT of this MESSAGE too**, so that we know you should have succesfully solved the Verification!",
                         components: [],
-                    }).catch(() => {});
+                    }).catch(() => { });
                 });
             } else {
                 interaction?.update({
@@ -73,12 +73,12 @@ module.exports = async (client) => {
                             new MessageButton().setLabel("Only when it's urgent").setStyle("DANGER").setCustomId("PingUrgent").setDisabled(),
                         ]),
                     ]
-                }).catch(() => {});
+                }).catch(() => { });
             }
         }
-        
-        if(channel.id == rulesChannel && interaction?.customId.startsWith("Key")) {
-            if(interaction?.customId == "Key2022Nexusx") {
+
+        if (channel.id == rulesChannel && interaction?.customId.startsWith("Key")) {
+            if (interaction?.customId == "Key2022Nexusx") {
                 interaction?.update({
                     ephemeral: true,
                     content: "**SECOND Question:**\n> Am I allowed to ping People?",
@@ -94,7 +94,7 @@ module.exports = async (client) => {
                             new MessageButton().setLabel("Cancel Verification").setStyle("DANGER").setCustomId("Cancel_Verify")
                         ]),
                     ]
-                }).catch(() => {});
+                }).catch(() => { });
             } else {
                 interaction?.update({
                     ephemeral: true,
@@ -108,23 +108,23 @@ module.exports = async (client) => {
                             new MessageButton().setLabel("KeyOfNexusx").setStyle("DANGER").setCustomId("KeyOfNexusx").setDisabled(),
                         ])
                     ]
-                }).catch(() => {});
+                }).catch(() => { });
             }
         }
 
-        if(channel.id == rulesChannel && interaction?.customId == "Cancel_Verify"){
+        if (channel.id == rulesChannel && interaction?.customId == "Cancel_Verify") {
             interaction?.update({
                 ephemeral: true,
                 content: "👌 **Cancelled the Verification Process!**",
                 components: []
-            }).catch(() => {});
+            }).catch(() => { });
         }
         // CANCEL 
-        if(channel.id == rulesChannel && interaction?.customId == "no-verification") {
+        if (channel.id == rulesChannel && interaction?.customId == "no-verification") {
             interaction?.reply({
                 ephemeral: true,
                 content: "👌 **Cancelled the Verification Process!**"
-            }).catch(() => {});
+            }).catch(() => { });
         }
     })
 }
