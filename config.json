@@ -1,20 +1,16 @@
 {
-    "token": "",
-    "prefix": ",",
-    "color": "#6861fe",
-    "pastebinapi": "sdsd",
-    "secret": "-6sqBYimrvctm8AN57aHamm6NquudZsO", 
-    "callback": "https://dash.nexusx.dev/callback", 
+  "token": "",
+  "prefix": ",",
+  "color": "#6861fe",
+  "pastebinapi": "sdsd",
+  "secret": "-6sqBYimrvctm8AN57aHamm6NquudZsO",
+  "callback": "https://dash.nexusx.dev/callback",
 
-    "paypal": {
-        "clientId": "",
-        "clientSecret": ""
-    },
-    "servers": {
-    },
-    "passwords": {  
-        
-    },
-    "usernames": {
-    }
+  "paypal": {
+    "clientId": "",
+    "clientSecret": ""
+  },
+  "servers": {},
+  "passwords": {},
+  "usernames": {}
 }

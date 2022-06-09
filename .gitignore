@@ -1,3 +1,6 @@
-node_modules
-.sqlite
-servicebots
+node_modules/
+servicebots/
+
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
