@@ -1,6 +1,9 @@
 const { MessageEmbed, Permissions } = require("discord.js");
 const { Roles } = require("../../../settings.json");
 const emoji = require("../../../emoji")
+const {
+    theDB,
+} = require("./utilfunctions");
 
 module.exports = {
     name: require("path").parse(__filename).name,
