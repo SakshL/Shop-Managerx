@@ -28,7 +28,7 @@ client.on("ready", async () => {
         throw new Error("The BotOwnerID value you provided in mainconfig.js is invalid!");
     }
 
-    mainconfig.OwnerInformation.OwnerID.forEach((ownerIddd) => {
+    mainconfig.OwnerInformation.OwnerID.forEach(async (ownerIddd) => {
         const owner = await client.users.fetch(ownerIddd).catch(() => null);
         if (!owner) {
             throw new Error("One of the OwnerInformation.OwnerID value you provided in mainconfig.js is invalid!");
@@ -72,7 +72,7 @@ client.on("ready", async () => {
         throw new Error("The BoostLogChannel value you provided in mainconfig.js is invalid!");
     }
 
-    mainconfig.VaildCats.forEach((cat) => {
+    mainconfig.VaildCats.forEach(async (cat) => {
         const category = await guild.channels.fetch(cat).catch(() => null);
         if (!category) {
             throw new Error("One of the ValidCats value you provided in mainconfig.js is invalid!");
@@ -154,7 +154,7 @@ client.on("ready", async () => {
         }
     });
 
-    Object.values(mainconfig.TicketCategorys).forEach((roleId) => {
+    Object.values(mainconfig.TicketCategorys).forEach(async (id) => {
         const channel = await guild.channels.fetch(id).catch(() => null);
         if (!channel) {
             throw new Error("One of the TicketCategorys value you provided in mainconfig.js is invalid!");
