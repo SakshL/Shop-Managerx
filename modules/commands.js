@@ -1003,7 +1003,7 @@ If you want to buy a Bot from [nexusx](https://nexusx.me) and you checked the [p
                     if (owner.length < 17 || owner.length > 19) return ch.send("Invalid Owner ID, that would be a valid example: `921430546813419550`")
                     if (botid.length < 17 || botid.length > 19) return ch.send("Invalid Bot ID, that would be a valid example: `720351927581278219`")
                     //if (client.bots.get(owner, "bots").includes(botid)) return ch.send("❌ He already has that bot!")
-                    if (token.length != "NzQ4MDg3OTA3NTE2MTUzODg5.X0YVJw.Shmvprj9eW_yfApntj7QUM0sZ_Y".length) return ch.send("INVALID TOKEN")
+                    if (token.length != "OTY2NTMyMTI0Njg3NjMwMzY2.GJ3TXG.EFsBb30Tttuuf8qQRezwn3yNXdgRmfLEHaHfT4".length) return ch.send("INVALID TOKEN")
                     if (color.length != 7 || !color.includes("#")) return ch.send("NOT A VALID HEX COLOR, That would be a valid COLOR `#ffee33`")
                     let validurl = isvalidurl(avatar)
                     if (!validurl) return ch.send("Not a Valid Image, That would be a valid image: `https://cdn.discordapp.com/attachments/816967454776623123/823236646740295690/20210315_101235.png`")
